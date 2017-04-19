@@ -10,6 +10,7 @@
 \usepackage[bookmarks=true]{hyperref}
 \usepackage{subfigure}
 \usepackage{graphicx}
+\usepackage{amssymb}
 
 
 
@@ -25,18 +26,68 @@
 \chapter{Introduzione}
 
 
-\textbf{Gruppo}: insieme $G$ ed un'operazione $\bullet$ detta \textit{Legge del gruppo G} che combina due elementi qualsiasi $a$ e $b$ formandone un terzo $a\bullet b$ appartenente ancora allo stesso insieme $G$. 
+%\textbf{Teoria dei Gruppi}: branca della matematica e dell'algebra astratta che studia le strutture algebriche conosciute come \textit{Gruppi}. 
+%\newline\newline
+%
+%
+%
+\textbf{Gruppo}: insieme $G$ ed un'operazione $\bullet$ detta \textit{Operazione o Legge del gruppo G} che combina due elementi qualsiasi $a$ e $b$ dell'insieme $G$ formandone un terzo $c = a\bullet b$ appartenente ancora allo stesso insieme $G$. 
 La coppia $(G, \bullet)$ deve soddisfare gli \textit{assiomi di gruppo}:
-\begin{itemize}
-    \item Chiusura: per ogni coppia $a$ e $b$, il risultato dell'operazione $a\bullet b$ \`e ancora in $G$;
-    \item Associativit\`a: per ogni $a$, $b$ e $c$ in $G$ vale $\left ( a\bullet b \right ) \bullet c = a \bullet \left ( b \bullet c \right ) $;
-    \item Elemento Identit\`a: esiste un unico elemento $e$ in $G$ tale che sia verificata l'equazione $ e \bullet a = a \bullet e = a$;
-    \item Elemento Inverso: per ogni elemento $a$ in $G$ esiste un elemento $b$ di $G$ indicato come $a^{-1}$ (o come $-a$ se l'operazione \`e definita come $"+"$) tale per cui sia verificata l'equazione $ a \bullet b = b \bullet a = e$, dove $e$ \`e l'elemento identit\`a.
-\end{itemize}
-Inoltre il risultato dell'operazione pu\`o dipendere dall'ordine degli operandi per cui l'equazione $ a \bullet b = b \bullet a$ pu\`o non essere sempre vera. I gruppi per i quali vale la commutatività sono detti \textit{Gruppi Abeliani}.
+\begin{enumerate}
+    \item \textit{Chiusura}: $ c \in G$, dove $c = a\bullet b$ $ \forall (a$, $b) \in G$;
+    %
+    %
+    \item \textit{Associativit\`a}: $\left ( a\bullet b \right ) \bullet c = a \bullet \left ( b \bullet c \right ) $, $ \forall (a, b, c) \in G$;
+    %
+    %
+    \item \textit{Elemento Identit\`a}: $ \exists ! e \in G \mid e \bullet a = a \bullet e = a$;
+    %
+    %
+    \item \textit{Elemento Inverso}: $\exists b \in G \mid a \bullet b = b \bullet a = e$ dove $b = a^{-1} $ se l'operazione \`e definita come $"\cdot"$ oppure $b = -a $ se l'operazione \`e definita come $"+"$, infine l'elemento $e$ \`e l'identit\`a.
+\end{enumerate}
+Un esempio concreto di Gruppo viene dato dai \textit{Gruppi di Permutazione}. Questi sono definiti da un insieme $X$ ed una collezione $G$ delle corrispondenze biunivoche di $X$ su se stesso, anche dette Permutazioni. Il cubo di Rubik \`e un elemento di questo gruppo ed ogni rotazione di una sua superficie risulta in una permutazione dei colori sulla superficie. 
+\newline
+L'operazione di gruppo \`e chiamata Composizione di permutazioni ed \`e definita come prodotto di due permutazioni $\sigma$ e $\pi$ tali per cui la loro composizione $\sigma \cdot \pi$ mappa ogni elemento $x$ all'insieme $\sigma ( \pi ( x ) )$. Essendo vero che la composizione di due corrispondenze biunivoche \`e ancora una corrispondenza biunivoca, il prodotto di due permutazioni \`e ancora una permutazione; inoltre la composizione \`e associativa e cos\`i anche il prodotto di permutazione $ (\sigma \cdot \pi) \cdot \rho = \sigma \cdot ( \pi \cdot \rho )$.
+\newline
+L'elemento neutro per l'operazione di Composizione \`e la Permutazione Identit\`a che mappa ogni elemento dell'insieme su se stesso. 
+\newline
+Infine, le corrispondenze biunivoche sono di inversa, cos\`i quindi anche le permutazioni e l'inversa di $\sigma$ ovvero $ \sigma ^ {-1} $ \`e ancora una permutazione.
+\newline
+Avendo verificato che esiste un prodotto associativo, un elemento identit\`a ed un'inversa per ogni suo elemento, l'insieme delle permutazioni forma un gruppo.
+%
+%
+%
 \newline\newline
-\textbf{Gruppo Abeliano}: gruppo per il quale valgono i quattro assiomi dei Gruppi ed un quinto assioma detto \textit{Commutativit\`a} per il quale vale la propriet\`a commutativa dei suoi elementi. Un gruppo abeliano \`e anche detto \textit{gruppo commutativo}.
+A questi assiomi possiamo aggiungere la commutativit\`a, ovvero il risultato dell'operazione di gruppo pu\`o dipendere dall'ordine degli operandi per cui $ a \bullet b = b \bullet a$ pu\`o non essere sempre vera. 
+\newline
+I gruppi per i quali vale la commutatività sono detti \textit{Gruppi Abeliani}.
 \newline\newline
+%
+%
+%
+\textbf{Anello}: Un anello \`e un insieme sul quale sono definite due operazioni binarie (struttura algebrica) che, per estensione dei numeri interi $\mathbb{Z}$, vengono chiamate \textit{somma} ($+$) e \textit{prodotto} ($\cdot$). L'anello \`e un gruppo abeliano sull'operazione binaria della (somma); consideriamo un esempio sui numeri interi: l'insieme \`e $\mathbb{Z}$, l'operazione \`e la somma "+" ed il gruppo viene quindi denotato con $(\mathbb{Z}, +)$. L'operazione + combina due elementi qualsiasi e ne forma un terzo, \`e un'operazione associativa, l'elemento identit\`a \`e lo zero, ogni intero $n \in \mathbb{Z}$ ha il suo elemento opposto $-n$, infine \`e un'operazione commutativa dato che vale $m + n = n + m, \forall (n, m) \in \mathbb{Z}$.
+\newline
+I numeri interi $\mathbb{Z}$ presi in modulo $n$ costituiscono il gruppo $\mathbb{Z}/ n \mathbb{Z}$ degli \textit{Interi in modulo $n$}. Tali gruppi $G$, detti ciclici, possono esser generati da un unico elemento, consistono in un insieme di elementi con una singola operazione associativa invertibile e contiene un elemento $g$, detto \textit{Generatore} del gruppo, tale che ogni altro elemento del gruppo pu\`o essere ottenuto applicando ripetitivamente l'operazione di gruppo o la sua inversa a tale elemento $g$. Ogni elemento del gruppo pu\`o esser scritto come potenza di $g$ nelle notazioni della moltiplicazione o dell'addizione.
+\newline
+Per un anello pu\`o valere l'uguaglianza $0 = 1$ qualora sia formato da un solo elemento; viene perci\`o detto \textit{anello banale}.
+\newline\newline
+%
+%
+%
+\textbf{Caratteristica di un Anello}: Dato un anello $R$ ed un elemento $a$ la sua caratteristica $char(R)$ \`e definita come \begin{center} $n  \in \mathbb{N}$, $n \ne 0 $, $char(R) = \begin{cases} \min (n) \mid \underbrace{a+a+\cdots+a}_\text{n volte} = 0 & \mbox{se }\exists n\\
+0 & \mbox{altrimenti}
+\end{cases}$
+\end{center}
+Se tale minimo $n$ non esiste allora si assume che la caratteristica sia 0 per definizione.
+Per un anello la caratteristica diventa il pi\`u piccolo $n$ tale che $a+a+\cdots+a{{=}}0$ per ogni suo elemento; la si pu\`o definire come il \textit{minimo comune multiplo} delle caratteristiche di tutti i suoi elementi. 
+Tutti gli anelli con caratteristica $0$ sono \textit{infiniti}.\newline
+L'unico anello con caratteristica $1$ \`e l'anello banale, formato da un solo elemento, per il quale vale la seguente $0 {{=}} 1$.\newline
+Tutti gli altri anelli con caratteristica maggiore di 1 sono costituiti da un numero finito di elementi. Suddivisioni dei numeri interi del tipo $\mathbb{Z}/n\mathbb{Z}$ forniscono anelli modulari con elementi in numero finito ed hanno caratteristica $n$.\newline
+I campi $\mathbb{Q}$, $\mathbb{R}$ e $\mathbb{C}$ hanno caratteristica $0$.
+\newline\newline
+%
+%
+%
 \textbf{Spazio Proiettivo}: \`e ottenuto da uno spazio euclideo aggiungendo i \textit{punti all'infinito}. A seconda dello spazio euclideo considerato, ad esempio una retta o un piano, si vengono a definire, nello spazio proiettivo, una retta proiettiva o un piano proiettivo. 
 Estendere il piano Euclideo a quello proiettivo significa:
 \begin{enumerate}
@@ -44,52 +95,61 @@ Estendere il piano Euclideo a quello proiettivo significa:
     \item aggiungere una nuova retta incidente su tutti e soli i punti all'infinito. Questa retta \`e chiamata \textbf{la} \textit{retta all'infinito}.
 \end{enumerate}
 Quanto appena detto esclude l'esistenza di rette parallele.\newline
-Lo spazio proiettivo reale $\textbf{RP}^n$ o $\mathbb{P}_n(\mathbb{R})$ \`e lo spazio topologico di rette di $\mathbb{R}^ {n+1}$ passanti per l'origine
+Lo spazio proiettivo $n$-dimensionale \`e l'unione di $\mathbb{R}^n$ e di tutti i suoi punti all'infinito. Tuttavia questa definizione pone i punti all'infinito come \textit{punti speciali}, per tal motivo una definizione pi\`u rigorosa pu\`o essere: Lo spazio proiettivo $n$-dimensionale \`e definito come l'insieme delle rette $\mathbb{R}^ {n+1}$ passanti per l'origine.\newline
+Lo spazio proiettivo reale $\textbf{RP}^n$ o $\mathbb{P}_n(\mathbb{R})$ \`e lo spazio topologico di rette di $\mathbb{R}^ {n+1}$ passanti per l'origine.
 \newline\newline
-\textbf{Anello}: Un anello \`e un insieme sul quale sono definite due operazioni binarie (struttura algebrica) che, per estensione dei numeri interi $\mathbb{Z}$, vengono chiamate \textit{somma} ($+$) e \textit{prodotto} ($\cdot$). L'anello \`e quindi un gruppo abeliano comprendente una seconda operazione binaria (la somma) la quale \`e associativa, distributiva rispetto alla legge di gruppo abeliana e presenta un elemento identit\`a (lo zero).
-\newline
-Per un anello pu\`o valere l'uguaglianza $0 = 1$ qualora sia formato da un solo elemento; viene perci\`o detto \textit{anello banale}.
+%
+%
+%
+\textbf{Variet\`a - \textit{Manifold}}: Una variet\`a algebrica \`e l'insieme delle soluzioni di un sistema di polinomi sui numeri reali o complessi. In una variet\`a algebrica V chiamiamo il punto P \textit{singolare} in senso geometrico se lo spazio tangente a V nel punto P non pu\`o essere definito regolarmente. Per variet\`a definite sui reali il concetto di punto singolare generalizza il concetto di \textit{non derivabilit\`a}. Una variet\`a algebrica che non presenti punti singolari viene detta non singolare, \textit{liscia} o $\mathbb{C}^ {\infty}$ ed implica l'esistenza di derivate di ogni ordine.
+Classi di variet\`a algebriche sono le curve algebriche piane, le quali includono: rette, circonferenze, parabole, ellissi, iperbole, curve cubiche come ad esempio le curve ellittiche.
+Un punto del piano appartiene alla curva se le sue coordinate soddisfano l'equazione polinomiale data di cui la variet\`a algebrica offre la soluzione.
 \newline\newline
-\textbf{Caratteristica di un Anello}: Dato un elemento $a$ la sua caratteristica $n$ \`e definita come \textit{il pi\`u piccolo numero $n$ tale da soddisfare la seguente}
-\begin{center}
-$n  \in \mathbb{N}, n \ne 0 \mid \underbrace{a+a+\cdots+a}_\text{n volte} {{=}} 0$
-\end{center}
-Se tale minimo $n$ non esiste allora si assume che la caratteristica sia 0 per definizione.
-Per un anello la caratteristica diventa il pi\`u piccolo $n$ tale che $a+a+\cdots+a{{=}}0$ per ogni suo elemento; la si pu\`o definire come il \textit{minimo comune multiplo} delle caratteristiche di tutti i suoi elementi. 
-Tutti gli anelli con caratteristica $0$ sono \textit{infiniti}, l'unico anello con caratteristica $1$ \`e l'anello banale, formato da un solo elemento, per cui $0 {{=}} 1$.
-\newline\newline
-\textbf{Varietà algebriche}: insieme delle soluzioni di un sistema di polinomi sui numeri reali o complessi. In una variet\`a algebrica V chiamiamo il punto P \textit{singolare} in senso geometrico se lo spazio tangente a V nel punto P non pu\`o essere definito regolarmente. Per variet\`a definite sui reali il concetto di punto singolare generalizza il concetto di \textit{pianura non locale}. Una variet\`a algebrica che non presenti punti singolari viene detta non singolare o \textit{liscia}.
-\newline\newline
+%
+%
+%
 \textbf{Curva piana cubica}: curva algebrica piana $C$ definita da un'equazione cubica $F(x, y, z) = 0$ applicata su di un piano proiettivo. Combinazioni lineari non nulle di monomi del terzo grado sono: $x^3, y^3, z^3, x^2y, x^2z, y^2x, y^2z, z^2x, z^2y, xyz$, per un totale di 10 combinazioni. Per questo motivo le curve cubiche formano uno spazio proiettivo di dimensione 9 per ogni campo $K$ dato.
 Una curva $C$ passante per $P$ comporta che ogni punto $P$ impone una singola condizione lineare sulla $F$; per tal motivo \`e possibile trovare curve cubiche su qualsiasi 9 punti dati
 \newline\newline
+%
+%
+%
 \textbf{Genere di una curva}
 \newline\newline
+%
+%
+%
 \textbf{Punto Razionale}
 \newline\newline
+%
+%
+%
 \textbf{Curva Cubica}
 \newline\newline
+%
+%
+%
 \textbf{Curva Non Singolare}
 \newline\newline
+%
+%
+%
 \textbf{Funzione Abeliana}: funzione $f(u_1, ... u_p)$ analitica uniforme nelle variabili p, periodica, dipendente da tutte e p le sue variabili, meromorfa.
 \newline\newline
+%
+%
+%
 \textbf{Funzione Meromorfa}: \`e una funzione Olomorfa (Derivabile nel campo complesso per ogni direzione) in un sottodominio D del campo complesso $\mathbb{C}$, ad esclusione di un numero finito di punti detti Poli della funzione\newline\newline
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
 \chapter{Curve Ellittiche}
 
 Una curva ellittica pu\`o esser definita come una Curva Algebrica, di Genere 1, avente un Punto Razionale.
@@ -97,13 +157,48 @@ Una curva ellittica pu\`o esser definita come una Curva Algebrica, di Genere 1, 
 Un modello atto ad esprimere una curva ellittica \`e una Curva Cubica, Non Singolare. Tale modello presenta un punto di flesso all'infinito ed equivale a dire che la curva pu\`o esser scritta nella forma estesa di Tate-Weierstrass ovvero:
 
 $y^{2}z + a_1xyz + a_3yz^2 =x^3 + a_2x^2z + a_4xz^2 + a_6z^3$
-
-
-
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
 \bibliografia{tesi}
-
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
 \appendice
 \chapter{prima appendice}
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
 \chapter{seconda appendice}
-
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
 \end{document}
