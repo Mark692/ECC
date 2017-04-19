@@ -37,9 +37,31 @@ Inoltre il risultato dell'operazione pu\`o dipendere dall'ordine degli operandi 
 \newline\newline
 \textbf{Gruppo Abeliano}: gruppo per il quale valgono i quattro assiomi dei Gruppi ed un quinto assioma detto \textit{Commutativit\`a} per il quale vale la propriet\`a commutativa dei suoi elementi. Un gruppo abeliano \`e anche detto \textit{gruppo commutativo}.
 \newline\newline
-\textbf{Spazio Proiettivo}: \`e ottenuto da uno spazio euclideo aggiungendo i \textit{punti all'infinito}. A seconda dello spazio euclideo considerato, ad esempio una retta o un piano, si vengono a definire nello spazio proiettivo, una retta proiettiva o un piano proiettivo.
+\textbf{Spazio Proiettivo}: \`e ottenuto da uno spazio euclideo aggiungendo i \textit{punti all'infinito}. A seconda dello spazio euclideo considerato, ad esempio una retta o un piano, si vengono a definire, nello spazio proiettivo, una retta proiettiva o un piano proiettivo. 
+Estendere il piano Euclideo a quello proiettivo significa:
+\begin{enumerate}
+    \item per ogni classe di rette parallele, aggiungere un singolo nuovo punto. Tale punto \`e considerato come punto di incontro per ogni retta della stessa classe. Classi di diverse rette parallele avranno diversi punti. Questi punti sono chiamati \textit{punti all'infinito};
+    \item aggiungere una nuova retta incidente su tutti e soli i punti all'infinito. Questa retta \`e chiamata \textbf{la} \textit{retta all'infinito}.
+\end{enumerate}
+Quanto appena detto esclude l'esistenza di rette parallele.\newline
+Lo spazio proiettivo reale $\textbf{RP}^n$ o $\mathbb{P}_n(\mathbb{R})$ \`e lo spazio topologico di rette di $\mathbb{R}^ {n+1}$ passanti per l'origine
 \newline\newline
-\textbf{Funzione Algebrica}
+\textbf{Anello}: Un anello \`e un insieme sul quale sono definite due operazioni binarie (struttura algebrica) che, per estensione dei numeri interi $\mathbb{Z}$, vengono chiamate \textit{somma} ($+$) e \textit{prodotto} ($\cdot$). L'anello \`e quindi un gruppo abeliano comprendente una seconda operazione binaria (la somma) la quale \`e associativa, distributiva rispetto alla legge di gruppo abeliana e presenta un elemento identit\`a (lo zero).
+\newline
+Per un anello pu\`o valere l'uguaglianza $0 = 1$ qualora sia formato da un solo elemento; viene perci\`o detto \textit{anello banale}.
+\newline\newline
+\textbf{Caratteristica di un Anello}: Dato un elemento $a$ la sua caratteristica $n$ \`e definita come \textit{il pi\`u piccolo numero $n$ tale da soddisfare la seguente}
+\begin{center}
+$n  \in \mathbb{N}, n \ne 0 \mid \underbrace{a+a+\cdots+a}_\text{n volte} {{=}} 0$
+\end{center}
+Se tale minimo $n$ non esiste allora si assume che la caratteristica sia 0 per definizione.
+Per un anello la caratteristica diventa il pi\`u piccolo $n$ tale che $a+a+\cdots+a{{=}}0$ per ogni suo elemento; la si pu\`o definire come il \textit{minimo comune multiplo} delle caratteristiche di tutti i suoi elementi. 
+Tutti gli anelli con caratteristica $0$ sono \textit{infiniti}, l'unico anello con caratteristica $1$ \`e l'anello banale, formato da un solo elemento, per cui $0 {{=}} 1$.
+\newline\newline
+\textbf{Varietà algebriche}: insieme delle soluzioni di un sistema di polinomi sui numeri reali o complessi. In una variet\`a algebrica V chiamiamo il punto P \textit{singolare} in senso geometrico se lo spazio tangente a V nel punto P non pu\`o essere definito regolarmente. Per variet\`a definite sui reali il concetto di punto singolare generalizza il concetto di \textit{pianura non locale}. Una variet\`a algebrica che non presenti punti singolari viene detta non singolare o \textit{liscia}.
+\newline\newline
+\textbf{Curva piana cubica}: curva algebrica piana $C$ definita da un'equazione cubica $F(x, y, z) = 0$ applicata su di un piano proiettivo. Combinazioni lineari non nulle di monomi del terzo grado sono: $x^3, y^3, z^3, x^2y, x^2z, y^2x, y^2z, z^2x, z^2y, xyz$, per un totale di 10 combinazioni. Per questo motivo le curve cubiche formano uno spazio proiettivo di dimensione 9 per ogni campo $K$ dato.
+Una curva $C$ passante per $P$ comporta che ogni punto $P$ impone una singola condizione lineare sulla $F$; per tal motivo \`e possibile trovare curve cubiche su qualsiasi 9 punti dati
 \newline\newline
 \textbf{Genere di una curva}
 \newline\newline
@@ -49,7 +71,8 @@ Inoltre il risultato dell'operazione pu\`o dipendere dall'ordine degli operandi 
 \newline\newline
 \textbf{Curva Non Singolare}
 \newline\newline
-\textbf{Funzione Abeliana}: funzione $f(u_1, ... u_p)$ analitica uniforme nelle variabili p, periodica, dipendente da tutte e p le sue variabili, meromorfa.\newline\newline
+\textbf{Funzione Abeliana}: funzione $f(u_1, ... u_p)$ analitica uniforme nelle variabili p, periodica, dipendente da tutte e p le sue variabili, meromorfa.
+\newline\newline
 \textbf{Funzione Meromorfa}: \`e una funzione Olomorfa (Derivabile nel campo complesso per ogni direzione) in un sottodominio D del campo complesso $\mathbb{C}$, ad esclusione di un numero finito di punti detti Poli della funzione\newline\newline
 
 
