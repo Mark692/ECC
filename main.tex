@@ -11,6 +11,7 @@
 \usepackage{subfigure}
 \usepackage{graphicx}
 \usepackage{amssymb}
+\graphicspath{ {Images/} }
 
 
 
@@ -44,23 +45,23 @@ La coppia $(G, \bullet)$ deve soddisfare gli \textit{assiomi di gruppo}:
     %
     %
     \item \textit{Elemento Inverso}: $\exists b \in G \mid a \bullet b = b \bullet a = e$ dove $b = a^{-1} $ se l'operazione \`e definita come $"\cdot"$ oppure $b = -a $ se l'operazione \`e definita come $"+"$, infine l'elemento $e$ \`e l'identit\`a.
-\end{enumerate}
+\end{enumerate} 
 Un esempio concreto di Gruppo viene dato dai \textit{Gruppi di Permutazione}. Questi sono definiti da un insieme $X$ ed una collezione $G$ delle corrispondenze biunivoche di $X$ su se stesso, anche dette Permutazioni. Il cubo di Rubik \`e un elemento di questo gruppo ed ogni rotazione di una sua superficie risulta in una permutazione dei colori sulla superficie. 
 \newline
-L'operazione di gruppo \`e chiamata Composizione di permutazioni ed \`e definita come prodotto di due permutazioni $\sigma$ e $\pi$ tali per cui la loro composizione $\sigma \cdot \pi$ mappa ogni elemento $x$ all'insieme $\sigma ( \pi ( x ) )$. Essendo vero che la composizione di due corrispondenze biunivoche \`e ancora una corrispondenza biunivoca, il prodotto di due permutazioni \`e ancora una permutazione; inoltre la composizione \`e associativa e cos\`i anche il prodotto di permutazione $ (\sigma \cdot \pi) \cdot \rho = \sigma \cdot ( \pi \cdot \rho )$.
+L'operazione di gruppo \`e chiamata Composizione di permutazioni ed \`e definita come prodotto di due permutazioni $\sigma$ e $\pi$ tali per cui la loro composizione $\sigma \cdot \pi$ mappa ogni elemento $x$ all'insieme $\sigma ( \pi ( x ) )$. Essendo vero che la composizione di due corrispondenze biunivoche \`e ancora una corrispondenza biunivoca, il prodotto di due permutazioni \`e ancora una permutazione; inoltre la composizione \`e associativa e cos\`i anche il prodotto tra permutazioni $ (\sigma \cdot \pi) \cdot \rho = \sigma \cdot ( \pi \cdot \rho )$.
 \newline
 L'elemento neutro per l'operazione di Composizione \`e la Permutazione Identit\`a che mappa ogni elemento dell'insieme su se stesso. 
 \newline
-Infine, le corrispondenze biunivoche sono di inversa, cos\`i quindi anche le permutazioni e l'inversa di $\sigma$ ovvero $ \sigma ^ {-1} $ \`e ancora una permutazione.
+Esistendo l'inversa di una corrispondenza biunivoca, esister\`a l'inversa $ \sigma ^ {-1} $ che \`e ancora una permutazione.
 \newline
-Avendo verificato che esiste un prodotto associativo, un elemento identit\`a ed un'inversa per ogni suo elemento, l'insieme delle permutazioni forma un gruppo.
+Avendo verificato l'esistenza di un prodotto associativo, un elemento identit\`a e dell'operazione inversa, l'insieme delle permutazioni forma un gruppo.
 %
 %
 %
 \newline\newline
-A questi assiomi possiamo aggiungere la commutativit\`a, ovvero il risultato dell'operazione di gruppo pu\`o dipendere dall'ordine degli operandi per cui $ a \bullet b = b \bullet a$ pu\`o non essere sempre vera. 
+A questi assiomi possiamo aggiungere un quinto: la \textit{commutativit\`a}, per cui il risultato dell'operazione di gruppo pu\`o dipendere dall'ordine degli operandi per cui $ a \bullet b = b \bullet a$ pu\`o non essere sempre vera. 
 \newline
-I gruppi per i quali vale la commutatività sono detti \textit{Gruppi Abeliani}.
+I gruppi per i quali vale la commutativit\`a sono detti \textit{Gruppi Abeliani}.
 \newline\newline
 %
 %
@@ -94,10 +95,23 @@ I campi $\mathbb{Q}$, $\mathbb{R}$ e $\mathbb{C}$ hanno caratteristica $0$.
 Dato un anello $R$, diciamo che l'ideale $P$ di $R$ \`e \textbf{primo} se ha le seguenti propriet\`a:
 \begin{enumerate}
     \item $P$ \`e un sottoinsieme proprio di $R$,
-    \item dati gli elementi $(a, b) \subset R \mid ab \subset P$ allora almeno uno dei due elementi appartiene a $P$.
+    \item dati gli elementi $(a, b) \in R \mid ab \in P$ allora almeno uno dei due elementi appartiene a $P$.
 \end{enumerate}
 Quanto detto generalizza la seguente propriet\`a dei numeri primi: "se $p$ \`e un numero primo e tale $p$ divide il prodotto di due interi $ab$, allora $p$ divide $a$ o $p$ divide $b$. Possiamo quindi dire che un numero intero positivo $n$ \`e un numero primo se e solo se $n\mathbb{Z}$ \`e un \textit{Ideale Primo} in $\mathbb{Z}$. Considerato l'anello $R$ come insieme dei numeri interi $\mathbb{Z}$ (vale quindi $R = \mathbb{Z}$), l'insieme di tutti i numeri \textit{pari} costituisce un Primo Ideale.
-Un ulteriore esempio: scelto $R$ l'insieme che denota l'anello $\mathbb{C}[x, y]$ di polinomi in due variabili a coefficienti complessi, l'ideale generato dal polinomio $y^2 - x^3 -x -1$ \`e un Ideale Primo.    
+Un ulteriore esempio: scelto l'anello $\mathbb{C}[x, y]$ di polinomi in due variabili a coefficienti complessi, l'ideale generato dal polinomio $y^2 - x^3 -x -1$ \`e un Ideale Primo.
+\newline\newline
+%
+%
+%
+\textbf{Spazio Topologico - Definizione tramite Insiemi Aperti}: data la coppia $(X, T)$ dove $X$ \`e un insieme e $T$ \`e una collezione di sottoinsiemi di $X$, gli spazi topologici devono soddisfare le seguenti:
+\begin{enumerate}
+    \item l'insieme vuoto ed $X$ si trovano in $T$,
+    \item l'unione di qualsiasi collezione di insiemi di $T$ deve trovarsi ancora in $T$,
+    \item l'intersezione di due qualsiasi insiemi di $T$ deve trovarsi ancora in $T$.
+\end{enumerate}
+Gli insiemi in $T$ sono \textit{insiemi aperti}.
+\newline
+Uno spazio topologico non si basa sulla distanza tra due punti ma sulla forma dello spazio stesso.
 \newline\newline
 %
 %
@@ -114,25 +128,33 @@ Quanto appena detto esclude l'esistenza di rette parallele.
 Lo spazio proiettivo $n$-dimensionale \`e l'unione di $\mathbb{R}^n$ e di tutti i suoi punti all'infinito. Tuttavia questa definizione pone i punti all'infinito come \textit{punti speciali}, per tal motivo una definizione pi\`u rigorosa \`e: lo spazio proiettivo $n$-dimensionale \`e definito come l'insieme delle rette $\mathbb{R}^ {n+1}$ passanti per l'origine.
 \newline
 Lo spazio proiettivo reale $\textbf{RP}^n$ o $\mathbb{P}_n(\mathbb{R})$ \`e lo spazio topologico di rette in $\mathbb{R}^ {n+1}$ passanti per l'origine.
-\newline\newline
-%
-%
-%
-\textbf{Curva piana cubica}: curva algebrica piana $C$ definita da un'equazione cubica $F(x, y, z) = 0$ applicata su di un piano proiettivo. Combinazioni lineari non nulle di monomi del terzo grado sono: $x^3, y^3, z^3, x^2y, x^2z, y^2x, y^2z, z^2x, z^2y, xyz$, per un totale di 10 combinazioni. Per questo motivo le curve cubiche formano uno spazio proiettivo di dimensione 9 per ogni campo $K$ dato.
-Una curva $C$ passante per un punto $P$ comporta che ogni $P$ imponga una singola condizione lineare sulla $F$; per tal motivo \`e possibile trovare curve cubiche su qualsiasi 9 punti dati.
 \newline
-Una curva cubica pu\` presentare un punto singolare, in questo caso assume la parametrizzazione in termini di una retta proiettiva. In caso di una curva liscia (priva di punti singolari) la curva ha 9 punti di inflessione su un campo chiuso, ad esempio il campo $\mathbb{C}$ dei numeri complessi. Di questi punti, solo 3 possono essere reali e gli altri 6 non possono esser mostrati nel piano proiettivo disegnando la curva. Una propriet\`a di questi punti \`e che ogni retta passante per due di questi contiene esattamente tre punti di inflessione.
+Per uno spazio proiettivo parliamo di \textit{coordinate omogenee} o \textit{coordinate proiettive} tali per cui, dato il punto E$(x, y)$ nel piano Euclideo, le coordinate omogenee vengono rappresentate in forma E$(xZ, yZ, Z)$ dove $Z \in \mathbb{R} \backslash \{0\}$ \`e un numero reale diverso da zero. Il punto $(0, 0, 0)$ non esiste in quanto $Z$ deve essere diverso da $0$ e non esiste l'origine in uno spazio proiettivo. Diversamente da quanto accade per lo spazio Euclideo, due insiemi di coordinate omogenee rappresentano lo stesso punto se e solo se un insieme \`e ottenuto moltiplicando le coordinate per una costante diversa da 0. Ci\`o significa che, se prendiamo il punto sul piano cartesiano $(1, 2)$, questo pu\`o esser rappresentato dal punto omogeneo $(1, 2, 1)$ o $2, 4, 2)$.\\
+Dal punto omogeneo $(X, Y, Z)$ otteniamo il punto cartesiano $(X/Z, Y/Z)$. Un caso degenere \`e per $Z=0$ per cui il punto rappresentato nello spazio proiettivo \`e il punto all'infinito. L'insieme di tutti i punti $(x, y, 0)$, ovvero di tutti i punti all'infinito, \`e la retta all'infinito.
+\newline
+Riguardo la notazione: per distinguere le coordinate omogenee da quelle cartesiane, spesso vengono usate notazioni differenti da $(x, y)$. A volte viene sostituita la virgola $,$ con il simbolo $:$, altre volte le parentesi tonde $()$ vengono sostituite da quadre $[]$ ed altre volte vengono usate entrambe le notazioni assieme. Esempio: coordinate cartesiane $(1, 4)$, omogenee $[1:4:Z]$.
 \newline\newline
 %
 %
 %
-\textbf{Spazio Affine}: struttura geometrica che generalizza quelle propriet\`a dello spazio Euclideo che sono indipendenti dai concetti di distanza e di misura degli angoli, mantenendo solo le propriet\`a di parallelismo e rapporto di lunghezze per segmenti paralleli. In uno spazio affine non viene distinto un punto di "origine". Di conseguenza non possono esistere vettori con un'origine fissata e non possono essere univocamente associati ad un punto. In uno spazio affine esistono i vettori distanza (displacement vectors) anche chiamati \textit{traslazioni} tra due punti nello spazio. La dimensione di uno spazio affine \`e dunque pari alla dimensione dello spazio dei vettori di traslazione. Per uno spazio affine di dimensione uno abbiamo una \textit{linea affine}, per uno spazio affine di dimensione due abbiamo un \textit{piano affine}.
+\textbf{Spazio Affine}: struttura geometrica che generalizza quelle propriet\`a dello spazio Euclideo che sono indipendenti dai concetti di distanza e di misura degli angoli, mantenendo solo le propriet\`a di parallelismo e rapporto di lunghezze per segmenti paralleli. In uno spazio affine non viene distinto un punto di "origine". Di conseguenza non possono esistere vettori con un'origine fissata e non possono essere univocamente associati ad un punto. In uno spazio affine esistono i vettori distanza (displacement vectors) anche chiamati \textit{traslazioni} tra due punti nello spazio. La dimensione di uno spazio affine \`e dunque pari alla dimensione dello spazio dei vettori di traslazione. Per uno spazio affine di dimensione uno $\mathbb{A}^1$ abbiamo una \textit{linea affine}, per uno spazio affine di dimensione due $\mathbb{A}^2$ abbiamo un \textit{piano affine}.
+\newline
+Gli spazi affini sono sottospazi degli spazi proiettivi: otteniamo un piano affine da un qualsiasi piano proiettivo rimuovendo la linea all'infinito ed i punti all'infinito. \`E quindi l'operazione inversa rispetto alla trasformazione dal piano euclideo a quello proiettivo. Similmente possiamo fare il passaggio inverso, ovvero costruire un piano proiettivo a partire da un piano affine aggiungendo la linea all'infinito e tutti i suoi punti.
+%Se un piano affine contiene un numero finito di punti e se una retta del piano contiene $n$ punti allora:
+%\begin{enumerate}
+%    \item tutte le rette contengono $n$ punti,
+%    \item ogni punto del piano \`e contenuto in $n+1$ rette,
+%    \item esistono $n^2$ punti in totale,
+%    \item esistono $n^2 + n = n(n+1)$ rette.
+%\end{enumerate}
+%Il numero $n$ viene detto \textit{ordine} del piano affine.
+%\includegraphics[scale=0.3]{PianoAffine}
 \newline\newline
 %
 %
 %
 \textbf{Variet\`a - \textit{Manifold}}: Una variet\`a algebrica $V$ \`e l'insieme delle soluzioni di un sistema di polinomi sui numeri reali o complessi. Tramite le variet\`a algebriche \`e possibile creare un legame tra l'algebra e la geometria in modo tale da formulare problemi geometrici in termini algebrici e viceversa. Possiamo dunque dire che un punto del piano appartiene alla curva $C$ se le sue coordinate soddisfano l'equazione polinomiale data la cui soluzione \`e data dalla variet\`a algebrica.
-In una variet\`a algebrica V chiamiamo il punto P \textit{singolare} se non pu\`o essere definita correttamente una tangente in quel punto. Per variet\`a definite sui reali il concetto di punto singolare generalizza il concetto di \textit{non derivabilit\`a}. Una variet\`a algebrica che non presenti punti singolari viene detta non singolare, \textit{liscia} o $\mathbb{C}^ {\infty}$ ed implica l'esistenza di derivate di ogni ordine.
+In una variet\`a algebrica $V$ chiamiamo il punto P \textit{singolare} se non pu\`o essere definita una tangente in quel punto. Per variet\`a definite sui reali il concetto di punto singolare generalizza il concetto di \textit{non derivabilit\`a}. Una variet\`a algebrica che non presenti punti singolari viene detta non singolare, \textit{liscia} o $\mathbb{C}^ {\infty}$ ed implica l'esistenza di derivate di ogni ordine.
 Classi di variet\`a algebriche sono le curve algebriche piane, le quali includono: rette, circonferenze, parabole, ellissi, iperbole, curve cubiche come ad esempio le curve ellittiche.
 \newline\newline
 Definiamo una variet\`a affine $V$ su un campo chiuso $K$ come il luogo degli zeri in uno spazio affine $A^n$ $n$-dimensionale di una famiglia finita di polinomi in $n$ variabili con coefficienti in $K$ che generano un Ideale Primo. Alternativamente possiamo dire che, detta $V$ una variet\`a algebrica su un campo $K$, Diciamo che $V$ \`e una variet\`a affine se \`e data da un insieme di equazioni $f_j(x_1, \ldots , x_n) = 0$ $\forall j = 1, \ldots, m$ con coefficienti in $K$.
@@ -144,7 +166,7 @@ Esempio: chiamiamo $K$ un campo chiuso e $A^2$ lo spazio affine bidimensionale s
 \newline\newline
 Parliamo di variet\`a proiettiva quando ci riferiamo ad una sottovariet\`a di uno spazio proiettivo. Tale variet\`a \`e il luogo degli zeri di un insieme di polinomi omogenei che generano un Primo Ideale.
 \newline
-Una curva proiettiva piana \`e il luogo degli zeri di un insieme di polinomi omogenei irriducibili in tre incognite. Chiamiamo \textit{Spazio Affine} una struttura matematica ottenuta a partire da uno spazio vettoriale e facendo in modo che tra i suoi punti non ve ne sia uno "origine", "centrale" e "privilegiato" rispetto agli altri. La curva proiettiva $y^2 = x^3 -x$ nello spazio affine di dimensione 2, ha associata l'equazione polinomiale omogenea cubica $y^2z = x^3 - xz^2$ che definisce una curva nello spazio proiettivo $\mathbb{P}^2$ come \textit{Curva Ellittica}. 
+Una curva proiettiva piana \`e il luogo degli zeri di un insieme di polinomi omogenei irriducibili in tre incognite. La curva proiettiva $y^2 = x^3 -x$ nello spazio affine di dimensione 2, ha associata l'equazione polinomiale omogenea cubica $y^2z = x^3 - xz^2$ che definisce una curva nello spazio proiettivo $\mathbb{P}^2$ come \textit{Curva Ellittica}. 
 \newline
 Introduciamo infine la formula \textit{genere-grado} che lega il grado $d$ di una curva piana $C \subset \mathbb{P}^2$ con il genere geometrico $g = \frac{1}{2} (d-1)(d-2)$.
 \newline
@@ -153,29 +175,31 @@ Si deduce che per la curva sopra descritta abbiamo grado $d = 3$ e quindi genere
 %
 %
 %
-\textbf{Punto Razionale}: un punto razionale $P(x, y)$ \`e un punto nello spazio tale che ciascuna delle sue coordinate $x$ e $y$ sia un numero razionale $\mathbb{Q}$. Pi\`u formalmente un punto $K$-razionale \`e un punto in uno spazio dove ogni coordinata del punto appartiene al campo $K$, allo stesso modo appartengono ad un campo pi\`u grande il quale contiene il campo $K$. 
+\textbf{Curva piana cubica}: curva algebrica piana $C$ di grado 3 definita da un'equazione $F(x, y, z) = 0$ applicata alle coordinate omogenee di un piano proiettivo. 
+%Combinazioni lineari non nulle di monomi del terzo grado sono: $x^3, y^3, z^3, x^2y, x^2z, y^2x, y^2z, z^2x, z^2y, xyz$, per un totale di 10 combinazioni. Per questo motivo le curve cubiche formano uno spazio proiettivo di dimensione 9 per ogni campo $K$ dato.
+%Una curva $C$ passante per un punto $P$ comporta che ogni $P$ imponga una singola condizione lineare sulla $F$; per tal motivo \`e possibile trovare curve cubiche su qualsiasi 9 punti dati.
 \newline
-Definiamo inoltre una variet\`a affine $V$ data dall'insieme delle equazioni $f_j(x_1, \ldots , x_n) = 0$ $\forall j = 1, \ldots, m$ con coefficienti in $K$. Il punto $K$-razionale di $V$ \`e una ennupla ordinata $(x_1, \ldots , x_n)$ di elementi del campo $K$ la quale \`e soluzione simultanea di tutto l'insieme di equazioni $f_j$. Nel caso generale un punto $P$ $K$-razionale di $V$ \`e un punto $K$-razionale di qualche sottoinsieme aperto di $V$.
+Una curva cubica pu\` presentare un punto singolare, in questo caso assume la parametrizzazione in termini di una retta proiettiva. In caso di una curva liscia (priva di punti singolari) la curva ha 9 punti di inflessione su un campo chiuso, ad esempio il campo $\mathbb{C}$ dei numeri complessi. 
+%Di questi punti, solo 3 possono essere reali e gli altri 6 non possono esser mostrati nel piano proiettivo disegnando la curva. 
+%Una propriet\`a di questi punti \`e che ogni retta passante per due di questi contiene esattamente tre punti di inflessione.
 \newline\newline
 %
 %
 %
-\textbf{Curva Cubica}
+\textbf{Punto Razionale}: un punto $K$-razionale \`e un punto $P(x, y)$ di una curva algebrica $f(x, y)=0$ dove ciascuna delle sue coordinate $x$ e $y$ appartengono al campo $K$. In questo senso un punto razionale $(x, y)$ del campo $\mathbb{Q}$ soddisfa l'equazione data $f$ con $x$ e $y$ entrambi numeri appartenenti al campo $\mathbb{Q}$. 
+\newline
+%Definita, inoltre, una variet\`a affine $V$ data dall'insieme delle equazioni $f_j(x_1, \ldots , x_n) = 0$ $\forall j = 1, \ldots, m$ con coefficienti in $K$, il punto $K$-razionale di $V$ \`e una ennupla ordinata $(x_1, \ldots , x_n)$ di elementi del campo $K$ la quale \`e soluzione simultanea di tutto l'insieme di equazioni $f_j$.
+Un punto razionale pu\`o anche essere il punto all'infinito.
 \newline\newline
 %
 %
 %
-\textbf{Curva Non Singolare}
+%\textbf{Funzione Abeliana}: funzione $f(u_1, ... u_p)$ analitica uniforme nelle variabili p, periodica, dipendente da tutte e p le sue variabili, meromorfa.
 \newline\newline
 %
 %
 %
-\textbf{Funzione Abeliana}: funzione $f(u_1, ... u_p)$ analitica uniforme nelle variabili p, periodica, dipendente da tutte e p le sue variabili, meromorfa.
-\newline\newline
-%
-%
-%
-\textbf{Funzione Meromorfa}: \`e una funzione Olomorfa (Derivabile nel campo complesso per ogni direzione) in un sottodominio D del campo complesso $\mathbb{C}$, ad esclusione di un numero finito di punti detti Poli della funzione\newline\newline
+%\textbf{Funzione Meromorfa}: \`e una funzione Olomorfa (Derivabile nel campo complesso per ogni direzione) in un sottodominio D del campo complesso $\mathbb{C}$, ad esclusione di un numero finito di punti detti Poli della funzione\newline\newline
 %
 %
 %
@@ -187,12 +211,100 @@ Definiamo inoltre una variet\`a affine $V$ data dall'insieme delle equazioni $f_
 %
 %
 \chapter{Curve Ellittiche}
-
-Una curva ellittica pu\`o esser definita come una Curva Algebrica, di Genere 1, avente un Punto Razionale.
-
-Un modello atto ad esprimere una curva ellittica \`e una Curva Cubica, Non Singolare. Tale modello presenta un punto di flesso all'infinito ed equivale a dire che la curva pu\`o esser scritta nella forma estesa di Tate-Weierstrass ovvero:
-
-$y^{2}z + a_1xyz + a_3yz^2 =x^3 + a_2x^2z + a_4xz^2 + a_6z^3$
+Una curva ellittica pu\`o esser definita come una curva Algebrica in due variabili, di grado 3, genere 1, avente un punto $K$-razionale. Il punto $K$-razionale pu\`o essere il punto all'infinito $O$ ed il campo $K$ \`e solitamente il campo dei numeri reali $\mathbb{C}$, dei reali $\mathbb{R}$, dei razionali $\mathbb{Q}$ o un campo finito. Se la caratteristica $char(K)$ del campo $K$ \`e diversa 2 e da 3 possiamo scrivere la formula della nella forma proiettiva estesa di Tate-Weierstrass :
+\begin{gather}
+Y^{2}Z + a_1XYZ + a_3YZ^2 =X^3 + a_2X^2Z + a_4XZ^2 + a_6X^3
+\end{gather}
+La forma affine estesa \`e ottenuta impostando $Z=1$: 
+\begin{gather}
+Y^{2} + a_1XY + a_3Y =X^3 + a_2X^2 + a_4X + a_6
+\end{gather}
+Tramite due cambi di variabili otteniamo la forma breve della curva: lavoriamo dapprima sul membro di sinistra ed applichiamo la trasformazione $y = Y - \frac{a_1X + a_3}{2}$
+\begin{align*}
+&Y^{2} + a_1XY + a_3Y  
+\\ 
+&= \left ( y - \frac{a_1}{2}X - \frac{a_3}{2} \right )^2 + a_1X \left ( y - \frac{a_1}{2}X - \frac{a_3}{2} \right ) + a_3 \left ( y - \frac{a_1}{2}X - \frac{a_3}{2} \right ) 
+\\
+%= y^2 -a_1Xy -a_3y + \frac{{a_1}^2}{4}X^2 +\frac{a_1a_3}{2}X + \frac{{a_3}^2}{4} + a_1Xy - \frac{{a_1}^2}{2}X^2 - \frac{a_1a_3}{2}X + a_3y - \frac{a_1a_3}{2}X - \frac{{a_3}^2}{2} 
+%\\
+&= y^2 + \frac{a_1^2}{2}X^2 - \frac{a_1a_3}{2}X +\frac{a_3^2}{2} 
+\end{align*}
+\\
+Portiamo quindi i termini in $X$ al membro destro dell'equazione e semplifichiamo i termini simili
+\begin{align*}
+y^2 &= - \left ( \frac{{a_1}^2}{2}X^2 - \frac{a_1a_3}{2}X +\frac{{a_3}^2}{2} \right ) + X^3 + a_2X^2 + a_4X + a_6
+\\
+&= X^3 + AX^2 + BX + C 
+\end{align*}
+dove abbiamo $A = a_2 - \frac{{a_1}^2}{2}$, $B = a_4 + \frac{a_1a_3}{2}$ e $C = a_6 - \frac{{a_3}^2}{2}$.
+Applichiamo quindi il secondo cambio di variabile $x = X - \frac{A}{3}$, il secondo membro diventa:
+%\begin{gather}
+\begin{align*}
+&X^3 + AX^2 + BX + C 
+\\
+&=\left(x- \frac{A}{3} \right )^3 +A\left ( x - \frac{A}{3} \right )^2 + B\left (x - \frac{A}{3} \right )^3 +C
+\\
+&= x^3-Ax^2 + \frac{A^2}{3}x - \frac{A^3}{27} + Ax^2 + - \frac{A^3}{9} -\frac{2}{3}A^2x + Bx - \frac{AB}{3} +C
+\\
+&= x^3 + (B-A^2)x + \frac{2A^3-9AB+27C}{27}
+\\
+&= x^3 + ax+b
+\end{align*}
+%\end{gather}
+Abbiamo quindi ottenuto la forma breve
+\begin{gather}
+y^2 = x^3 + ax+b
+\end{gather}
+Tuttavia per renderla una vera curva ellittica dobbiamo imporre che sia liscia, ovvero non singolare, per cui non devono esistere radici multiple. Possiamo aggiungere questa condizione dicendo che il determinante dell'espressione $x^3 + ax+b$ deve essere diverso da zero, ovvero $\Delta = -4a^3 - 27b^2 \ne 0$. L'aggiunta di questa condizione ci porta alla
+\begin{center}
+\textit{Equazione di Weierstrass}:
+$\begin{cases}
+y^2 = x^3 + ax+b\\
+4a^3 \ne 27b^2\end{cases}$
+\end{center}
+La curva ellittica nel piano proiettivo passa per il punto all'infinito $O$ di coordinate omogenee $[0:1:0]$ ed indica l'elemento identit\`a del gruppo. Inoltre la curva \`e simmetrica rispetto l'asse $x$, per ogni punto $P$ possiamo trovare $-P$ sulla curva al punto opposto rispetto l'asse di simmetria. Per convenzione il punto all'infinito $-O$ viene considerato semplicemente come $O$.
+\begin{center}
+\includegraphics[scale=0.8]{Curvabase2}
+\\
+Tipica rappresentazione di una curva ellittica
+%\includegraphics[scale=0.7]{EC16a+21mod23}
+\\
+%Rappresentazione della curva $y^2 = x^3 + 16x + 21$
+\end{center}
+\begin{center}
+\textbf{Point Addition}
+\end{center}
+Con il termine "Point Addition" si fa riferimento alla somma di due punti sulla curva.
+\\
+Dati due punti distinti $A$ e $B$ sulla curva possiamo definire in modo univoco un terzo punto $A+B$ nel seguente modo: tracciata la retta passante per $A$ e $B$, questa intercetter\`a un terzo punto $C$ sulla curva. Il punto opposto $-C$ rappresenta il punto da noi cercato. Brevemente: $A + B = -C$.
+\begin{center}
+\includegraphics[scale=0.7]{PointAdditionA+Bbn}
+\end{center}
+Esistono per\`o dei casi particolari:
+\begin{enumerate}
+    \item Somma di un punto $P$ ed il punto all'infinito $O$. 
+    \\
+    Ricordando che il punto $O$ viene trattato come elemento identit\`a del gruppo possiamo scrivere $P+O = O+P = P$,
+    \item Somma di due punti simmetrici (opposti) tra loro $P + (-P)$. 
+    \\
+    Tramite il metodo del Point Addition si costruisce una retta per i due punti che risulta parallela all'asse y che andr\`a ad intersecare il punto all'infinito $O$. Definiamo quindi $P + (-P) = O$,
+    \item Somma di un punto $P$ e se stesso. 
+    \\
+    Non avendo due punti distinti non \`e possibile tracciare la retta per i due punti; in questo caso si traccia la retta tangente alla curva nel punto $P$, viene quindi trovato un altro punto $-Q$ ed il suo simmetrico \`e il risultato cercato: $P + P = Q$,
+    \item Caso particolare: sommiamo $P+P$ ma tale punto \`e un flesso per la curva. 
+    \\
+    In un punto di flesso la concavit\`a della curva cambia ed in ogni curva ellittica esistono esattamente 9 punti di flesso. In questo caso consideriamo il secondo punto $Q =P$ e la somma finale viene ad essere $-P$, l'opposto del punto iniziale.
+\end{enumerate}
+Il calcolo del punto $C = A + B$ \`e dato per costruzione geometrica della retta $r$ passante per i punti $A(x_A, y_A)$ e $B(x_B, y_B)$. Detto $m$ il coefficiente angolare della retta $r_{AB}$ abbiamo: $m = \frac{y_A - y_B}{x_A - x_B}$
+\\
+Si noti che nel caso in cui $x_A = x_B$ si ottiene uno zero al denominatore, $m$ porterebbe quindi la tangente ad essere parallela all'asse y ed il punto individuato dalla formula sarebbe il punto all'infinito $O$ per cui otterremmo $C = O$.
+\\
+Proseguendo con la formula, le coordinate del punto $C(x_C, y_C) = -(P+Q)$ saranno date dalle seguenti formule:
+$\begin{cases}
+x_C = m^2 - (x_A + x_B)\\
+y_C = -[y_A + m(x_C - x_A)]
+\end{cases}$
+%Aggiungi C = A + A e formule corrette
 %
 %
 %
