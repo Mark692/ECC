@@ -79,47 +79,83 @@ Per un anello pu\`o valere l'uguaglianza $0 = 1$ qualora sia formato da un solo 
 \end{cases}$
 \end{center}
 Se tale minimo $n$ non esiste allora si assume che la caratteristica sia 0 per definizione.
-Per un anello la caratteristica diventa il pi\`u piccolo $n$ tale che $a+a+\cdots+a{{=}}0$ per ogni suo elemento; la si pu\`o definire come il \textit{minimo comune multiplo} delle caratteristiche di tutti i suoi elementi. 
-Tutti gli anelli con caratteristica $0$ sono \textit{infiniti}.\newline
-L'unico anello con caratteristica $1$ \`e l'anello banale, formato da un solo elemento, per il quale vale la seguente $0 {{=}} 1$.\newline
-Tutti gli altri anelli con caratteristica maggiore di 1 sono costituiti da un numero finito di elementi. Suddivisioni dei numeri interi del tipo $\mathbb{Z}/n\mathbb{Z}$ forniscono anelli modulari con elementi in numero finito ed hanno caratteristica $n$.\newline
+Per un anello la caratteristica diventa il pi\`u piccolo $n$ tale che valga $a+a+\cdots+a{{=}}0$ per ogni suo elemento; la si pu\`o definire come il \textit{minimo comune multiplo} delle caratteristiche di tutti i suoi elementi. 
+Tutti gli anelli con caratteristica $0$ sono \textit{infiniti}.
+\newline
+L'unico anello con caratteristica $1$ \`e l'anello banale.
+\newline
+Tutti gli altri anelli con caratteristica maggiore di 1 sono costituiti da un numero finito di elementi. Suddivisioni dei numeri interi del tipo $\mathbb{Z}/n\mathbb{Z}$ forniscono anelli modulari con elementi in numero finito ed hanno caratteristica $char(R) = n$.\newline
 I campi $\mathbb{Q}$, $\mathbb{R}$ e $\mathbb{C}$ hanno caratteristica $0$.
 \newline\newline
 %
 %
 %
-\textbf{Spazio Proiettivo}: \`e ottenuto da uno spazio euclideo aggiungendo i \textit{punti all'infinito}. A seconda dello spazio euclideo considerato, ad esempio una retta o un piano, si vengono a definire, nello spazio proiettivo, una retta proiettiva o un piano proiettivo. 
+\textbf{Ideale}: un ideale \`e un sottoinsieme di un anello chiuso rispetto alla somma interna e rispetto al prodotto con qualsiasi elemento dell'anello.
+Dato un anello $R$, diciamo che l'ideale $P$ di $R$ \`e \textbf{primo} se ha le seguenti propriet\`a:
+\begin{enumerate}
+    \item $P$ \`e un sottoinsieme proprio di $R$,
+    \item dati gli elementi $(a, b) \subset R \mid ab \subset P$ allora almeno uno dei due elementi appartiene a $P$.
+\end{enumerate}
+Quanto detto generalizza la seguente propriet\`a dei numeri primi: "se $p$ \`e un numero primo e tale $p$ divide il prodotto di due interi $ab$, allora $p$ divide $a$ o $p$ divide $b$. Possiamo quindi dire che un numero intero positivo $n$ \`e un numero primo se e solo se $n\mathbb{Z}$ \`e un \textit{Ideale Primo} in $\mathbb{Z}$. Considerato l'anello $R$ come insieme dei numeri interi $\mathbb{Z}$ (vale quindi $R = \mathbb{Z}$), l'insieme di tutti i numeri \textit{pari} costituisce un Primo Ideale.
+Un ulteriore esempio: scelto $R$ l'insieme che denota l'anello $\mathbb{C}[x, y]$ di polinomi in due variabili a coefficienti complessi, l'ideale generato dal polinomio $y^2 - x^3 -x -1$ \`e un Ideale Primo.    
+\newline\newline
+%
+%
+%
+\textbf{Spazio Proiettivo}: \`e ottenuto da uno spazio euclideo aggiungendo i \textit{punti all'infinito}. A seconda dello spazio euclideo considerato, ad esempio una retta o un piano, si vengono a definire, nello spazio proiettivo, una retta proiettiva o un piano proiettivo. Tale spazio viene identificato dal simbolo $\mathbb{P}$.
+\newline
 Estendere il piano Euclideo a quello proiettivo significa:
 \begin{enumerate}
     \item per ogni classe di rette parallele, aggiungere un singolo nuovo punto. Tale punto \`e considerato come punto di incontro per ogni retta della stessa classe. Classi di diverse rette parallele avranno diversi punti. Questi punti sono chiamati \textit{punti all'infinito};
     \item aggiungere una nuova retta incidente su tutti e soli i punti all'infinito. Questa retta \`e chiamata \textbf{la} \textit{retta all'infinito}.
 \end{enumerate}
-Quanto appena detto esclude l'esistenza di rette parallele.\newline
-Lo spazio proiettivo $n$-dimensionale \`e l'unione di $\mathbb{R}^n$ e di tutti i suoi punti all'infinito. Tuttavia questa definizione pone i punti all'infinito come \textit{punti speciali}, per tal motivo una definizione pi\`u rigorosa pu\`o essere: Lo spazio proiettivo $n$-dimensionale \`e definito come l'insieme delle rette $\mathbb{R}^ {n+1}$ passanti per l'origine.\newline
-Lo spazio proiettivo reale $\textbf{RP}^n$ o $\mathbb{P}_n(\mathbb{R})$ \`e lo spazio topologico di rette di $\mathbb{R}^ {n+1}$ passanti per l'origine.
-\newline\newline
-%
-%
-%
-\textbf{Variet\`a - \textit{Manifold}}: Una variet\`a algebrica \`e l'insieme delle soluzioni di un sistema di polinomi sui numeri reali o complessi. In una variet\`a algebrica V chiamiamo il punto P \textit{singolare} in senso geometrico se lo spazio tangente a V nel punto P non pu\`o essere definito regolarmente. Per variet\`a definite sui reali il concetto di punto singolare generalizza il concetto di \textit{non derivabilit\`a}. Una variet\`a algebrica che non presenti punti singolari viene detta non singolare, \textit{liscia} o $\mathbb{C}^ {\infty}$ ed implica l'esistenza di derivate di ogni ordine.
-Classi di variet\`a algebriche sono le curve algebriche piane, le quali includono: rette, circonferenze, parabole, ellissi, iperbole, curve cubiche come ad esempio le curve ellittiche.
-Un punto del piano appartiene alla curva se le sue coordinate soddisfano l'equazione polinomiale data di cui la variet\`a algebrica offre la soluzione.
+Quanto appena detto esclude l'esistenza di rette parallele.
+\newline
+Lo spazio proiettivo $n$-dimensionale \`e l'unione di $\mathbb{R}^n$ e di tutti i suoi punti all'infinito. Tuttavia questa definizione pone i punti all'infinito come \textit{punti speciali}, per tal motivo una definizione pi\`u rigorosa \`e: lo spazio proiettivo $n$-dimensionale \`e definito come l'insieme delle rette $\mathbb{R}^ {n+1}$ passanti per l'origine.
+\newline
+Lo spazio proiettivo reale $\textbf{RP}^n$ o $\mathbb{P}_n(\mathbb{R})$ \`e lo spazio topologico di rette in $\mathbb{R}^ {n+1}$ passanti per l'origine.
 \newline\newline
 %
 %
 %
 \textbf{Curva piana cubica}: curva algebrica piana $C$ definita da un'equazione cubica $F(x, y, z) = 0$ applicata su di un piano proiettivo. Combinazioni lineari non nulle di monomi del terzo grado sono: $x^3, y^3, z^3, x^2y, x^2z, y^2x, y^2z, z^2x, z^2y, xyz$, per un totale di 10 combinazioni. Per questo motivo le curve cubiche formano uno spazio proiettivo di dimensione 9 per ogni campo $K$ dato.
-Una curva $C$ passante per $P$ comporta che ogni punto $P$ impone una singola condizione lineare sulla $F$; per tal motivo \`e possibile trovare curve cubiche su qualsiasi 9 punti dati
+Una curva $C$ passante per un punto $P$ comporta che ogni $P$ imponga una singola condizione lineare sulla $F$; per tal motivo \`e possibile trovare curve cubiche su qualsiasi 9 punti dati.
+\newline
+Una curva cubica pu\` presentare un punto singolare, in questo caso assume la parametrizzazione in termini di una retta proiettiva. In caso di una curva liscia (priva di punti singolari) la curva ha 9 punti di inflessione su un campo chiuso, ad esempio il campo $\mathbb{C}$ dei numeri complessi. Di questi punti, solo 3 possono essere reali e gli altri 6 non possono esser mostrati nel piano proiettivo disegnando la curva. Una propriet\`a di questi punti \`e che ogni retta passante per due di questi contiene esattamente tre punti di inflessione.
 \newline\newline
 %
 %
 %
-\textbf{Genere di una curva}
+\textbf{Spazio Affine}: struttura geometrica che generalizza quelle propriet\`a dello spazio Euclideo che sono indipendenti dai concetti di distanza e di misura degli angoli, mantenendo solo le propriet\`a di parallelismo e rapporto di lunghezze per segmenti paralleli. In uno spazio affine non viene distinto un punto di "origine". Di conseguenza non possono esistere vettori con un'origine fissata e non possono essere univocamente associati ad un punto. In uno spazio affine esistono i vettori distanza (displacement vectors) anche chiamati \textit{traslazioni} tra due punti nello spazio. La dimensione di uno spazio affine \`e dunque pari alla dimensione dello spazio dei vettori di traslazione. Per uno spazio affine di dimensione uno abbiamo una \textit{linea affine}, per uno spazio affine di dimensione due abbiamo un \textit{piano affine}.
 \newline\newline
 %
 %
 %
-\textbf{Punto Razionale}
+\textbf{Variet\`a - \textit{Manifold}}: Una variet\`a algebrica $V$ \`e l'insieme delle soluzioni di un sistema di polinomi sui numeri reali o complessi. Tramite le variet\`a algebriche \`e possibile creare un legame tra l'algebra e la geometria in modo tale da formulare problemi geometrici in termini algebrici e viceversa. Possiamo dunque dire che un punto del piano appartiene alla curva $C$ se le sue coordinate soddisfano l'equazione polinomiale data la cui soluzione \`e data dalla variet\`a algebrica.
+In una variet\`a algebrica V chiamiamo il punto P \textit{singolare} se non pu\`o essere definita correttamente una tangente in quel punto. Per variet\`a definite sui reali il concetto di punto singolare generalizza il concetto di \textit{non derivabilit\`a}. Una variet\`a algebrica che non presenti punti singolari viene detta non singolare, \textit{liscia} o $\mathbb{C}^ {\infty}$ ed implica l'esistenza di derivate di ogni ordine.
+Classi di variet\`a algebriche sono le curve algebriche piane, le quali includono: rette, circonferenze, parabole, ellissi, iperbole, curve cubiche come ad esempio le curve ellittiche.
+\newline\newline
+Definiamo una variet\`a affine $V$ su un campo chiuso $K$ come il luogo degli zeri in uno spazio affine $A^n$ $n$-dimensionale di una famiglia finita di polinomi in $n$ variabili con coefficienti in $K$ che generano un Ideale Primo. Alternativamente possiamo dire che, detta $V$ una variet\`a algebrica su un campo $K$, Diciamo che $V$ \`e una variet\`a affine se \`e data da un insieme di equazioni $f_j(x_1, \ldots , x_n) = 0$ $\forall j = 1, \ldots, m$ con coefficienti in $K$.
+\newline
+Esempio: chiamiamo $K$ un campo chiuso e $A^2$ lo spazio affine bidimensionale su $K$. I polinomi nell'anello $K[x, y]$ possono esser visti come funzioni a valori complessi su $A^2$ valutati nei punti di $A^2$. Il sottoinsieme S dell'anello che contiene un singolo elemento $f(x, y) = x + y - 1$. Il luogo degli zeri di $f(x, y)$ \`e l'insieme dei punti in $A^2$ sui quali la funzione si annulla, ovvero l'insieme di tutte le coppie di numeri complessi $(x, y)$ tali che $y = 1 - x$ (linea). L'insieme $V(f) = {(x, 1-x) \in C^2}$ \`e un sottoinsieme di $A^2$ ed un insieme algebrico. Tale insieme $V$ non \`e vuoto, \`e irriducibile dato che non pu\`o essere scritto come unione di due sottoinsieme algebrici e quindi \`e una variet\`a algebrica affine.
+%
+%
+%
+\newline\newline
+Parliamo di variet\`a proiettiva quando ci riferiamo ad una sottovariet\`a di uno spazio proiettivo. Tale variet\`a \`e il luogo degli zeri di un insieme di polinomi omogenei che generano un Primo Ideale.
+\newline
+Una curva proiettiva piana \`e il luogo degli zeri di un insieme di polinomi omogenei irriducibili in tre incognite. Chiamiamo \textit{Spazio Affine} una struttura matematica ottenuta a partire da uno spazio vettoriale e facendo in modo che tra i suoi punti non ve ne sia uno "origine", "centrale" e "privilegiato" rispetto agli altri. La curva proiettiva $y^2 = x^3 -x$ nello spazio affine di dimensione 2, ha associata l'equazione polinomiale omogenea cubica $y^2z = x^3 - xz^2$ che definisce una curva nello spazio proiettivo $\mathbb{P}^2$ come \textit{Curva Ellittica}. 
+\newline
+Introduciamo infine la formula \textit{genere-grado} che lega il grado $d$ di una curva piana $C \subset \mathbb{P}^2$ con il genere geometrico $g = \frac{1}{2} (d-1)(d-2)$.
+\newline
+Si deduce che per la curva sopra descritta abbiamo grado $d = 3$ e quindi genere $g = 1$.
+\newline\newline
+%
+%
+%
+\textbf{Punto Razionale}: un punto razionale $P(x, y)$ \`e un punto nello spazio tale che ciascuna delle sue coordinate $x$ e $y$ sia un numero razionale $\mathbb{Q}$. Pi\`u formalmente un punto $K$-razionale \`e un punto in uno spazio dove ogni coordinata del punto appartiene al campo $K$, allo stesso modo appartengono ad un campo pi\`u grande il quale contiene il campo $K$. 
+\newline
+Definiamo inoltre una variet\`a affine $V$ data dall'insieme delle equazioni $f_j(x_1, \ldots , x_n) = 0$ $\forall j = 1, \ldots, m$ con coefficienti in $K$. Il punto $K$-razionale di $V$ \`e una ennupla ordinata $(x_1, \ldots , x_n)$ di elementi del campo $K$ la quale \`e soluzione simultanea di tutto l'insieme di equazioni $f_j$. Nel caso generale un punto $P$ $K$-razionale di $V$ \`e un punto $K$-razionale di qualche sottoinsieme aperto di $V$.
 \newline\newline
 %
 %
