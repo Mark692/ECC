@@ -39,7 +39,7 @@
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{tesiinfo}
 [2008/02/06 v0.1b
-  Standard per le Tesi in Ingegneria Informatica -- Università degli Studi dell'Aquila by Gianlorenzo D'Angelo & Mauro Felice]
+  Standard per le Tesi in Ingegneria Informatica -- Universit? degli Studi dell'Aquila by Gianlorenzo D'Angelo & Mauro Felice]
 
 \usepackage{graphicx}
 \newif\ifesterno
