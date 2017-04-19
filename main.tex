@@ -1,0 +1,86 @@
+\documentclass[a4paper,12pt]{tesiinfo}
+%\documentclass[a4paper,12pt,dvipdfm]{tesiinfo}
+
+%%Pacchetti utili anche se non necessari
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{latexsym}
+\usepackage{tabularx}
+\usepackage[italian]{babel}
+\usepackage[bookmarks=true]{hyperref}
+\usepackage{subfigure}
+\usepackage{graphicx}
+
+
+
+\titolo{Crittografia Ellittica}
+\laureando{Marco Carolla}
+\relatore{Gabriele Di Stefano}
+\annoaccademico{2016-2017}
+
+\begin{document}
+
+\maketitle
+\contentspage
+\chapter{Introduzione}
+
+
+\textbf{Gruppo}: insieme $G$ ed un'operazione $\bullet$ detta \textit{Legge del gruppo G} che combina due elementi qualsiasi $a$ e $b$ formandone un terzo $a\bullet b$ appartenente ancora allo stesso insieme $G$. 
+La coppia $(G, \bullet)$ deve soddisfare gli \textit{assiomi di gruppo}:
+\begin{itemize}
+    \item Chiusura: per ogni coppia $a$ e $b$, il risultato dell'operazione $a\bullet b$ \`e ancora in $G$;
+    \item Associativit\`a: per ogni $a$, $b$ e $c$ in $G$ vale $\left ( a\bullet b \right ) \bullet c = a \bullet \left ( b \bullet c \right ) $;
+    \item Elemento Identit\`a: esiste un unico elemento $e$ in $G$ tale che sia verificata l'equazione $ e \bullet a = a \bullet e = a$;
+    \item Elemento Inverso: per ogni elemento $a$ in $G$ esiste un elemento $b$ di $G$ indicato come $a^{-1}$ (o come $-a$ se l'operazione \`e definita come $"+"$) tale per cui sia verificata l'equazione $ a \bullet b = b \bullet a = e$, dove $e$ \`e l'elemento identit\`a.
+\end{itemize}
+Inoltre il risultato dell'operazione pu\`o dipendere dall'ordine degli operandi per cui l'equazione $ a \bullet b = b \bullet a$ pu\`o non essere sempre vera. I gruppi per i quali vale la commutatività sono detti \textit{Gruppi Abeliani}.
+\newline\newline
+\textbf{Gruppo Abeliano}: gruppo per il quale valgono i quattro assiomi dei Gruppi ed un quinto assioma detto \textit{Commutativit\`a} per il quale vale la propriet\`a commutativa dei suoi elementi. Un gruppo abeliano \`e anche detto \textit{gruppo commutativo}.
+\newline\newline
+\textbf{Spazio Proiettivo}: \`e ottenuto da uno spazio euclideo aggiungendo i \textit{punti all'infinito}. A seconda dello spazio euclideo considerato, ad esempio una retta o un piano, si vengono a definire nello spazio proiettivo, una retta proiettiva o un piano proiettivo.
+\newline\newline
+\textbf{Funzione Algebrica}
+\newline\newline
+\textbf{Genere di una curva}
+\newline\newline
+\textbf{Punto Razionale}
+\newline\newline
+\textbf{Curva Cubica}
+\newline\newline
+\textbf{Curva Non Singolare}
+\newline\newline
+\textbf{Funzione Abeliana}: funzione $f(u_1, ... u_p)$ analitica uniforme nelle variabili p, periodica, dipendente da tutte e p le sue variabili, meromorfa.\newline\newline
+\textbf{Funzione Meromorfa}: \`e una funzione Olomorfa (Derivabile nel campo complesso per ogni direzione) in un sottodominio D del campo complesso $\mathbb{C}$, ad esclusione di un numero finito di punti detti Poli della funzione\newline\newline
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Curve Ellittiche}
+
+Una curva ellittica pu\`o esser definita come una Curva Algebrica, di Genere 1, avente un Punto Razionale.
+
+Un modello atto ad esprimere una curva ellittica \`e una Curva Cubica, Non Singolare. Tale modello presenta un punto di flesso all'infinito ed equivale a dire che la curva pu\`o esser scritta nella forma estesa di Tate-Weierstrass ovvero:
+
+$y^{2}z + a_1xyz + a_3yz^2 =x^3 + a_2x^2z + a_4xz^2 + a_6z^3$
+
+
+
+\bibliografia{tesi}
+
+\appendice
+\chapter{prima appendice}
+\chapter{seconda appendice}
+
+\end{document}
