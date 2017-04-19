@@ -179,7 +179,7 @@ Si deduce che per la curva sopra descritta abbiamo grado $d = 3$ e quindi genere
 %Combinazioni lineari non nulle di monomi del terzo grado sono: $x^3, y^3, z^3, x^2y, x^2z, y^2x, y^2z, z^2x, z^2y, xyz$, per un totale di 10 combinazioni. Per questo motivo le curve cubiche formano uno spazio proiettivo di dimensione 9 per ogni campo $K$ dato.
 %Una curva $C$ passante per un punto $P$ comporta che ogni $P$ imponga una singola condizione lineare sulla $F$; per tal motivo \`e possibile trovare curve cubiche su qualsiasi 9 punti dati.
 \newline
-Una curva cubica pu\` presentare un punto singolare, in questo caso assume la parametrizzazione in termini di una retta proiettiva. In caso di una curva liscia (priva di punti singolari) la curva ha 9 punti di inflessione su un campo chiuso, ad esempio il campo $\mathbb{C}$ dei numeri complessi. 
+Una curva cubica pu\`o presentare un punto singolare, in questo caso assume la parametrizzazione in termini di una retta proiettiva. In caso di una curva liscia (priva di punti singolari) la curva ha 9 punti di inflessione (punti di flesso) su un campo chiuso, ad esempio il campo $\mathbb{C}$ dei numeri complessi. 
 %Di questi punti, solo 3 possono essere reali e gli altri 6 non possono esser mostrati nel piano proiettivo disegnando la curva. 
 %Una propriet\`a di questi punti \`e che ogni retta passante per due di questi contiene esattamente tre punti di inflessione.
 \newline\newline
@@ -238,7 +238,6 @@ y^2 &= - \left ( \frac{{a_1}^2}{2}X^2 - \frac{a_1a_3}{2}X +\frac{{a_3}^2}{2} \ri
 \end{align*}
 dove abbiamo $A = a_2 - \frac{{a_1}^2}{2}$, $B = a_4 + \frac{a_1a_3}{2}$ e $C = a_6 - \frac{{a_3}^2}{2}$.
 Applichiamo quindi il secondo cambio di variabile $x = X - \frac{A}{3}$, il secondo membro diventa:
-%\begin{gather}
 \begin{align*}
 &X^3 + AX^2 + BX + C 
 \\
@@ -250,7 +249,6 @@ Applichiamo quindi il secondo cambio di variabile $x = X - \frac{A}{3}$, il seco
 \\
 &= x^3 + ax+b
 \end{align*}
-%\end{gather}
 Abbiamo quindi ottenuto la forma breve
 \begin{gather}
 y^2 = x^3 + ax+b
@@ -262,7 +260,33 @@ $\begin{cases}
 y^2 = x^3 + ax+b\\
 4a^3 \ne 27b^2\end{cases}$
 \end{center}
-La curva ellittica nel piano proiettivo passa per il punto all'infinito $O$ di coordinate omogenee $[0:1:0]$ ed indica l'elemento identit\`a del gruppo. Inoltre la curva \`e simmetrica rispetto l'asse $x$, per ogni punto $P$ possiamo trovare $-P$ sulla curva al punto opposto rispetto l'asse di simmetria. Per convenzione il punto all'infinito $-O$ viene considerato semplicemente come $O$.
+\textbf{Dimostrazione $4a^3 \ne 27b^2$}: La condizione da imporre per una curva liscia \`e la derivabilit\`a in ogni punto della curva, va quindi rispettata la relazione $\frac{d}{dx}C(x) \ne 0 \forall x \in C$ dove $C$ \`e l'equazione della nostra curva. Applicando la derivata:\\
+$\frac{d}{dx}y^2 = \frac{d}{dx}(x^3 +Ax+B)$\\
+$0 = 3x^2 +A$\\
+$x^2 = -\frac{A}{3}$\\
+Applichiamo ora la $x^2$ al termine destro dell'equazione breve moltiplicato per $x$, ovvero:\\
+$x^4 + Ax^2+Bx = 0$ \\
+$(-\frac{A}{3})^2 + A(-\frac{A}{3})+Bx = 0$\\
+$(\frac{A^2}{9})^2 - \frac{A^2}{3}+Bx = 0$\\
+$x = \frac{2A^2}{9B}$\\
+Il valore trovato pu\`o ora essere applicato alla derivata in $dx$ trovata prima:\\
+$0 = 3x^2 +A$\\
+$0 = 3(\frac{2A^2}{9B})^2 +A = \frac{4A^4}{27B^2} +A $\\
+Dividendo per $A$ otteniamo finalmente:\\
+$0 = \frac{4A^3}{27B^2} +1 = 4A^3+27B$\\
+Pi\`u chiaramente abbiamo che la derivata si annulla per $4A^3+27B = 0$. Questo dimostra la tesi iniziale.\\
+\\
+La curva ellittica nel piano proiettivo ha un singolo punto all'infinito $O$ avente coordinate omogenee $[0:1:0]$, tale punto costituisce l'elemento identit\`a del gruppo. Inoltre la curva \`e simmetrica rispetto l'asse $x$, per ogni punto $P$ possiamo trovare $-P$ sulla curva al punto opposto rispetto l'asse di simmetria. Per convenzione il punto all'infinito $-O$ viene considerato semplicemente come $O$.\\
+\`E possibile affermare che le curve ellittiche formano un Gruppo date le seguenti affermazioni:
+\begin{itemize}
+    \item gli elementi del gruppo sono tutti e soli i punti della curva,
+    \item l'elemento identit\`a \`e il punto all'infinito $O = 0$,
+    \item l'elemento inverso del punto $P$ \`e il punto simmetrico rispetto all'asse $x$,
+    \item la legge di gruppo "somma" \`e data dalla legge "dati tre punti $A$, $B$ e $C$ allineati, diversi da $0$, la loro somma \`e $A+B+C=0$.
+\end{itemize}
+Quest'ultima affermazione resta valida dati tre punti allineati qualsiasi, senza pesare sul loro ordine. Questo ci porta ad affermare che se $A$, $B$ e $C$ sono tre punti allineati allora:\\
+$A+(B+C)=B+(A+C)=C+(A+B)=C+(B+A)=\cdots = 0$\\
+dimostrando intuitivamente che l'operatore \textit{somma} "$+$" \`e sia associativo che commutativo. Il gruppo definito da una curva ellittica \`e quindi un gruppo abeliano.
 \begin{center}
 \includegraphics[scale=0.8]{Curvabase2}
 \\
@@ -274,9 +298,9 @@ Tipica rappresentazione di una curva ellittica
 \begin{center}
 \textbf{Point Addition}
 \end{center}
-Con il termine "Point Addition" si fa riferimento alla somma di due punti sulla curva.
+Con il termine "Point Addition" si fa riferimento alla somma di due punti sulla curva costituisce la legge di gruppo per le curve ellittiche e viene definita come segue: 
 \\
-Dati due punti distinti $A$ e $B$ sulla curva possiamo definire in modo univoco un terzo punto $A+B$ nel seguente modo: tracciata la retta passante per $A$ e $B$, questa intercetter\`a un terzo punto $C$ sulla curva. Il punto opposto $-C$ rappresenta il punto da noi cercato. Brevemente: $A + B = -C$.
+Dati due punti distinti $K$-razionali $A$ e $B$ sulla curva possiamo definire in modo univoco un terzo punto $C(x_C, y_C)$ dato dall'intersezione della retta passante per $A$ e $B$ e la curva. Il punto opposto $-C(x_C, -y_C)$ rappresenta la somma dei due punti: $A + B = B+ A = -C$. Il risultato dell'equazione $A+B+C = 0$ \`e il punto all'infinito. Il motivo di tale risultato \`e che la curva ellittica ha un singolo punto all'infinito il quale \`e un punto di flesso. Si pu\`o aggiungere che la linea all'infinito incontrer\`a una sola volta la curva, precisamente nel punto all'infinito, quindi tale punto determina un'intersezione di molteplicit\`a tre.
 \begin{center}
 \includegraphics[scale=0.7]{PointAdditionA+Bbn}
 \end{center}
@@ -295,16 +319,172 @@ Esistono per\`o dei casi particolari:
     \\
     In un punto di flesso la concavit\`a della curva cambia ed in ogni curva ellittica esistono esattamente 9 punti di flesso. In questo caso consideriamo il secondo punto $Q =P$ e la somma finale viene ad essere $-P$, l'opposto del punto iniziale.
 \end{enumerate}
-Il calcolo del punto $C = A + B$ \`e dato per costruzione geometrica della retta $r$ passante per i punti $A(x_A, y_A)$ e $B(x_B, y_B)$. Detto $m$ il coefficiente angolare della retta $r_{AB}$ abbiamo: $m = \frac{y_A - y_B}{x_A - x_B}$
-\\
+Il calcolo del punto $C = A + B$ \`e dato per costruzione geometrica della retta $r$ passante per i punti $A(x_A, y_A)$ e $B(x_B, y_B)$. Detto $m$ il coefficiente angolare della retta $r_{AB}$, le coordinate del punto $C(x_C, y_C) = -(P+Q)$ saranno date dalle seguenti formule:
+\begin{align*}
+\begin{cases}
+m = \frac{y_A - y_B}{x_A - x_B}\\
+x_C = m^2 - (x_A + x_B)\\
+y_C = m(x_A - x_C)-y_A
+\end{cases}
+\end{align*}
+%Aggiungi C = A + A e formule corrette
 Si noti che nel caso in cui $x_A = x_B$ si ottiene uno zero al denominatore, $m$ porterebbe quindi la tangente ad essere parallela all'asse y ed il punto individuato dalla formula sarebbe il punto all'infinito $O$ per cui otterremmo $C = O$.
 \\
-Proseguendo con la formula, le coordinate del punto $C(x_C, y_C) = -(P+Q)$ saranno date dalle seguenti formule:
+Come gi\`a visto, se vale $x_A = x_B$ abbiamo dei casi particolari per cui se $y_A = -y_B$ allora i due punti sono simmetrici e la loro somma \`e il punto all'infinito, se invece abbiamo $y_A = y_B = 0$ abbiamo che il punto $A$ ed il punto $B$ coincidono e si trovano all'estremit\`a sinistra della curva. La loro somma \`e ancora il punto all'infinito. Tuttavia esiste un altro caso particolare in cui si verifica $x_A = x_B$ ma $y_A = y_B \ne 0$, tale caso \`e detto \textit{Point Doubling}.
+\\
+\\
+\begin{center}
+\textbf{Point Doubling}
+\end{center}
+L'operazione del Point Doubling permette di sommare un punto a se stesso, se la sua ordinata $y$ \`e diversa da zero, ed ottenere un secondo punto sulla curva. Dato un punto $A(x_A, y_A)$ con $y_A \ne 0$ sommare $A+A$ equivale a trovare il punto $B = -(A+A) = -2A$. Quella che nel Point Addition era una retta per due punti diventa ora la tangente alla curva $y^2 = x^3 + ax +b$ nel punto $A$. La motivazione che ci porta ad usare la retta tangente alla curva viene dalla considerazione che presi due punti $P$ e $Q$ della curva, man mano che $Q$ si avvicina a $P$ pi\`u la curva tra i due punti tende a diventare la tangente. Le equazioni che permettono il calcolo del punto $B$ sono:
+\begin{align*}
+\begin{cases}
+m = \frac{3{x_A}^2 + a}{2y_A}\\
+x_C = m^2 - 2x_A\\
+y_C = m(x_A - x_C)-y_A
+\end{cases}
+\end{align*}
+Si noti come il coefficiente angolare $m$ dipenda non solo dalle coordinate di $A$ ma anche dal coefficiente $a$ presente nell'equazione della curva. Tale formulazione discende dalla derivata prima dell'equazione della curva per cui si ha:
+$\frac{d}{dx}y^2 = \frac{d}{dx}x^3 + ax + b$\\
+$2y\frac{d}{dx} = 3x^2 + a$\\
+$m = \frac{d}{dx} = \frac{3x^2 + a}{2y}$
+\\
+\\
+Quanto detto finora si applica a curve ellittiche nel campo dei numeri reali $\mathbb{R}$, tuttavia possiamo estendere il discorso ai numeri razionali $\mathbb{Q}$ in quanto definiti sul campo dei reali. La legge di gruppo (Point Addition) tra punti con coordinate reali si applica anche al campo $\mathbb{Q}$; le formule usate mostrano che la somma di due punti $A, B \in \mathbb{Q}$ comporta $C = A + B, \to C \in \mathbb{Q}$ dato che la retta $r_{AB}$ \`e a coefficienti razionali. In tal modo si dimostra che l'insieme di punti razionali della curva forma un sottogruppo del gruppo a punti reali. Essendo quest'ultimo un gruppo abeliano, tale sar\`a anche il sottogruppo dei numeri razionali; si conclude quindi che vale $C = A+B = B+A$.
+\\
+\\
+Studiare una curva ellittica su di un campo finito (ovvero il numero dei suoi elementi \`e finito) porta la curva ad una "scomposizione" in punti, anch'essi in numero finito, perdendo la tipica forma vista negli esempi precedenti. L'equazione che governa la curva cambia leggermente: consideriamo $(x, y) \in \mathbb{Z}/p\mathbb{Z}$ con $p$ un numero primo\\
 $\begin{cases}
-x_C = m^2 - (x_A + x_B)\\
-y_C = -[y_A + m(x_C - x_A)]
+y^2 = x^3 + ax+b (mod p)\\
+4a^3 \ne 27b^2  (mod p)
 \end{cases}$
-%Aggiungi C = A + A e formule corrette
+in unione al punto all'infinito.\\
+\\
+Il numero di elementi di una curva ellittica in un campo finito \`e difficile da determinare ma possiamo limitare in un intervallo tale cardinalit\`a grazie al teorema di Hasse sulle curve ellittiche: detti $K$ un campo finito con un $q$ elementi, $E$ una curva ellittica definita su tale $K$ e $cardE_K$ la cardinalit\`a (numero di elementi) della curva, possiamo dire che
+\begin{align*}
+    \mid cardE_K - (q+1) \mid \le 2 \sqrt{q}
+\end{align*}
+che ci porta a delimitare la cardinalit\`a tra i valori 
+\begin{align*}
+    q+1-2 \sqrt {q} \le cardE_K \le q+1+2 \sqrt {q}
+\end{align*}
+Consideriamo degli esempi: per un campo $K$ di $q=4$ elementi abbiamo una curva $E$ con $1 \le cardE_K \le 9$, $q=16 \to 9 \le cardE_K \le 25$, $q=64 \to 33 \le cardE_K \le 97$, $q=256 \to 129 \le cardE_K \le 385$. \`E importante notare che il teorema usato resituisce la cardinalit\`a della curva includendo il punto all'infinito.
+Questi risultati ci portano ad affermare che il numero di elementi della curva \`e vicino al numero di elementi del campo. 
+\textit{Considerazioni personali}: per numeri $q$ quadrati perfetti si pu\`o semplificare la formula di Hasse in $ \frac{1}{2}q +1 \le cardE_K \le \frac{3}{2}q +1$. Questa formula \`e stata trovata dall'osservazione dei risultati degli esempi precedenti e messa a confronto con numeri "non quadrati perfetti" come ad esempio un numero primo. La formula mostrata fornisce una stima coerente con quella di Hasse per "quadrati" ma fornisce una stima peggiorativa in tutti gli altri casi. Esempio: $q=160$, per Hasse abbiamo $136 \le cardE_K \le 186$, per la formula ideata abbiamo $81 \le cardE_K \le 241$. 
+\\
+L'insieme di punti di $E$ per il campo dato $K_p$ \`e un gruppo abeliano finito, \`e inoltre un gruppo ciclico o il risultato di un prodotto tra due gruppi ciclici. Un esempio \`e dato dalla curva $y^2 = x^3 - x$ sul campo $K_{71} = \mathbb{Z}/2\mathbb{Z}\times\mathbb{Z}/36\mathbb{Z}$ che comprende un totale di 72 punti di cui 71 sono punti affini, incluso il punto $(0,0)$ ed uno \`e il punto all'infinito.
+Numerosi algoritmi permettono il calcolo preciso del numero di punti per una curva ellittica su un campo finito; ad esempio l'algoritmo di Schoof parte dal teorema di Hasse, definisce $t = q+1-cardE_K$ e si procede nel calcolare la cardinalit\`a di $t\%N$ (operazione modulo), dove $N > 4\sqrt{q}$, tramite il teorema cinese del resto. La complessit\`a di questo algoritmo \`e pari a $O(n^{5+o(1)})$.
+%Altri algoritmi
+%1 - https://en.wikipedia.org/wiki/Counting_points_on_elliptic_curves
+%2 - https://en.wikipedia.org/wiki/Elliptic_curve#Elliptic_curves_over_finite_fields
+%
+\\
+\\
+\begin{center}
+\includegraphics[scale=0.8]{ECmodp}\\
+Le immagini mostrano la stessa curva $y^2=x^3-7x+10$ mod $(p)$ con \\
+$p = \{19, 97, 127, 487\}$.\\
+Si noti inoltre come l'asse di simmetria non sia pi\`u per $y=0$ ma diventa $y=p\big / 2$
+\end{center}
+Risulta evidente che la curva abbia perso la sua tipica forma e di come sia composta di soli punti sparsi sul piano $xy$. Le operazioni studiate precedentemente non cambiano nonostante ci troviamo in presenza di un campo modulare. Le rette usate per la Point Addition e la Point Doubling non sono cambiate concettualmente, ma una differenza grafica notevole \`e che trovandoci in un campo modulare $p$ sono permesse coordinate con valori compresi tra $0$ e $p-1$, quei punti che escono fuori da questo intervallo vengono riportati in modulo $p$ sul grafico, lo stesso concetto si applica alla retta per cui viene ripetuta ciclicamente:
+\begin{center}
+\includegraphics[scale=0.65]{ECmodRetta}\\
+Curva $y^2=x^3-x+3$ mod$(127)$\\
+Punti $P = (16, 20)$, $Q=(41, 120)$, $R = -(P+Q) = (86, 81)$\\
+Cardinalit\`a: 111 elementi
+\end{center}
+
+Quanto velocemente riusciamo a calcolare il punto $nP$? Poniamo il caso di dover calcolare $n=100$, tramite ripetute Point Addition abbiamo il punto $P$ di innesco e dobbiamo computare i successivi 99 punti per trovare $100P$ per un totale di $n-1$ addizioni. Velocizzare questo risultato diventa davvero facile se pensiamo di usare un insieme di Point Addition (Add) e Point Doubling (Double): $n=1 \to A$, Double $\to n=2$, Add $\to n=3$, Double $\to n=6$, Double $\to n=12$, Double $\to n=24$, Add $\to n=25$, Double $\to n=50$ ed infine Double $n=100$ per un totale di 8 operazioni (6 Point Doubling e 2 Point Addition). Abbiamo ridotto notevolmente il numero di operazioni necessarie per raggiungere il coefficiente $n$. 
+\\
+L'uso di una notazione base $B$ aiuta a trovare un algoritmo efficiente per questi calcoli; partiamo dal considerare $100_{10} = 1100100_2 = d_6d_5d_4d_3d_2d_1d_0$ ed usiamo il seguente algoritmo: scorriamo il numero in base $B=2$ da sinistra verso destra ed usiamo l'operazione Point Doubling, nel caso di dover calcolare un $1$ facciamo seguire una Point Addition. 
+\\
+\\
+Passo 0: $n=1_2 \to nP = P$. Il primo numero da trovare sar\`a sempre 1\\
+Passo 1: Double $n \to 2n = 10_2$, dato che $d_5 = 1$ dobbiamo proseguire con una Add;\\
+Passo 2: Add    $2 \to 3 = 11_2$. Procediamo quindi al calcolo degli altri $d_i$;\\
+Passo 3: Double $3 \to 6 = 110_2$\\
+Passo 4: Double $6 \to 12 = 1100_2$\\
+Passo 5: Double $12 \to 24 = 11000_2$, dobbiamo avere $d_2 = 1$ quindi...\\
+Passo 6: Add    $24 \to 25 = 11001_2$\\
+Passo 7: Double $25 \to 50 = 110010_2$\\
+Passo 8: Double $50 \to 100 = 1100100_2$\\
+\\
+Usando le operazioni indicate troviamo il punto cercato $100P$. Confrontiamo ora i costi computazionali dei due metodi visti. 
+\\
+Il primo consiste nel sommare $n-1$ volte lo stesso punto per arrivare al nostro $nP$; prendiamo il numero $n-1$ ed espresso in termini binari, base 2, vediamo che $n_2$ \`e formato da $k$ cifre $d_kd_{k-1} \ldots d_1d_0$. Il costo di $n-1$ addizioni \`e pari a $O(n-1)$ ed abbiamo visto che non \`e affatto un buon risultato. 
+\\
+Il secondo metodo, detto Double and Add, necessita di sole $O(log n)$ operazioni, dandoci un risultato nettamente migliore.
+%
+%
+%
+%
+\chapter{Sottogruppi}
+%
+Data la curva $E: y^2 = x^3 +2x +2$ mod$(17)$ e dato il punto $A(5, 1)$, usiamo la tecnica del Point Doubling per trovare il punto $2A$.
+I dati che ci servono sono $a = 2$, coefficiente di $x$ nella curva, e le coordinate del punto $A$; passiamo alle formule:
+\\
+\\
+$m = \frac{3{x_A}^2 + a}{2y_A}= \frac{3 \cdot 5^2 + 2}{2 \cdot 1} = \frac{9}{2} \text{ mod}17= 9 \cdot 9 \text{ mod}17 = 13\text{ mod}17\\
+x_C = m^2 - 2x_A= 13^2 - (2 \cdot 5) = 169\text{ mod}17 = 6 \text{ mod}17\\
+y_C = m(x_A - x_C)-y_A= m(5 - 6)-1 = -14\text{ mod}17 = 3\text{ mod}17
+$
+\\
+\\
+Il punto trovato ha coordinate $2A = (5, 1)+(5, 1) = (6, 3)$.
+\\
+\begin{center}
+\includegraphics[scale=0.6]{PointDoublingMOD17}
+\end{center}
+Come si nota dal grafico, i punti rappresentati sono in numero limitato. La cardinalit\`a secondo il teorema di Hasse \`e compresa nell'intervallo $[10, 26]$, se ci riferiamo alla figura e contiamo i punti rappresentati notiamo che questi sono in totale 19, compreso il punto all'infinito. Il risultato teorico rispetta il valore effettivo trovato.
+\\
+\`E possibile fare un'ulteriore verifica del risultato contando i punti tramite una Point Addition nel seguente modo: sappiamo che partendo dal punto $A(5, 1)$ abbiamo trovato $2A = (6, 3)$; possiamo quindi sommare i due punti trovati ed ottenere $3A = 2A + A = (10, 6)$. Procedendo analogamente troviamo $4A = (3, 1)$, $5A = (9, 16)$, $6A = (16, 13)$, $7A = (0, 6)$, $8A = (13, 7)$, $9A = (7, 6)$, $10A = (7, 11)$, $11A = (13, 10)$, $12A = (0, 11)$, $13A = (16, 4)$,  $14A = (9, 1)$, $15A = (3, 16)$, $16A = (10, 11)$, $17A = (6, 14)$, $18A = (5, 16)$, $19A = O$.
+\\
+Il punto $19A$ rappresenta il punto all'infinito.
+Alcune considerazioni sui risultati ottenuti:
+\begin{enumerate}
+    
+    \item Ancora una volta sono state rispettate le aspettative teoriche sulla cardinalit\`a della curva, abbiamo infatti trovato 19 punti distinti sulla curva.
+    
+    \item $19A$ \`e il punto all'infinito perch\`e corrisponde alla Point Addition $(5, 1) + (5, 16)$. L'ascissa \`e $5$ per entrambi i punti e l'ordinata \`e diversa da zero, i due punti sono quindi distinti sulla curva e, come gi\`a detto durante lo studio della Point Addition, il risultato deve essere il punto $O$ all'infinito.
+    
+    \item La somma di $A + 18A$ \`e il punto $19A = O$ ma lo stesso risultato lo si pu\`o ottenere sommando altri due punti come $2A + 17A$, $3A + 16A$, $4A + 15A$ e cos\`i via ottenendo sempre lo stesso risultato (lo si nota facilmente considerando che le ascisse delle coppie di punti dati sono le stesse).
+    
+    \item \textit{Considerazioni personali}: il calcolo dei 19 punti ha portato alla luce una ricorsivit\`a nei valori delle ascisse, i primi 9 punti hanno ascissa nella sequenza $5, 6, 10, 3, 9, 16, 0, 13, 7$ mentre i successivi 9 hanno ascissa in sequenza invertita. Due punti successivi tra loro presentano la stessa ascissa: $9A$ e $10A$, la loro somma \`e $19A = O$. 
+    %Partendo da questo risultato \`e forse possibile trovare "facilmente" la cardinalit\`a di una curva? 
+    \\
+    \`E possibile affermare "calcolati due punti $nA$ e $(n+1)A$ di una curva $E$ su un campo finito $K$ tramite la legge di gruppo Point Addition, se vale $x_n = x_{n+1}$ allora il $nA + (n+1)A$ corrisponde al punto all'infinito e la somma delle molteplicit\`a dei due punti costituisce la Cardinalit\`a, per cui $cardE_K = n+(n+1) = 2n+1$"?
+    \\
+    La risposta \`e in generale "no". Quanto appena affermato non vale all'interno di gruppi "grandi"; prendiamo ad esempio la curva $y^2 = x^3 + 2x+3$ nel campo $\mathbb{Z}/97\mathbb{Z}$, con punto di partenza $P(3, 6)$. La curva ha in totale 100 punti ma il punto $P$ da noi considerato genera un sottogruppo, per il quale viene detto \textit{Generatore}, con meno di 100 punti. I punti sono $P(3, 6), 2P(80, 10), 3P(80, 87), 4P(3, 91), 5P = O$ da cui deduciamo che la cardinalit\`a di questo sottogruppo \`e 5, vale inoltre $2P+3P = 5P \to card(E_K) = 5$ in quanto $2P$ e $3P$ sono punti successivi tra loro con medesima ascissa; la ricorsivit\`a delle ascisse vista precedentemente si mantiene valida nel sottogruppo per cui possiamo scrivere ogni punto $kP$ come $(k$ mod $card(E_K))P$.\\
+    Abbiamo infine provato che diversi punti di innesco generano diversi sottogruppi, ognuno con una sua cardinalit\`a $card(S_E) \le card(E)$ (nota: viene rispettata l'uguaglianza tra i due termini quando non esistono sottogruppi, esattamente come accadeva nel primo esempio). 
+    
+\end{enumerate}
+
+L'ordine del punto $P$ \`e analogo al concetto di caratteristica $char(K)$ di un campo $K$ ovvero corrisponde al pi\`u piccolo numero intero positivo tale che $nP = 0$. L'ordine di $P$ \`e direttamente collegato alla caratteristica della curva ellitta per mezzo del \textit{Teorema di Lagrange} che afferma "la cardinalit\`a di un sottogruppo $H$ del gruppo $G$ \`e un divisore intero della cardinalit\`a di $G$"; in altri termini se il gruppo $G$ ha cardinalit\`a $N$ ed uno dei suoi sottogruppi ha cardinalit\`a $n$ allora $n$ \`e un divisore intero di $N$. Detto ci\`o possiamo costruirci un metodo per trovare la cardinalit\`a di un sottogruppo $H$ dato il punto generatore $P$: calcoliamo $N = card(E_K)$ tramite l'algoritmo di Schoof, prendiamo tutti i divisori interi di $N$ trovando quindi $n_1$, $n_2 \ldots$. Il pi\`u piccolo $n_x$ per cui verifichiamo $n_xP = 0$ corrisponde alla cardinalit\`a del sottogruppo.
+\\
+Esempio: la curva $y^2 = x^3-x+3$ mod$(37)$ ha cardinalit\`a $N=42$ per cui i suoi sottogruppi possono avere cardinalit\`a pari a $n= \{1, 2, 3, 6, 7, 14, 21\}$. Dato il punto $P=(2, 3)$ troviamo che la cardinalit\`a del sottogruppo $H_P$ \`e pari a 7 perch\`e $7P = 0$. Ovviamente anche $n = 14$, $n = 21$ ed $n=42$ portano a rispettare l'equazione $n_xP=0$ ma solo il divisore pi\`u piccolo corrisponde alla cardinalit\`a del sottogruppo.
+\\
+\textbf{Ulteriore esempio}: curva $E: y^2 = x^3 -x+1$ mod$(29)$ ha cardinalit\`a $N=37$, un numero primo. I divisori di un numero primo sono solo $1$ e se stesso per cui la cardinalit\`a dei sottogruppi $H_G$ pu\`o essere o $1$ o $37$, tuttavia non possiamo accettare una cardinalit\`a $n=1$ in quanto ricordiamo che tale sottogruppo comprenderebbe solo il punto all'infinito. Deduciamo quindi che $n = N = 37$ \`e l'unico valore accettabile per la cardinalit\`a dei sottogruppi $H_G$ e che \textbf{esiste un solo sottogruppo $H$} corrispondente al gruppo generatore $G$ e comprendente tutti i punti della curva.
+\\
+Sempre come conseguenza del teorema di Lagrange possiamo individuare un numero $h= N \big / n, \mid h \in \mathbb{Z}$ che chiamiamo \textbf{cofattore del sottogruppo}. \`E importante notare che per ogni punto della curva viene verificata la seguente uguaglianza $NP=0$ poich\`e $N$ sar\`a sempre un multiplo di $n$, euesto ci permette di scrivere $n(hP)=0$. Supponiamo che $n$ sia un numero primo, l'equazione lascia quindi pensare che il punto $G = hP$ sia un generatore di un sottogruppo di cardinalit\`a $n$.
+\\
+Trovare un sottogruppo con la cardinalit\`a pi\`u grande possibile:
+\begin{enumerate}
+    \item Data la curva ellittica $E$ calcolare $N = Schoof(E)$ per ottenerne la cardinalit\`a;
+    \item Calcoliamo il divisore \textbf{primo} pi\`u grande di $N$;
+    \item Calcoliamo $h = N \big / n$;
+    \item Continuiamo a scegliere un punto casuale $P$ sulla curva finch\`e $G = hP = 0$. Quando troviamo un valore per cui $G \ne 0$ allora possiamo dire che $P$ \`e un generatore del sottogruppo $H$ di cardinalit\`a $n$ e cofattore $h$.
+\end{enumerate}
+
+\chapter{Logaritmo Discreto}
+In matematica non \`e solitamente difficile trovare un numero $k$ data l'equazione $Q = kP$, nelle curve ellittiche il discorso cambia notevolmente. Trovare il coefficiente $k$ viene considerato un problema Difficile per la matematica, il nome con cui ci riferiamo a questo \`e \textit{Logaritmo Discreto}.
+\\
+Questo problema \`e analogo al problema del logaritmo discreto usato con sistemi di crittografia quali Digital Signature Algorithm (DSA), lo scambio di chiavi Diffie-Hellman (D-H) e l'algoritmo ElGamal. Questi algoritmi sono caratterizzati dal trovare il numero $k$ dall'espressione esponenziale con modulo: $b = a^k$ mod$p$. 
+\\
+L'aggettivo "ciclico" viene dato per via degli insiemi finiti o sottogruppi ciclici usati dagli algoritmi. Notiamo per\`o che non \`e presente alcun logaritmo per le curve ellittiche: la denominazione proviene dalla conformazione con l'espressione appena vista. L'espressione per le curve ellittiche presenta una difficolt\`a computazionale ben superiore ai problemi logartmici discreti analoghi, si \`e pensato quindi di usare questo problema come base per un sistema di crittografia chiamato Crittografia Ellittica.
+
+
+
+
 %
 %
 %
@@ -315,7 +495,8 @@ y_C = -[y_A + m(x_C - x_A)]
 %
 %
 %
-\bibliografia{tesi}
+%
+%\bibliografia{tesi}
 %
 %
 %
@@ -326,8 +507,8 @@ y_C = -[y_A + m(x_C - x_A)]
 %
 %
 %
-\appendice
-\chapter{prima appendice}
+%\appendice
+%\chapter{prima appendice}
 %
 %
 %
@@ -338,7 +519,7 @@ y_C = -[y_A + m(x_C - x_A)]
 %
 %
 %
-\chapter{seconda appendice}
+%\chapter{seconda appendice}
 %
 %
 %
