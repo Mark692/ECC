@@ -258,7 +258,8 @@ Tuttavia per renderla una vera curva ellittica dobbiamo imporre che sia liscia, 
 \textit{Equazione di Weierstrass}:
 $\begin{cases}
 y^2 = x^3 + ax+b\\
-4a^3 \ne 27b^2\end{cases}$
+4a^3 \ne 27b^2\end{cases}
+\bigcup $ $\{O\}$.\\
 \end{center}
 \textbf{Dimostrazione $4a^3 \ne 27b^2$}: La condizione da imporre per una curva liscia \`e la derivabilit\`a in ogni punto della curva, va quindi rispettata la relazione $\frac{d}{dx}C(x) \ne 0 \forall x \in C$ dove $C$ \`e l'equazione della nostra curva. Applicando la derivata:\\
 $\frac{d}{dx}y^2 = \frac{d}{dx}(x^3 +Ax+B)$\\
@@ -354,12 +355,13 @@ Quanto detto finora si applica a curve ellittiche nel campo dei numeri reali $\m
 \\
 \\
 Studiare una curva ellittica su di un campo finito (ovvero il numero dei suoi elementi \`e finito) porta la curva ad una "scomposizione" in punti, anch'essi in numero finito, perdendo la tipica forma vista negli esempi precedenti. L'equazione che governa la curva cambia leggermente: consideriamo $(x, y) \in \mathbb{Z}/p\mathbb{Z}$ con $p$ un numero primo\\
+\begin{center}
 $\begin{cases}
-y^2 = x^3 + ax+b (mod p)\\
-4a^3 \ne 27b^2  (mod p)
-\end{cases}$
-in unione al punto all'infinito.\\
-\\
+y^2 = x^3 + ax+b ($mod $p)\\
+4a^3 \ne 27b^2  ($mod $p)
+\end{cases}
+\bigcup $ $\{O\}$.\\
+\end{center}
 Il numero di elementi di una curva ellittica in un campo finito \`e difficile da determinare ma possiamo limitare in un intervallo tale cardinalit\`a grazie al teorema di Hasse sulle curve ellittiche: detti $K$ un campo finito con un $q$ elementi, $E$ una curva ellittica definita su tale $K$ e $cardE_K$ la cardinalit\`a (numero di elementi) della curva, possiamo dire che
 \begin{align*}
     \mid cardE_K - (q+1) \mid \le 2 \sqrt{q}
@@ -393,7 +395,6 @@ Curva $y^2=x^3-x+3$ mod$(127)$\\
 Punti $P = (16, 20)$, $Q=(41, 120)$, $R = -(P+Q) = (86, 81)$\\
 Cardinalit\`a: 111 elementi
 \end{center}
-
 Quanto velocemente riusciamo a calcolare il punto $nP$? Poniamo il caso di dover calcolare $n=100$, tramite ripetute Point Addition abbiamo il punto $P$ di innesco e dobbiamo computare i successivi 99 punti per trovare $100P$ per un totale di $n-1$ addizioni. Velocizzare questo risultato diventa davvero facile se pensiamo di usare un insieme di Point Addition (Add) e Point Doubling (Double): $n=1 \to A$, Double $\to n=2$, Add $\to n=3$, Double $\to n=6$, Double $\to n=12$, Double $\to n=24$, Add $\to n=25$, Double $\to n=50$ ed infine Double $n=100$ per un totale di 8 operazioni (6 Point Doubling e 2 Point Addition). Abbiamo ridotto notevolmente il numero di operazioni necessarie per raggiungere il coefficiente $n$. 
 \\
 L'uso di una notazione base $B$ aiuta a trovare un algoritmo efficiente per questi calcoli; partiamo dal considerare $100_{10} = 1100100_2 = d_6d_5d_4d_3d_2d_1d_0$ ed usiamo il seguente algoritmo: scorriamo il numero in base $B=2$ da sinistra verso destra ed usiamo l'operazione Point Doubling, nel caso di dover calcolare un $1$ facciamo seguire una Point Addition. 
@@ -414,12 +415,8 @@ Usando le operazioni indicate troviamo il punto cercato $100P$. Confrontiamo ora
 Il primo consiste nel sommare $n-1$ volte lo stesso punto per arrivare al nostro $nP$; prendiamo il numero $n-1$ ed espresso in termini binari, base 2, vediamo che $n_2$ \`e formato da $k$ cifre $d_kd_{k-1} \ldots d_1d_0$. Il costo di $n-1$ addizioni \`e pari a $O(n-1)$ ed abbiamo visto che non \`e affatto un buon risultato. 
 \\
 Il secondo metodo, detto Double and Add, necessita di sole $O(log n)$ operazioni, dandoci un risultato nettamente migliore.
-%
-%
-%
-%
-\chapter{Sottogruppi}
-%
+\\
+\\
 Data la curva $E: y^2 = x^3 +2x +2$ mod$(17)$ e dato il punto $A(5, 1)$, usiamo la tecnica del Point Doubling per trovare il punto $2A$.
 I dati che ci servono sono $a = 2$, coefficiente di $x$ nella curva, e le coordinate del punto $A$; passiamo alle formule:
 \\
@@ -458,10 +455,10 @@ Alcune considerazioni sui risultati ottenuti:
     Abbiamo infine provato che diversi punti di innesco generano diversi sottogruppi, ognuno con una sua cardinalit\`a $card(S_E) \le card(E)$ (nota: viene rispettata l'uguaglianza tra i due termini quando non esistono sottogruppi, esattamente come accadeva nel primo esempio). 
     
 \end{enumerate}
-
 L'ordine del punto $P$ \`e analogo al concetto di caratteristica $char(K)$ di un campo $K$ ovvero corrisponde al pi\`u piccolo numero intero positivo tale che $nP = 0$. L'ordine di $P$ \`e direttamente collegato alla caratteristica della curva ellitta per mezzo del \textit{Teorema di Lagrange} che afferma "la cardinalit\`a di un sottogruppo $H$ del gruppo $G$ \`e un divisore intero della cardinalit\`a di $G$"; in altri termini se il gruppo $G$ ha cardinalit\`a $N$ ed uno dei suoi sottogruppi ha cardinalit\`a $n$ allora $n$ \`e un divisore intero di $N$. Detto ci\`o possiamo costruirci un metodo per trovare la cardinalit\`a di un sottogruppo $H$ dato il punto generatore $P$: calcoliamo $N = card(E_K)$ tramite l'algoritmo di Schoof, prendiamo tutti i divisori interi di $N$ trovando quindi $n_1$, $n_2 \ldots$. Il pi\`u piccolo $n_x$ per cui verifichiamo $n_xP = 0$ corrisponde alla cardinalit\`a del sottogruppo.
 \\
 Esempio: la curva $y^2 = x^3-x+3$ mod$(37)$ ha cardinalit\`a $N=42$ per cui i suoi sottogruppi possono avere cardinalit\`a pari a $n= \{1, 2, 3, 6, 7, 14, 21\}$. Dato il punto $P=(2, 3)$ troviamo che la cardinalit\`a del sottogruppo $H_P$ \`e pari a 7 perch\`e $7P = 0$. Ovviamente anche $n = 14$, $n = 21$ ed $n=42$ portano a rispettare l'equazione $n_xP=0$ ma solo il divisore pi\`u piccolo corrisponde alla cardinalit\`a del sottogruppo.
+\\
 \\
 \textbf{Ulteriore esempio}: curva $E: y^2 = x^3 -x+1$ mod$(29)$ ha cardinalit\`a $N=37$, un numero primo. I divisori di un numero primo sono solo $1$ e se stesso per cui la cardinalit\`a dei sottogruppi $H_G$ pu\`o essere o $1$ o $37$, tuttavia non possiamo accettare una cardinalit\`a $n=1$ in quanto ricordiamo che tale sottogruppo comprenderebbe solo il punto all'infinito. Deduciamo quindi che $n = N = 37$ \`e l'unico valore accettabile per la cardinalit\`a dei sottogruppi $H_G$ e che \textbf{esiste un solo sottogruppo $H$} corrispondente al gruppo generatore $G$ e comprendente tutti i punti della curva.
 \\
@@ -474,17 +471,188 @@ Trovare un sottogruppo con la cardinalit\`a pi\`u grande possibile:
     \item Calcoliamo $h = N \big / n$;
     \item Continuiamo a scegliere un punto casuale $P$ sulla curva finch\`e $G = hP = 0$. Quando troviamo un valore per cui $G \ne 0$ allora possiamo dire che $P$ \`e un generatore del sottogruppo $H$ di cardinalit\`a $n$ e cofattore $h$.
 \end{enumerate}
-
-\chapter{Logaritmo Discreto}
 In matematica non \`e solitamente difficile trovare un numero $k$ data l'equazione $Q = kP$, nelle curve ellittiche il discorso cambia notevolmente. Trovare il coefficiente $k$ viene considerato un problema Difficile per la matematica, il nome con cui ci riferiamo a questo \`e \textit{Logaritmo Discreto}.
 \\
-Questo problema \`e analogo al problema del logaritmo discreto usato con sistemi di crittografia quali Digital Signature Algorithm (DSA), lo scambio di chiavi Diffie-Hellman (D-H) e l'algoritmo ElGamal. Questi algoritmi sono caratterizzati dal trovare il numero $k$ dall'espressione esponenziale con modulo: $b = a^k$ mod$p$. 
+Questo problema \`e analogo al problema del logaritmo discreto usato con sistemi di crittografia quali Digital Signature Algorithm (DSA), lo scambio di chiavi Diffie-Hellman (D-H) e l'algoritmo ElGamal usato nella crittografia asimmetrica (chiave pubblica). Questi algoritmi sono caratterizzati dal trovare il numero $k$ dall'espressione esponenziale con modulo: $b = a^k$ mod$p$. 
 \\
 L'aggettivo "ciclico" viene dato per via degli insiemi finiti o sottogruppi ciclici usati dagli algoritmi. Notiamo per\`o che non \`e presente alcun logaritmo per le curve ellittiche: la denominazione proviene dalla conformazione con l'espressione appena vista. L'espressione per le curve ellittiche presenta una difficolt\`a computazionale ben superiore ai problemi logartmici discreti analoghi, si \`e pensato quindi di usare questo problema come base per un sistema di crittografia chiamato Crittografia Ellittica.
+%
+%
+%
+%
+%
+\chapter{Crittografia Ellittica}
+La crittografia basata sulle curve ellittiche si basa sui concetti visti finora servendosi di sei parametri:
+\begin{itemize}
+    \item \textbf{p}, numero primo, specifica la cardinalit\`a del campo $\mathbb{Z}/p\mathbb{Z}$;
+    \item \textbf{a}, \textbf{b} coefficienti nell'equazione breve di Weierstrass della curva ellittica;
+    \item \textbf{G} il generatore del sottogruppo
+    \item \textbf{n}, numero primo, rappresenta l'ordine di tale sottogruppo
+    \item \textbf{h} il cofattore.
+\end{itemize}
+\textbf{Nota sull'importanza dei sottogruppi propri}: una curva ellittica $E$ definita su un campo $\mathbb{F}_p$, viene detta \textbf{anomala} se la cardinalit\`a $card(E) = p$. Per curve anomale sono stati descritti algoritmi come quello di Smart o Samaev che riescono a risolvere il problema del logaritmo discreto in tempo $O($ln $p)$.
+\\
+\\
+Come possiamo definire una curva crittograficamente \textit{sicura}?
+\\
+Per rispondere alla domanda possiamo avvalerci di un ulteriore parametro: il seed $S$, un numero casuale che pu\`o essere utilizzato per generare o i coefficienti $a$ e $b$ o il generatore $G$ oppure entrambi. Generare questi parametri \`e possibile dal calcolo dell'hash di $S$
+\begin{center}
+    $S = random[min, max] \to H = hash(S) \to 
+    \begin{cases}
+        a = f(H)\\
+        b = g(H)
+    \end{cases}$
+\end{center}
+Viene cos\`i descritto un procedimento semplice da usare ma che risulta difficile nel caso di dover trovare il seed $S$ a partire dai coefficienti:
+\begin{center}
+$
+\begin{cases}
+    h_1 = f^{-1} (a)\\
+    h_2 = g^{-1} (b)
+\end{cases}$ se 
+$h_1 = h_2 \Rightarrow H=h_1=h_2 \nrightarrow S=hash^{-1} (H)$
+\end{center}
+Una curva generata grazie ad un seed viene detta \textbf{Verificabile Casuale} (\textit{Verifiably Random}). Il principio dietro la scelta di hash per generare parametri prende il nome di NUMS (\textit{Nothing Up My Sleeve}) assicurando che la curva non sia stata appositamente creata per lasciare esposte vulnerabilit\`a note.
+\\
+\\
+\textbf{Crittografia asimmetrica}
+\\
+Chiave privata: numero intero, casuale, $d \in [1, n-1]$\\
+Chiave pubblica: punto della curva $H = dG$\\
+Conoscere $d$ e $G$ ci porta facilmente a calcolare $H$, tuttavia partire dai punti $H$ e $G$ trovare il numero $d$ significa risolvere il Problema del Logaritmo Discreto.
+\\
+\\
+L'algoritmo ECDH \`e l'acronimo di Elliptic Curve Diffie-Hellman e si basa sull'accordo di una chiave. Detti Alice (\textit{A}) e Bob (\textit{B}) le parti in gioco, $M$ il messaggio che vogliono scambiarsi in modo sicuro, l'algoritmo si basa sui seguenti passi:
+\begin{enumerate}
+    \item Entrambi $A$ e $B$ generano le loro chiavi private e pubbliche. Alice avr\`a chiave privata $d_A = random(1, n-1)$, e pubblica $H_A = d_AG$; Bob avr\`a invece $d_B = random(1, n-1)$, e pubblica $H_B = d_BG$;
+    
+    \item Si passa allo scambio di chiavi pubbliche $H_A$ e $H_B$ attraverso un canale non sicuro. Un ipotetico mal intenzionato $C$ \`e il Man in the Middle che cerca di intercettare le chiavi pubbliche. Nonostante la possibilit\`a di recuperarle, trovare le chiavi private consiste nel risolvere il PdLD;
+    
+    \item Alice si trova ora in possesso della sua chiave privata $d_A$ e della chiave pubblica di Bob $H_B$; si passa dunque a calcolare il Segreto condiviso $S_A$ tramite la seguente: $S_A = d_AH_B$. Bob fa lo stesso trovando $S_B = d_bH_A$.
+\end{enumerate}
+Tale segreto condiviso si dimostra essere lo stesso sia per Alice che per Bob, infatti avendo detto che le curve ellittiche formano un gruppo abeliano, vale la propriet\`a commutativa per cui \`e valida la seguente:
+\begin{center}
+    $S_A = d_A \cdot H_B = d_A \cdot (d_B \cdot G) = d_B \cdot (d_A \cdot G) = d_B \cdot H_A = S_B$
+\end{center}
+Alice e Bob possono ora comunicare in modo sicuro usando una crittografia simmetrica a partire dal segreto $S$: la chiave pu\`o essere, ad esempio, la coordinata $x_S$ per crittografare i messaggi successivi.
+\\
+\\
+Curve diverse portano a protocolli diversi: \textbf{secp256k1} usa i seguenti parametri 
+\begin{itemize}
+    \item \textbf{p} = $0x$FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFE FFFFFC2F = $2^{256} - 2^{32}-2^9-2^8-2^7-2^6-2^4-2^0$;
+    
+    \item \textbf{a} $=0$;
+    
+    \item \textbf{b} $=7$;
+    
+    \item \textbf{G} $= (x_G, y_G)$
+    \\
+    $x_G$ = $0x$79BE667E F9DCBBAC 55A06295 CE870B07 029BFCDB 2DCE28D9 59F2815B 16F81798,
+    \\
+    $y_G$ = $0x$483ADA77 26A3C465 5DA4FBFC 0E1108A8 FD17B448 A6855419 9C47D08F FB10D4B8;
+    
+    \item \textbf{n} = $0x$FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFE BAAEDCE6 AF48A03B BFD25E8C D0364141;
+    
+    \item \textbf{h} $ = 1$
+\end{itemize}
+Usando questa curva l'algoritmo sopra descritto Alice calcola:\\
+$d_A$ = hex(random(1, n-1)) = $0x$CA26D640 64C04556 8BC087B7 73137390 D2D412D8 E85E3BBA 11E7A87A F02A460C,\\
+$H_A = (x_A, y_A) = d_AG$,\\
+$x_A$ = $0x$50F1D077 DE0807EB 17E45781 BAD7AC8A 85EFBE48 5DB3988F 546CF300 E50F4750,\\
+$y_A$ = $0x$C5C0324A F29FE9CF 4FC0E305 EE406E4D CF1D6166 9877CA62 B16ADE01 2466C0C7;\\
+\\
+Bob invece:\\
+$d_B$ = hex(random(1, n-1)) = $0x$8840D8F4 08C63786 693A58C3 431489FE 6452C91E 2BD85B5A A982EC04 82B7D965,\\
+$H_B = (x_B, y_B) = d_BG$,\\
+$x_B$ = $0x$D9852BD0 8856BF07 1FF719E4 2B8D4CB1 E82D66F5 B0CB00CF C6B62892 E1A8FFCD,\\
+$y_B$ = $0x$C28B6FCA 34E247C8 32EE7C4F 55EC1DD5 150E6800 66BDFD86 1A8A26A7 724CE7E9;\\
+\\\
+ed il segreto condiviso sar\`a il punto di coordinate:\\
+$S_A = d_AH_B = d_bH_A = S_B = (x_S, y_S)$,\\
+$x_S$ = $0x$11F9892D 57C6EAAD B9DE6475 BBCA2204 01FEAA84 3B7A1DB1 3C44C348 C0FB92F1,\\
+$y_S$ = $0x$89FC9ED0 FF4B1D91 3E4978EF DF23BAD8 947528E0 C4DDD00D C0119149 DD5C08ED.
+\\
+L'algoritmo appena visto assume talvolta la notazione ECDHE - ECDH Ephemeral facendo riferimento al fatto che le \textbf{chiavi pubbliche scambiate sono temporanee} e non statiche. Una volta stabilita la connessione tali chiavi effimere vanno validate da un ente certificato come ad esempio TLS/SSL.
+\\
+\\
+\begin{center}
+    \textbf{Firma Digitale}
+\end{center}
+Applicare una firma sulle chiavi \`e compito dell'ECDSA - Elliptic Curve Digital Signature Algorithm, diretta variante di un protocollo esistente (DSA) applicata alle curve ellittiche. L'idea della firma digitale si basa su Alice che vuole firmare un messaggio $m$ con la sua chiave privata $d_A$, successivamente Bob vorr\`a accertarsi di star parlando effettivamente con Alice e cercher\`a di validare la firma tramite la chiave pubblica di Alice $H_A$. La forza della firma digitale \`e che solamente Alice \`e in grado di generare una firma valida $F_A$ e tutti sono in grado di verificarne l'autenticit\`a grazie alla chiave \textbf{pubblica} $H_A$ necessaria alla verifica.
+\\
+ECDSA si basa sull'hash del messaggio $H = hash(m)$ piuttosto che sul messaggio in chiaro $m$.
+\\
+\\
+\textbf{La scelta dell'hash}: l'algoritmo per produrre l'hash deve esser nell'ottica di una funzione crittograficamente sicura. In data 23 Febbraio 2017, Google ha completato l'esperimento "SHAttered" con il quale si mirava a trovare una collisione sull'algoritmo SHA-1. L'attacco portato avanti da Google ha richiesto la cifra di $9,223,372,036,854,775,808$ calcoli di SHA-1, utilizzando l'equivalente di 6500 anni di calcoli per una singola CPU, 110 anni di calcoli per una singola GPU, ottenendo il risultato di un attacco 100,000 volte pi\`u veloce di un attacco Brute Force normale.
+\\
+Sebbene ormai deprecato dal NIST nel 2011, molte applicazioni web e browser fanno ancora uso di SHA-1: Google Chrome ha preventivamente abilitato algoritmi più sicuri, Firefox ha ufficialmente deprecato SHA-1 solo nella versione 52 mentre Internet Explorer e GIT non hanno ancora pronta una patch. \\
+GIT \`e un'applicazione che permette a gruppi di persone di lavorare assieme, da remoto, sullo stesso progetto; lo spazio di lavoro \`e detto \textit{Repository}. Il salvataggio dei dati si basa su "commit" generati da SHA-1 rendendo essenzialmente possibile creare due spazi di lavoro con lo stesso commit ma contenuti differenti. \`E sempre pi\`u valida l'idea di un utente malintenzionato che tramite un commit noto, crei un repository con annessa \textbf{Backdoor} ma stesso commit, scambi i due repository ed attacchi la vittima.
+\\
+\\
+Scelto quindi un algoritmo sicuro, l'hash $H = hash(m)$ dovr\`a essere troncato ad $n$ bit; ricordiamo che $n$ corrisponde alla cardinalit\`a del sottogruppo generato dal punto $G$. Il nostro hash troncato \`e un numero intero e lo chiamiamo $T$. La firma viene quindi generata secondo i seguenti passi:
+\begin{enumerate}
+    \item Si sceglie un numero $k = random(1, n-1)$, analogo alla Chiave Privata $d_A$;
+    \item Si calcola il punto $P = (x_P, y_P) = kG$, analogo alla chiave pubblica $H_A$;
+    \item Si calcola $r = x_P $ mod$(n)$;
+    \item Se $r = 0$ (\`e un multiplo intero di $n$) si torna al punto 1;
+    \item Si calcola $f = k^{-1} (T+rd_A) $ mod$(n)$, $k^{-1}$ \`e il moltiplicativo inverso di $k$ mod$(n)$;
+    \item Se $f = 0$ (\`e un multiplo intero di $n$) si torna al punto 1.
+\end{enumerate}
+La coppia $F = (r, f)$ \`e la \textbf{firma}.
+\\
+Il segreto $k$ viene quindi usato per calcolare il punto $P$ e viene poi usato per generare $r$; infine si lega $r$ all'hash del messaggio tramite $f$. Trovare il segreto $k$ significa poter firmare messaggi fingendosi Alice ma il compito \`e difficile in quanto richiede di risolvere il noto Problema del Logaritmo Discreto.
+\\
+Come visto nell'algoritmo, $f$ deve essere diverso da $0$ e quindi non deve essere un divisore intero di $n$. \`E possibile utilizzare l'algoritmo solo se $n$ \`e un numero primo per \`e certo che $f$ sar\`a diverso da $0$. \textbf{Se il sottogruppo $H$ ha un ordine $n$ non primo, ECDSA non pu\`o essere utilizzato}, per questo motivo la maggior parte delle curve usate nella crittografia ellittica sono standardizzate e permettono numeri primi come cardinalit\`a $n$.
+\\
+\\
+Bob \`e ora in possesso della firma $F = (r, f)$ di Alice e vuole verificarne l'autenticit\`a. Tramite i parametri noti quali il punto Generatore $G$, la cardinalit\`a $n$ del sottogruppo, la chiave pubblica $H_A$, l'hash troncato $T$, la firma $F$, Bob procede come segue:
+\begin{enumerate}
+    \item Calcola il numero intero $u_1 = f^{-1}T$ mod$(n)$;
+    \item Calcola il numero intero $u_2 = f^{-1}r$ mod$(n)$;
+    \item Calcola il punto $P = u_1G + u_2H_A$.
+\end{enumerate}
+La firma $F$ viene quindi ritenuta valida se l'uguaglianza $r = x_P $ mod$(n)$ viene rispettata.
+\\
+Possiamo verificare la correttezza dell'algoritmo partendo dal punto $P$ e procedendo come segue:
+\begin{align*}
+    P &= u_1G + u_2H_A, &\text{ sostituiamo } H_A = d_AG\\
+    &= u_1G + u_2d_AG, &\text{ raggruppiamo secondo G }\\
+    &= (u_1 + u_2d_A)G, &\text{ sostituiamo } u_1 = f^{-1}T \text{ mod$(n)$, } u_2 = f^{-1}r\text{ mod$(n)$}\\
+    &= (f^{-1}T + f^{-1}r \cdot d_A)G, &\text{ raggruppiamo secondo } f^{-1}\\
+    &= f^{-1}(T + r \cdot d_A)G
+\end{align*}
+L'omissione, a sinistra, del "mod$(n)$" \`e volontaria in quanto $G$ ha cardinalit\`a $n$ per cui il risultato non cambia rendendo "mod$(n)$" superfluo.
+\\
+L'ultimo passo da fare \`e considerare la struttura di $f^{-1}$ ovvero $f = k^{-1} (T+rd_A)$ dalla quale troviamo che $k = f^{-1} (T+rd_A)$ per cui:
+\begin{align*}
+    P &= f^{-1}(T + r \cdot d_A)G, &\text{ sostituiamo quindi } k = f^{-1} (T+rd_A)
+    &= kG
+\end{align*}
+Il valore trovato corrisponde a quello calcolato in fase di generazione della firma, come si pu\`o notare dal passo 2, per cui l'algoritmo funziona correttamente e l'autenticit\`a di Alice \`e confermata.
+\\
+\\
+Tutti questi calcoli sono costruiti a partire dal segreto $k$ rendendolo molto importante per il corretto funzionamento dell'algoritmo. L'uso di un segreto $k$ statico induce l'indebolimento dell'algoritmo: la PlayStation3 legge solo giochi firmati con crittografia ECDSA e $k$ statico rendendo facile calcolare la chiave privata $d_S$ della Sony semplicemente avendo a disposizione due giochi firmati. Il procedimento \`e il seguente:
+Rappresentiamo ciascun gioco con la tripla $(T, r, f)$,
+\begin{align*}
+     &r_1 = r_2 &\text{ in quanto $r = x_P = kx_G$}\\
+     &f_1 - f_2 = k^{-1} [T_1+r_1d_S - (T_2 + r_2d_S)] &\text{ dalla $f = k^{-1} (T+rd_S)$}\\
+     &f_1 - f_2 = k^{-1} (T_1 - T_2)  \text{ mod$(n)$} &\text{ $r_1d_S$ e $-r_2d_S$ si sono semplificati}\\
+     &k= (T_1 - T_2)(f_1 - f_2)^{-1} \text{ mod$(n)$}
+\end{align*}
+Siamo quindi giunti a calcolare il valore di $k$ a partire dai due hash $T$ e dai solo valori firmati $f$. Per estrarre quindi la chiave privata $d_S$ della Sony basta partire dall'equazione
+\\
+$s = k^{-1}(T+rd_S)$ mod$(n)$ $to$ $d_S = r^{-1}(fk-T)$ mod$(n)$
+\\
+Allo stesso modo \`e possibile calcolare chiavi private $d$ se il segreto $k$ \`e costruito in modo prevedibile.
 
 
 
 
+
+
+
+\chapter{Attacchi alle EC - Come scegliere la giusta curva}
+1 - file:/.../TESI - ATTACCHI ALLE EC.pdf
 %
 %
 %
