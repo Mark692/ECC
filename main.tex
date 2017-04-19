@@ -11,6 +11,13 @@
 \usepackage{subfigure}
 \usepackage{graphicx}
 \usepackage{amssymb}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\usepackage{multicol}
+\usepackage{fixmath}
+\newcommand\ddfrac[2]{\frac{\displaystyle #1}{\displaystyle #2}}
+\usepackage[export]{adjustbox}
 \graphicspath{ {Images/} }
 
 
@@ -168,7 +175,7 @@ Parliamo di variet\`a proiettiva quando ci riferiamo ad una sottovariet\`a di un
 \newline
 Una curva proiettiva piana \`e il luogo degli zeri di un insieme di polinomi omogenei irriducibili in tre incognite. La curva proiettiva $y^2 = x^3 -x$ nello spazio affine di dimensione 2, ha associata l'equazione polinomiale omogenea cubica $y^2z = x^3 - xz^2$ che definisce una curva nello spazio proiettivo $\mathbb{P}^2$ come \textit{Curva Ellittica}. 
 \newline
-Introduciamo infine la formula \textit{genere-grado} che lega il grado $d$ di una curva piana $C \subset \mathbb{P}^2$ con il genere geometrico $g = \frac{1}{2} (d-1)(d-2)$.
+Introduciamo infine la formula \textit{genere-grado} che lega il grado $d$ di una curva piana $C \subset \mathbb{P}^2$ con il genere geometrico $g = \ddfrac{1}{2} (d-1)(d-2)$.
 \newline
 Si deduce che per la curva sopra descritta abbiamo grado $d = 3$ e quindi genere $g = 1$.
 \newline\newline
@@ -219,33 +226,33 @@ La forma affine estesa \`e ottenuta impostando $Z=1$:
 \begin{gather}
 Y^{2} + a_1XY + a_3Y =X^3 + a_2X^2 + a_4X + a_6
 \end{gather}
-Tramite due cambi di variabili otteniamo la forma breve della curva: lavoriamo dapprima sul membro di sinistra ed applichiamo la trasformazione $y = Y - \frac{a_1X + a_3}{2}$
+Tramite due cambi di variabili otteniamo la forma breve della curva: lavoriamo dapprima sul membro di sinistra ed applichiamo la trasformazione $y = Y - \ddfrac{a_1X + a_3}{2}$
 \begin{align*}
 &Y^{2} + a_1XY + a_3Y  
 \\ 
-&= \left ( y - \frac{a_1}{2}X - \frac{a_3}{2} \right )^2 + a_1X \left ( y - \frac{a_1}{2}X - \frac{a_3}{2} \right ) + a_3 \left ( y - \frac{a_1}{2}X - \frac{a_3}{2} \right ) 
+&= \left ( y - \ddfrac{a_1}{2}X - \ddfrac{a_3}{2} \right )^2 + a_1X \left ( y - \ddfrac{a_1}{2}X - \ddfrac{a_3}{2} \right ) + a_3 \left ( y - \ddfrac{a_1}{2}X - \ddfrac{a_3}{2} \right ) 
 \\
-%= y^2 -a_1Xy -a_3y + \frac{{a_1}^2}{4}X^2 +\frac{a_1a_3}{2}X + \frac{{a_3}^2}{4} + a_1Xy - \frac{{a_1}^2}{2}X^2 - \frac{a_1a_3}{2}X + a_3y - \frac{a_1a_3}{2}X - \frac{{a_3}^2}{2} 
+%= y^2 -a_1Xy -a_3y + \ddfrac{{a_1}^2}{4}X^2 +\ddfrac{a_1a_3}{2}X + \ddfrac{{a_3}^2}{4} + a_1Xy - \ddfrac{{a_1}^2}{2}X^2 - \ddfrac{a_1a_3}{2}X + a_3y - \ddfrac{a_1a_3}{2}X - \ddfrac{{a_3}^2}{2} 
 %\\
-&= y^2 + \frac{a_1^2}{2}X^2 - \frac{a_1a_3}{2}X +\frac{a_3^2}{2} 
+&= y^2 + \ddfrac{a_1^2}{2}X^2 - \ddfrac{a_1a_3}{2}X +\ddfrac{a_3^2}{2} 
 \end{align*}
 \\
 Portiamo quindi i termini in $X$ al membro destro dell'equazione e semplifichiamo i termini simili
 \begin{align*}
-y^2 &= - \left ( \frac{{a_1}^2}{2}X^2 - \frac{a_1a_3}{2}X +\frac{{a_3}^2}{2} \right ) + X^3 + a_2X^2 + a_4X + a_6
+y^2 &= - \left ( \ddfrac{{a_1}^2}{2}X^2 - \ddfrac{a_1a_3}{2}X +\ddfrac{{a_3}^2}{2} \right ) + X^3 + a_2X^2 + a_4X + a_6
 \\
 &= X^3 + AX^2 + BX + C 
 \end{align*}
-dove abbiamo $A = a_2 - \frac{{a_1}^2}{2}$, $B = a_4 + \frac{a_1a_3}{2}$ e $C = a_6 - \frac{{a_3}^2}{2}$.
-Applichiamo quindi il secondo cambio di variabile $x = X - \frac{A}{3}$, il secondo membro diventa:
+dove abbiamo $A = a_2 - \ddfrac{{a_1}^2}{2}$, $B = a_4 + \ddfrac{a_1a_3}{2}$ e $C = a_6 - \ddfrac{{a_3}^2}{2}$.
+Applichiamo quindi il secondo cambio di variabile $x = X - \ddfrac{A}{3}$, il secondo membro diventa:
 \begin{align*}
 &X^3 + AX^2 + BX + C 
 \\
-&=\left(x- \frac{A}{3} \right )^3 +A\left ( x - \frac{A}{3} \right )^2 + B\left (x - \frac{A}{3} \right )^3 +C
+&=\left(x- \ddfrac{A}{3} \right )^3 +A\left ( x - \ddfrac{A}{3} \right )^2 + B\left (x - \ddfrac{A}{3} \right )^3 +C
 \\
-&= x^3-Ax^2 + \frac{A^2}{3}x - \frac{A^3}{27} + Ax^2 + - \frac{A^3}{9} -\frac{2}{3}A^2x + Bx - \frac{AB}{3} +C
+&= x^3-Ax^2 + \ddfrac{A^2}{3}x - \ddfrac{A^3}{27} + Ax^2 + - \ddfrac{A^3}{9} -\ddfrac{2}{3}A^2x + Bx - \ddfrac{AB}{3} +C
 \\
-&= x^3 + (B-A^2)x + \frac{2A^3-9AB+27C}{27}
+&= x^3 + (B-A^2)x + \ddfrac{2A^3-9AB+27C}{27}
 \\
 &= x^3 + ax+b
 \end{align*}
@@ -261,21 +268,28 @@ y^2 = x^3 + ax+b\\
 4a^3 \ne 27b^2\end{cases}
 \bigcup $ $\{O\}$.\\
 \end{center}
-\textbf{Dimostrazione $4a^3 \ne 27b^2$}: La condizione da imporre per una curva liscia \`e la derivabilit\`a in ogni punto della curva, va quindi rispettata la relazione $\frac{d}{dx}C(x) \ne 0 \forall x \in C$ dove $C$ \`e l'equazione della nostra curva. Applicando la derivata:\\
-$\frac{d}{dx}y^2 = \frac{d}{dx}(x^3 +Ax+B)$\\
-$0 = 3x^2 +A$\\
-$x^2 = -\frac{A}{3}$\\
-Applichiamo ora la $x^2$ al termine destro dell'equazione breve moltiplicato per $x$, ovvero:\\
-$x^4 + Ax^2+Bx = 0$ \\
-$(-\frac{A}{3})^2 + A(-\frac{A}{3})+Bx = 0$\\
-$(\frac{A^2}{9})^2 - \frac{A^2}{3}+Bx = 0$\\
-$x = \frac{2A^2}{9B}$\\
-Il valore trovato pu\`o ora essere applicato alla derivata in $dx$ trovata prima:\\
-$0 = 3x^2 +A$\\
-$0 = 3(\frac{2A^2}{9B})^2 +A = \frac{4A^4}{27B^2} +A $\\
-Dividendo per $A$ otteniamo finalmente:\\
-$0 = \frac{4A^3}{27B^2} +1 = 4A^3+27B$\\
-Pi\`u chiaramente abbiamo che la derivata si annulla per $4A^3+27B = 0$. Questo dimostra la tesi iniziale.\\
+\textbf{Dimostrazione $4a^3 \ne 27b^2$}: La condizione da imporre per una curva liscia \`e la derivabilit\`a in ogni punto della curva, va quindi rispettata la relazione $\ddfrac{d}{dx}C(x) \ne 0 \forall x \in C$ dove $C$ \`e l'equazione della nostra curva.
+\begin{align*}
+&y^2 = x^3 + ax+b &\text{Applichiamo la derivata in $x$}\\
+&\ddfrac{d}{dx}y^2 = \ddfrac{d}{dx}(x^3 +Ax+B)\\
+&0 = 3x^2 +A\\
+&x^2 = -\ddfrac{A}{3}\\
+\\
+&\text{Riprendiamo l'equazione iniziale}\\
+&y^2 = x^3 + ax+b &\text{Consideriamo $y=0$}\\
+&x^3 + ax+b = 0 &\text{Moltiplichiamo per $x$}\\
+&x^4 + Ax^2+Bx = 0 &\text{Applichiamo la $x^2$ trovata prima}\\
+&(-\ddfrac{A}{3})^2 + A(-\ddfrac{A}{3})+Bx = 0 &\text{Semplifichiamo}\\
+&(\ddfrac{A^2}{9})^2 - \ddfrac{A^2}{3}+Bx = 0 &\text{Troviamo quindi la $x$}\\
+&x = \ddfrac{2A^2}{9B}
+&\text{Applichiamola alla derivata in $x$}\\
+\\
+&0 = 3x^2 +A\\
+&0 = 3(\ddfrac{2A^2}{9B})^2 +A = \ddfrac{4A^4}{27B^2} +A &\text{Dividiamo per $A$}\\
+&0 = \ddfrac{4A^3}{27B^2} +1 &\text{Otteniamo dunque}\\
+&4A^3+27B = 0 &\text{c.v.d.}
+\end{align*}
+La derivata si annulla per $4A^3+27B = 0$ dimostrando la tesi iniziale.\\
 \\
 La curva ellittica nel piano proiettivo ha un singolo punto all'infinito $O$ avente coordinate omogenee $[0:1:0]$, tale punto costituisce l'elemento identit\`a del gruppo. Inoltre la curva \`e simmetrica rispetto l'asse $x$, per ogni punto $P$ possiamo trovare $-P$ sulla curva al punto opposto rispetto l'asse di simmetria. Per convenzione il punto all'infinito $-O$ viene considerato semplicemente come $O$.\\
 \`E possibile affermare che le curve ellittiche formano un Gruppo date le seguenti affermazioni:
@@ -288,34 +302,41 @@ La curva ellittica nel piano proiettivo ha un singolo punto all'infinito $O$ ave
 Quest'ultima affermazione resta valida dati tre punti allineati qualsiasi, senza pesare sul loro ordine. Questo ci porta ad affermare che se $A$, $B$ e $C$ sono tre punti allineati allora:\\
 $A+(B+C)=B+(A+C)=C+(A+B)=C+(B+A)=\cdots = 0$\\
 dimostrando intuitivamente che l'operatore \textit{somma} "$+$" \`e sia associativo che commutativo. Il gruppo definito da una curva ellittica \`e quindi un gruppo abeliano.
-\begin{center}
-\includegraphics[scale=0.8]{Curvabase2}
-\\
-Tipica rappresentazione di una curva ellittica
-%\includegraphics[scale=0.7]{EC16a+21mod23}
-\\
-%Rappresentazione della curva $y^2 = x^3 + 16x + 21$
-\end{center}
+\begin{figure}[ht]
+    \includegraphics[width=.8\textwidth,center]{commonEC}
+    \caption{Tipiche rappresentazioni di curve ellittiche}
+\end{figure}
 \begin{center}
 \textbf{Point Addition}
 \end{center}
 Con il termine "Point Addition" si fa riferimento alla somma di due punti sulla curva costituisce la legge di gruppo per le curve ellittiche e viene definita come segue: 
 \\
 Dati due punti distinti $K$-razionali $A$ e $B$ sulla curva possiamo definire in modo univoco un terzo punto $C(x_C, y_C)$ dato dall'intersezione della retta passante per $A$ e $B$ e la curva. Il punto opposto $-C(x_C, -y_C)$ rappresenta la somma dei due punti: $A + B = B+ A = -C$. Il risultato dell'equazione $A+B+C = 0$ \`e il punto all'infinito. Il motivo di tale risultato \`e che la curva ellittica ha un singolo punto all'infinito il quale \`e un punto di flesso. Si pu\`o aggiungere che la linea all'infinito incontrer\`a una sola volta la curva, precisamente nel punto all'infinito, quindi tale punto determina un'intersezione di molteplicit\`a tre.
-\begin{center}
-\includegraphics[scale=0.7]{PointAdditionA+Bbn}
-\end{center}
+\begin{figure}[ht]
+    \includegraphics[width=.75\textwidth,center]{PA_P+Q}
+    \caption{Curva $y^2 = x^3-7x+10$, $P=(1, 2)$}
+\end{figure}
+
 Esistono per\`o dei casi particolari:
 \begin{enumerate}
+    \item Somma di due punti simmetrici (opposti) tra loro $P$ e $Q = -P$. 
+    \\
+    Tramite il metodo della Point Addition si costruisce una retta per i due punti che risulta parallela all'asse y che andr\`a ad intersecare il punto all'infinito $O$. Definiamo quindi $P + Q = P+(-P) = O$,
+    \begin{figure}[ht]
+        \includegraphics[width=.6\textwidth,center]{P+(-P)}
+        \caption{Curva $y^2 = x^3-7x+10$, $P=(1, 2)$}
+    \end{figure}
     \item Somma di un punto $P$ ed il punto all'infinito $O$. 
-    \\
+    \\ 
+    La retta che unisce il punto $P$ ed il punto $O$ interseca la curva in un punto $Q = -P$, calcolando il punto $-Q$ otteniamo il risultato cercato ovvero $-(-Q) = P$.
     Ricordando che il punto $O$ viene trattato come elemento identit\`a del gruppo possiamo scrivere $P+O = O+P = P$,
-    \item Somma di due punti simmetrici (opposti) tra loro $P + (-P)$. 
-    \\
-    Tramite il metodo del Point Addition si costruisce una retta per i due punti che risulta parallela all'asse y che andr\`a ad intersecare il punto all'infinito $O$. Definiamo quindi $P + (-P) = O$,
     \item Somma di un punto $P$ e se stesso. 
     \\
     Non avendo due punti distinti non \`e possibile tracciare la retta per i due punti; in questo caso si traccia la retta tangente alla curva nel punto $P$, viene quindi trovato un altro punto $-Q$ ed il suo simmetrico \`e il risultato cercato: $P + P = Q$,
+    \begin{figure}[ht]
+        \includegraphics[width=.6\textwidth,center]{PA_P+P}
+        \caption{Curva $y^2 = x^3-7x+10$, $P=Q=(-1, 4)$}
+    \end{figure}
     \item Caso particolare: sommiamo $P+P$ ma tale punto \`e un flesso per la curva. 
     \\
     In un punto di flesso la concavit\`a della curva cambia ed in ogni curva ellittica esistono esattamente 9 punti di flesso. In questo caso consideriamo il secondo punto $Q =P$ e la somma finale viene ad essere $-P$, l'opposto del punto iniziale.
@@ -323,7 +344,7 @@ Esistono per\`o dei casi particolari:
 Il calcolo del punto $C = A + B$ \`e dato per costruzione geometrica della retta $r$ passante per i punti $A(x_A, y_A)$ e $B(x_B, y_B)$. Detto $m$ il coefficiente angolare della retta $r_{AB}$, le coordinate del punto $C(x_C, y_C) = -(P+Q)$ saranno date dalle seguenti formule:
 \begin{align*}
 \begin{cases}
-m = \frac{y_A - y_B}{x_A - x_B}\\
+m = \ddfrac{y_A - y_B}{x_A - x_B}\\
 x_C = m^2 - (x_A + x_B)\\
 y_C = m(x_A - x_C)-y_A
 \end{cases}
@@ -340,17 +361,17 @@ Come gi\`a visto, se vale $x_A = x_B$ abbiamo dei casi particolari per cui se $y
 L'operazione del Point Doubling permette di sommare un punto a se stesso, se la sua ordinata $y$ \`e diversa da zero, ed ottenere un secondo punto sulla curva. Dato un punto $A(x_A, y_A)$ con $y_A \ne 0$ sommare $A+A$ equivale a trovare il punto $B = -(A+A) = -2A$. Quella che nel Point Addition era una retta per due punti diventa ora la tangente alla curva $y^2 = x^3 + ax +b$ nel punto $A$. La motivazione che ci porta ad usare la retta tangente alla curva viene dalla considerazione che presi due punti $P$ e $Q$ della curva, man mano che $Q$ si avvicina a $P$ pi\`u la curva tra i due punti tende a diventare la tangente. Le equazioni che permettono il calcolo del punto $B$ sono:
 \begin{align*}
 \begin{cases}
-m = \frac{3{x_A}^2 + a}{2y_A}\\
+m = \ddfrac{3{x_A}^2 + a}{2y_A}\\
 x_C = m^2 - 2x_A\\
 y_C = m(x_A - x_C)-y_A
 \end{cases}
 \end{align*}
 Si noti come il coefficiente angolare $m$ dipenda non solo dalle coordinate di $A$ ma anche dal coefficiente $a$ presente nell'equazione della curva. Tale formulazione discende dalla derivata prima dell'equazione della curva per cui si ha:
-$\frac{d}{dx}y^2 = \frac{d}{dx}x^3 + ax + b$\\
-$2y\frac{d}{dx} = 3x^2 + a$\\
-$m = \frac{d}{dx} = \frac{3x^2 + a}{2y}$
-\\
-\\
+\begin{align*}
+\ddfrac{d}{dx}y^2 &= \ddfrac{d}{dx}x^3 + ax + b\\
+2y\ddfrac{d}{dx} &= 3x^2 + a\\
+m = \ddfrac{d}{dx} &= \ddfrac{3x^2 + a}{2y}
+\end{align*}
 Quanto detto finora si applica a curve ellittiche nel campo dei numeri reali $\mathbb{R}$, tuttavia possiamo estendere il discorso ai numeri razionali $\mathbb{Q}$ in quanto definiti sul campo dei reali. La legge di gruppo (Point Addition) tra punti con coordinate reali si applica anche al campo $\mathbb{Q}$; le formule usate mostrano che la somma di due punti $A, B \in \mathbb{Q}$ comporta $C = A + B, \to C \in \mathbb{Q}$ dato che la retta $r_{AB}$ \`e a coefficienti razionali. In tal modo si dimostra che l'insieme di punti razionali della curva forma un sottogruppo del gruppo a punti reali. Essendo quest'ultimo un gruppo abeliano, tale sar\`a anche il sottogruppo dei numeri razionali; si conclude quindi che vale $C = A+B = B+A$.
 \\
 \\
@@ -372,29 +393,29 @@ che ci porta a delimitare la cardinalit\`a tra i valori
 \end{align*}
 Consideriamo degli esempi: per un campo $K$ di $q=4$ elementi abbiamo una curva $E$ con $1 \le cardE_K \le 9$, $q=16 \to 9 \le cardE_K \le 25$, $q=64 \to 33 \le cardE_K \le 97$, $q=256 \to 129 \le cardE_K \le 385$. \`E importante notare che il teorema usato resituisce la cardinalit\`a della curva includendo il punto all'infinito.
 Questi risultati ci portano ad affermare che il numero di elementi della curva \`e vicino al numero di elementi del campo. 
-\textit{Considerazioni personali}: per numeri $q$ quadrati perfetti si pu\`o semplificare la formula di Hasse in $ \frac{1}{2}q +1 \le cardE_K \le \frac{3}{2}q +1$. Questa formula \`e stata trovata dall'osservazione dei risultati degli esempi precedenti e messa a confronto con numeri "non quadrati perfetti" come ad esempio un numero primo. La formula mostrata fornisce una stima coerente con quella di Hasse per "quadrati" ma fornisce una stima peggiorativa in tutti gli altri casi. Esempio: $q=160$, per Hasse abbiamo $136 \le cardE_K \le 186$, per la formula ideata abbiamo $81 \le cardE_K \le 241$. 
+\\
+Una curva con cardinalit\`a pari ad un numero primo \`e detta "curva prima".
+\\
+\textit{Considerazioni personali}: per numeri $q$ quadrati perfetti si pu\`o semplificare la formula di Hasse in $ \ddfrac{1}{2}q +1 \le cardE_K \le \ddfrac{3}{2}q +1$. Questa formula \`e stata trovata dall'osservazione dei risultati degli esempi precedenti e messa a confronto con numeri "non quadrati perfetti" come ad esempio un numero primo. La formula mostrata fornisce una stima coerente con quella di Hasse per "quadrati" ma fornisce una stima peggiorativa in tutti gli altri casi. Esempio: $q=160$, per Hasse abbiamo $136 \le cardE_K \le 186$, per la formula ideata abbiamo $81 \le cardE_K \le 241$. 
 \\
 L'insieme di punti di $E$ per il campo dato $K_p$ \`e un gruppo abeliano finito, \`e inoltre un gruppo ciclico o il risultato di un prodotto tra due gruppi ciclici. Un esempio \`e dato dalla curva $y^2 = x^3 - x$ sul campo $K_{71} = \mathbb{Z}/2\mathbb{Z}\times\mathbb{Z}/36\mathbb{Z}$ che comprende un totale di 72 punti di cui 71 sono punti affini, incluso il punto $(0,0)$ ed uno \`e il punto all'infinito.
-Numerosi algoritmi permettono il calcolo preciso del numero di punti per una curva ellittica su un campo finito; ad esempio l'algoritmo di Schoof parte dal teorema di Hasse, definisce $t = q+1-cardE_K$ e si procede nel calcolare la cardinalit\`a di $t\%N$ (operazione modulo), dove $N > 4\sqrt{q}$, tramite il teorema cinese del resto. La complessit\`a di questo algoritmo \`e pari a $O(n^{5+o(1)})$.
+Numerosi algoritmi permettono il calcolo preciso del numero di punti per una curva ellittica su un campo finito; ad esempio l'algoritmo di Schoof parte dal teorema di Hasse, definisce $t = q+1-cardE_K$ e si procede nel calcolare la cardinalit\`a di "$t\%N$" (operazione modulo), dove $N > 4\sqrt{q}$, tramite il teorema cinese del resto. La complessit\`a di questo algoritmo \`e pari a $O(n^{5+o(1)})$.
 %Altri algoritmi
 %1 - https://en.wikipedia.org/wiki/Counting_points_on_elliptic_curves
 %2 - https://en.wikipedia.org/wiki/Elliptic_curve#Elliptic_curves_over_finite_fields
 %
-\\
-\\
+\begin{figure}[ht]
+    \includegraphics[width=.8\textwidth,center]{ECmodp}
+    \caption{Curva $y^2 = x^3-7x+10$ mod $(p)$, $p = \{19, 97, 127, 487\}$}
 \begin{center}
-\includegraphics[scale=0.8]{ECmodp}\\
-Le immagini mostrano la stessa curva $y^2=x^3-7x+10$ mod $(p)$ con \\
-$p = \{19, 97, 127, 487\}$.\\
-Si noti inoltre come l'asse di simmetria non sia pi\`u per $y=0$ ma diventa $y=p\big / 2$
+\textbf{L'asse di simmetria} non \`e pi\`u $y=0$ ma \textbf{diventa} $\mathbold{y=p\big / 2}$
 \end{center}
-Risulta evidente che la curva abbia perso la sua tipica forma e di come sia composta di soli punti sparsi sul piano $xy$. Le operazioni studiate precedentemente non cambiano nonostante ci troviamo in presenza di un campo modulare. Le rette usate per la Point Addition e la Point Doubling non sono cambiate concettualmente, ma una differenza grafica notevole \`e che trovandoci in un campo modulare $p$ sono permesse coordinate con valori compresi tra $0$ e $p-1$, quei punti che escono fuori da questo intervallo vengono riportati in modulo $p$ sul grafico, lo stesso concetto si applica alla retta per cui viene ripetuta ciclicamente:
-\begin{center}
-\includegraphics[scale=0.65]{ECmodRetta}\\
-Curva $y^2=x^3-x+3$ mod$(127)$\\
-Punti $P = (16, 20)$, $Q=(41, 120)$, $R = -(P+Q) = (86, 81)$\\
-Cardinalit\`a: 111 elementi
-\end{center}
+\end{figure}
+Risulta evidente che la curva abbia perso la sua tipica forma e di come sia composta di soli punti sparsi sul piano $xy$. Le operazioni studiate precedentemente non cambiano nonostante ci troviamo in presenza di un campo modulare. Le rette usate per la Point Addition e la Point Doubling non sono cambiate concettualmente, ma una differenza grafica notevole \`e che trovandoci in un campo modulare $p$ sono permesse coordinate con valori compresi tra $0$ e $p-1$, quei punti che escono fuori da questo intervallo vengono riportati in modulo $p$ sul grafico, lo stesso concetto si applica alla retta per cui viene ripetuta ciclicamente
+\begin{figure}[ht]
+    \includegraphics[width=.6\textwidth,center]{ECmodRetta}
+    \caption{Curva $y^2=x^3-x+3$ mod$(127)$, punti $P = (16, 20)$, $Q=(41, 120)$, $R = -(P+Q) = (86, 81)$ Cardinalit\`a: 111 elementi}
+\end{figure}
 Quanto velocemente riusciamo a calcolare il punto $nP$? Poniamo il caso di dover calcolare $n=100$, tramite ripetute Point Addition abbiamo il punto $P$ di innesco e dobbiamo computare i successivi 99 punti per trovare $100P$ per un totale di $n-1$ addizioni. Velocizzare questo risultato diventa davvero facile se pensiamo di usare un insieme di Point Addition (Add) e Point Doubling (Double): $n=1 \to A$, Double $\to n=2$, Add $\to n=3$, Double $\to n=6$, Double $\to n=12$, Double $\to n=24$, Add $\to n=25$, Double $\to n=50$ ed infine Double $n=100$ per un totale di 8 operazioni (6 Point Doubling e 2 Point Addition). Abbiamo ridotto notevolmente il numero di operazioni necessarie per raggiungere il coefficiente $n$. 
 \\
 L'uso di una notazione base $B$ aiuta a trovare un algoritmo efficiente per questi calcoli; partiamo dal considerare $100_{10} = 1100100_2 = d_6d_5d_4d_3d_2d_1d_0$ ed usiamo il seguente algoritmo: scorriamo il numero in base $B=2$ da sinistra verso destra ed usiamo l'operazione Point Doubling, nel caso di dover calcolare un $1$ facciamo seguire una Point Addition. 
@@ -421,7 +442,7 @@ Data la curva $E: y^2 = x^3 +2x +2$ mod$(17)$ e dato il punto $A(5, 1)$, usiamo 
 I dati che ci servono sono $a = 2$, coefficiente di $x$ nella curva, e le coordinate del punto $A$; passiamo alle formule:
 \\
 \\
-$m = \frac{3{x_A}^2 + a}{2y_A}= \frac{3 \cdot 5^2 + 2}{2 \cdot 1} = \frac{9}{2} \text{ mod}17= 9 \cdot 9 \text{ mod}17 = 13\text{ mod}17\\
+$m = \ddfrac{3{x_A}^2 + a}{2y_A}= \ddfrac{3 \cdot 5^2 + 2}{2 \cdot 1} = \ddfrac{9}{2} \text{ mod}17= 9 \cdot 9 \text{ mod}17 = 13\text{ mod}17\\
 x_C = m^2 - 2x_A= 13^2 - (2 \cdot 5) = 169\text{ mod}17 = 6 \text{ mod}17\\
 y_C = m(x_A - x_C)-y_A= m(5 - 6)-1 = -14\text{ mod}17 = 3\text{ mod}17
 $
@@ -631,19 +652,228 @@ L'ultimo passo da fare \`e considerare la struttura di $f^{-1}$ ovvero $f = k^{-
 Il valore trovato corrisponde a quello calcolato in fase di generazione della firma, come si pu\`o notare dal passo 2, per cui l'algoritmo funziona correttamente e l'autenticit\`a di Alice \`e confermata.
 \\
 \\
-Tutti questi calcoli sono costruiti a partire dal segreto $k$ rendendolo molto importante per il corretto funzionamento dell'algoritmo. L'uso di un segreto $k$ statico induce l'indebolimento dell'algoritmo: la PlayStation3 legge solo giochi firmati con crittografia ECDSA e $k$ statico rendendo facile calcolare la chiave privata $d_S$ della Sony semplicemente avendo a disposizione due giochi firmati. Il procedimento \`e il seguente:
-Rappresentiamo ciascun gioco con la tripla $(T, r, f)$,
+Tutti questi calcoli sono costruiti a partire dal segreto $k$ rendendolo molto importante per il corretto funzionamento dell'algoritmo. L'uso di un segreto $k$ statico induce l'indebolimento dell'algoritmo: la PlayStation3 legge solo giochi firmati con crittografia ECDSA e $k$ statico rendendo facile calcolare la chiave privata $d_S$ della Sony semplicemente avendo a disposizione due giochi firmati. Potendo rappresentare ciascun gioco con la tripla $(T, r, f)$, il procedimento per trovare la chiave privata $d_S$ della Sony \`e il seguente
 \begin{align*}
      &r_1 = r_2 &\text{ in quanto $r = x_P = kx_G$}\\
      &f_1 - f_2 = k^{-1} [T_1+r_1d_S - (T_2 + r_2d_S)] &\text{ dalla $f = k^{-1} (T+rd_S)$}\\
      &f_1 - f_2 = k^{-1} (T_1 - T_2)  \text{ mod$(n)$} &\text{ $r_1d_S$ e $-r_2d_S$ si sono semplificati}\\
      &k= (T_1 - T_2)(f_1 - f_2)^{-1} \text{ mod$(n)$}
 \end{align*}
-Siamo quindi giunti a calcolare il valore di $k$ a partire dai due hash $T$ e dai solo valori firmati $f$. Per estrarre quindi la chiave privata $d_S$ della Sony basta partire dall'equazione
-\\
-$s = k^{-1}(T+rd_S)$ mod$(n)$ $to$ $d_S = r^{-1}(fk-T)$ mod$(n)$
-\\
+Siamo quindi giunti a calcolare il valore di $k$ a partire dai due hash $T$ e dai loro valori firmati $f$. Per estrarre quindi la chiave $d_S$ basta partire dall'equazione
+\begin{align*}
+     f &= k^{-1}(T+rd_S) \text{mod}(n) &\text{e ricavare la } d_S\\
+     d_S &= r^{-1}(fk-T) \text{mod}(n) 
+\end{align*}
 Allo stesso modo \`e possibile calcolare chiavi private $d$ se il segreto $k$ \`e costruito in modo prevedibile.
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+\chapter{Attacchi alle EC}
+Rompere la sicurezza delle curve ellittiche significa risolvere il Problema del Logaritmo Discreto ovvero: dati due punti $P$ e $Q$ di una curva ellittica definiti come $Q = xP$, dobbiamo riuscire a calcolare $x$. Un ulteriore dato necessario da ricordare \`e il punto generatore $G$ di un sottogruppo con cardinalit\`a $n$.
+\\
+\begin{center}
+    \textbf{1. Baby Step, Giant Step}
+\end{center}
+L'idea dell'algoritmo si basa sulla considerazione che il numero cercato $x$ possa essere visto come somma di altri interi, infatti possiamo dire che $x = am+b$, $a, b, m \in \mathbb{Z}$ sono tre numeri interi arbitrari. Se $x$ fosse pari a 51 allora $x = 51 = 5 \cdot 10 + 1$. \`E quindi lecito scrivere:
+\begin{align*}
+    Q &= xP &\text{ Sostituiamo ora }x = am+b\\
+    Q &= (am+b)P &\text{ Portiamo fuori dalle parentesi }\\
+    Q &= amP+bP &\text{ Quindi portiamo a sinistra il termine }amP\\
+    Q -amP &= bP
+\end{align*}
+Abbiamo trovato quindi due termini che possiamo calcolare allo stesso tempo e confrontare i risultati ottenuti; calcoliamo quindi i seguenti valori:
+\begin{align*}
+    &m = \ceil{\sqrt{n}} &\text{Arrotondato per eccesso}\\
+    &bP \text{ }\forall b \in [0, m] &\text{Salviamo il risultato in una tabella di hash}\\
+    &Q -amP \text{ }\forall a \in [0, m-1] &\text{Ripetere finch\`e } Q -amP \ne bP
+\end{align*}
+Quando usciamo dall'algoritmo possiamo dire di aver trovato la $x = am+b$ in quanto si \`e verificata l'uguaglianza $Q -amP = bP$.
+\\
+Il nome dell'algoritmo deriva dal fatto che vengono fatti piccoli passi (Baby Step) nei calcoli di $bP$ e grandi passi (Giant Step) quando calcoliamo $Q-amP$. Inoltre perch\`e abbiamo definito $m = \sqrt{n}$? La spiegazione si trova osservando che stiamo cercando di risolvere l'equazione $Q = amP+bP$ e quindi:\\
+\\
+$\begin{cases}
+    a = 0 \to Q=amP+bP=0P+bP=bP \Rightarrow & [0P, \ldots, mP]\\
+    a = 1 \to Q=amP+bP=mP+bP \Rightarrow & [mP, \ldots, 2mP]\\
+    a = 2 \to Q=amP+bP=2mP+bP \Rightarrow & [2mP, \ldots, 3mP]\\
+    \ldots\\
+    a = m-1 \to Q=amP+bP=(m-1)mP+bP \Rightarrow & [(m-1)mP, \ldots, m^2P]
+\end{cases}$
+\\
+\\
+Essendo vero che $m^2P=nP$ \`e evidente che abbiamo cercato in tutti i valori possibili ma con un numero contenuto di operazioni: esattamente $m$ moltiplicazioni per trovare tutti i $bP$ ed un massimo di altre $m$ operazioni per il confronto con $Q-amP$; l'algoritmo ha quindi una complessit\`a di tempo e spazio pari a $O(\sqrt{n})$.
+\\
+Abbiamo un netto miglioramento di prestazioni se paragonato ad un attacco Brute Force, tuttavia la sua applicazione resta resta ancora difficile; l'approccio usato dal BabyStep-GiantStep si basa su un tipo di attacco chiamato "meet-in-the-middle" in quanto prima dividiamo il problema in due parti e procediamo computando le due parti fino a trovarci "nel mezzo" del problema. Una curva standardizzata come secp192r1 presenta cardinalit\`a $n = $ 0x\textit{FFFFFFFF FFFFFFFF FFFFFFFF 99DEF836 146BC9B1 B4D22831}, il numero di operazioni sar\`a $m = \sqrt{n} \approx 7.9 \cdot 10^{28}$. La tabella di hash deve contenere dei punti di 32 bytes complessivi per un utilizzo di $32 \cdot 7.9\cdot 10^{28} \approx 2.5 \cdot 10^{30}$ bytes di memoria, un valore troppo grande da memorizzare.
+\\
+\begin{center}
+    \textbf{2. La $\mathbold{\rho}$ di Pollard}
+\end{center}
+Un altro algoritmo per la risoluzione del Problema del Logaritmo Discreto \`e la $\rho$ di Pollard che presenta la stessa complessit\`a di tempo $O(\sqrt{n})$ del BSGS ma una complessit\`a di spazio pari a $O(1)$. Il problema consiste ora nel risolvere la forma $aP + bQ = AP + BQ$ dove $a$, $b$, $A$, $B$ sono numeri interi. Cerchiamo quindi di semplificare l'equazione:
+\begin{align*}
+    aP + bQ &= AP + BQ &\text{Sostituiamo il punto }Q = xP\\
+    aP + bxP &= AP + BxP &\text{Portiamo a sinistra $AP$ ed a destra $bxP$}\\
+    aP -AP &= BxP -bxP &\text{Raccogliamo il punto }P\\
+    (a -A)P &= (Bx -bx)P &\text{Raccogliamo la x a destra}\\
+    (a -A)P &= (B -b)xP &\text{Semplifichiamo $P$ ed aggiungiamo il mod$(n)$}\\
+    a -A &= (B -b)x\text{ mod$(n)$} &\text{Evidenziamo la x}\\
+    x &= (a -A)(B -b)^{-1}\text{ mod$(n)$}
+\end{align*}
+L'aggiunta del mod$(n)$ \`e dovuta al fatto che il sottogruppo considerato \`e ciclico di $n$ elementi totali, da questo deriva che anche i coefficienti usati nella Point Doubling/Addition sono considerati mod$(n)$.
+\\
+L'utilizzo di questa formula si basa sulla scelta di una \textbf{sequenza} di valori pseudo-casuali per la coppia $(a, b)$ con la quale generiamo la sequenza $aP+bQ$ e, dato che $P$ e $Q$ sono elementi di un gruppo ciclico, anche tutti i punti della sequenza $aP+bQ$ saranno ciclici. Questo ci porta a trovare un ciclo tale che le coppie $(a, b) \ne (A, B)$ conducano a $aP+bQ = AP+BQ$.
+\\
+Trovare il ciclo \`e un compito che possiamo svolgere con un algoritmo denominato "la Lepre e la Tartaruga": data la sequenza di $(a, b)$ calcoliamo la rispettiva sequenza di punti $aP+bQ$ e scorriamola a due velocit\`a differenti, la tartaruga T legger\`a ogni punto mentre la lepre L li legger\`a alternati, saltando un punto ad ogni passo. Confrontando i punti trovati da T ed L ad ogni passo arriviamo a trovare il ciclo cercato. Le operazioni necessarie richiedono complessit\`a spaziale $O($log$n)$ e temporale $O(\sqrt{n})$.
+\\
+Un'alternativa da non prendere in considerazione \`e quella di calcolare tutti i possibili valori per la coppia $(a, b)$ ovvero $n \cdot n = n^2$ coppie porta ad un costo di $O(n^2)$, non solo peggiore del BSGS ma addirittura di un attacco Brute Force.
+\\
+Per un esempio concreto dell'algoritmo $\rho$ di Pollard possiamo considerare un evento datato 2004 in cui Chris Monico riusc\`i a risolvere il Problema del Logaritmo Discreto su una curva di 109bit di lunghezza ed una versione migliorata dell'algoritmo della $\rho$ di Pollard. I calcoli effettuati da Monico hanno richiesto 17 mesi di tempo prima di risolvere il problema. 
+\\
+Possiamo fare stime su altre curve mediante una proporzione: con gli stessi strumenti di Monico, risolvere il logaritmo discreto per una curva a 192 bit con complessit\`a temporale $O(\sqrt{n})$ comporterebbe
+\begin{center}
+    $17$ mesi $\times \ddfrac{\sqrt{2^{192}}}{\sqrt{2^{109}}} = 17$ mesi $\times \sqrt{2^{83}} \approx 5 \cdot 10^{13}$ mesi\\
+\end{center}
+Nuove versioni di questo metodo portano ad un numero massimo di $\sqrt{\pi n \big / 4}$ operazioni risultando quindi nelle seguenti stime:
+\begin{align*}
+    &n& &\text{Operazioni}& &\text{Anni MIPS}&\\
+    &160& &2^{80}& &8.5 \cdot 10^{11}&\\
+    &192& &2^{96}& &5.6 \cdot 10^{16}&\\
+    &224& &2^{112}& &3.7 \cdot 10^{21}&\\
+    &256& &2^{128}& &2.4 \cdot 10^{26}&\\
+    &384& &2^{192}& &4.4 \cdot 10^{45}&\\
+    &521& &2^{260}& &1.3 \cdot 10^{66}&\\
+\end{align*}
+Nota su "Anni MIPS": La sigla MIPS indica "Million Instructions Per Second", gli anni MIPS corrispondono al tempo necessario ad un calcolatore per computare tutte le operazioni assegnate.
+\begin{center}
+    \textbf{3. L'algoritmo di Shor}
+\end{center}
+L'algoritmo di Shor \`e nato per calcolare i fattori primi di un dato numero N, in termini di curve ellittiche: trovare il pi\`u grande fattore primo di $n$. \`E un algoritmo quantistico in grado di risolvere logaritmi discreti con complessit\`a temporale $O(($log $n)^3)$ e spaziale $O($log $n)$. L'efficienza di tale algorimo risiede nello \textbf{stato di superposizione} dei qubits, l'unit\`a quantica che rappresenta i bit, nel quale i qubit non hanno uno stato definito funch\`e non misurati; in altre parole quando misuramo un qubits abbiamo una certa possibilit\`a di osservare uno $0$ ed un'altra di osservare un $1$. Gli algoritmi quantici, come quello di Shor, lavorano modificando la probabilit\`a di ciascun bit.
+\\
+Sulla base di questa probabilit\`a \`e possibile computare numerosi input contemporaneamente avendo un numero limitato di qubit. Applicando questi concetti al logaritmo discreto per una curva ellittica abbiamo la possibilit\`a di trovare un numero $x$ distribuito in modo ciclico (uniforme) tra $0$ ed $n-1$ utilizzando "\textbf{log }$n$" qubits invece di "$n$\textbf{ log }$n$" bits. Computare adesso il prodotto scalare $xP$ indurrebbe la superposizione per tutti i punti nell'intervallo $[0P, (n-1)P]$, misurare i qubits in questo momento ci farebbe ottenere uno di quei punti con probabilit\`a $1 \big / n$.
+\\
+L'algoritmo di Shor si basa quindi su questi concetti per calcolare $n$ stati alla volta, ridurli a pochi stati e quindi ottenere un \textbf{risultato unico} e non molti.
+%
+%
+\\
+\\
+\\
+\\1 - file:/.../TESI - ATTACCHI ALLE EC.pdf
+%
+%
+%
+%
+%
+%
+%
+%
+\chapter{Livelli di sicurezza}
+La sicurezza di una primitiva crittografica, algoritmo di basso livello sul quale costruire protocolli crittografici, si misura in base allo "\textit{sforzo per romperlo}". Se assumiamo che tale sforzo sia $2^k$ allora la primitiva offre una \textit{sicurezza a k-bit} e viene detta avere un \textbf{livello di sicurezza k}. Sistemi di crittografia simmetrica devono permettere una sicurezza di $k$-bit mediante una chiave della di $k$-bit; se questo principio non dovesse valere, il sistema non \`e da considerarsi "buono". Le funzioni di hash differiscono da quanto appena visto: un hash di lunghezza $l$ non pu\`o offrire pi\`u di $l \big / 2$ bit di sicurezza. 
+\\
+Conoscere il livello di sicurezza di una primitiva permette di rapportare e calcolare la sicurezza di algoritmi usati nella crittografia asimmetrica, come RSA e ECC, agli standard della crittografia simmetrica. Il tempo di computazione impiegato da RSA per generare la chiave pubblica pu\`o essere misurato mediante esperimenti oppure stimato: se fattorizzare un modulo da $n$-bit richiede un tempo $T_{RSA}$, il tempo richiesto per fattorizzare un modulo da $m$-bit (con $m>n$) \`e stimato come: 
+\begin{center}
+    $ \ddfrac{N(m)}{N(n)} \cdot T_{RSA}$, dove $N(k) = e^{1.923 \sqrt[3]{( \text{ln }2^k) \cdot ( \text{ln ln }2^k)^{2}}}$
+\end{center}
+Introduciamo gli algoritmi asimmetrici che fanno uso del logaritmo discreto: chiamiamo $G$ un gruppo di ordine $q$ tale che il tempo $T_{LD}$ per computare l'operazione di gruppo sia $T_{LD} = T_S \big / 2^c$, avendo indicato con $T_S$ il tempo richiesto da una applicazione di un sistema crittografico Simmetrico, ed avendo assunto che il parametro $c$ sia compreso nell'intervallo $0 \leq c \leq 10$. Risolvere il logaritmo discreto nel gruppo $G$ considerato offre "$c+log_2\sqrt{q}$"-bit di sicurezza. Ponendo il caso di una curva debole con $q$ pari ad un numero primo di 160 bit, il livello di sicurezza della curva assume il valore "$c+80$".
+\\
+\`E possibile riassumere i livelli di sicurezza nei seguenti casi
+\begin{enumerate}
+    \item Sistemi crittografici simmetrici: pari alla lunghezza della chiave;
+    \item Funzioni crittografiche di hash: pari a met\`a della lunghezza dell'hash;
+    \item RSA: piccola e decrescente frazione della lunghezza del modulo;
+    \item Logaritmo Discreto: pari alla met\`a di $n$ (che si ricorda essere il pi\`u grande numero primo divisore della cardinalit\`a del gruppo $G$).
+\end{enumerate}
+\includegraphics[scale=0.45]{RSAvECC}
+\\
+%\includegraphics[scale=0.55]{RSAvECCkeys}
+%Il minor numero di bit per ECC rende l'algoritmo molto pi\`u veloce di RSA sia per la generazione delle chiavi che per la firma digitale. Il problema del logaritmo discreto per le curve ellittiche viene risolto da algoritmi molto pi\`u lenti di quelli usati per RSA.
+L'importanza di chiavi "piccole" \`e fondamentale se consideriamo che moltiplicare due numeri molto grandi pu\`o causare una latenza eccessiva sui dispositivi meno performanti (come vecchi cellulari o tablet), al tempo stesso la sicurezza va aumentata con l'inevitabile aumento della lunghezza delle chiavi per RSA.
+\\
+L'ECC permette implementazioni sulle "\textbf{Smart Card}" per via della dimensione ridotta delle chiavi usate ed \`e l'unico sistema di crittografia possibile sulle carte \textbf{Contactless}: gli altri algoritmi richiedono troppa induzione di energia.
+\\
+Con ECC otteniamo risultati nettamente migliori di quelli offerti da RSA sia per la generazione di chiavi che per la firma digitale. 
+Test benchmark sul calcolo della chiave pubblica: confrontiamo ECC-160bit contro RSA-1024bit, ECC-192bit contro RSA-1536bit, ECC-224bit contro RSA-2048bit evidenziando quante chiavi vengono generate al secondo con relativo commento sulle performance tra gli algoritmi 
+\begin{align*}
+    &\textbf{ECC}& &\textbf{RSA}& &\textbf{$\mathbold{k_{ECC}}$/s}& &\textbf{$\mathbold{k_{RSA}}$/s}& &\textbf{Efficienza}& &\textbf{Rapporto Chiavi}&\\
+    &160& &1024& &271.3& &114.3& &2.4:1& &1:6.4&\\
+    &192& &1536& &268.5& &36.4& &7.4:1& &1:8&\\
+    &224& &2048& &195.5& &17.8& &21.4:1& &1:9.1&
+\end{align*}
+La notazione "\textbf{k/s}" intende esprimere la media di chiavi pubbliche generate al secondo.
+\\
+Test benchmark sulla firma digitale: usando un MacBook Pro ed OpenSSL 0.9.8 (versione non ottimizzata per ECDSA), generiamo firme ECDSA da 256bit e firme RSA da 2048bit; otteniamo i seguenti risultati
+\begin{align*}
+    &\textbf{ECC}& &\textbf{RSA}& &\textbf{$\mathbold{F_{ECC}}$/s}& &\textbf{$\mathbold{F_{RSA}}$/s}& &\textbf{Efficienza}& &\textbf{Rapporto Chiavi}&\\
+    &256& &2048& &4287.4& &186.4& &23:1& &1:4&
+\end{align*}
+%\begin{align*}
+%    &\text{Doing 256 bit sign ecdsa's for 10s:} &42874  %&\text{ 256 bit ECDSA signs in 9.99s}&\\
+%    &\text{Doing 2048 bit private rsa's for 10s:} &1864 %&\text{ 2048 bit private RSA's in 9.99s}&
+%\end{align*}
+La notazione "\textbf{F/s}" intende esprimere la media di firme generate al secondo.\\
+ECDSA risulta pi\`u di 20 volte pi\`u performante di RSA.
+\\
+\\
+\textbf{Sicurezza della chiave privata}
+\\
+Ogni chiave privata deve esser generata in modo da non poter essere indovinate da utenti malintenzionati, si fa uso di un "\textbf{RNG} - \textit{Random Number Generator}" basato su rigide specifiche. Un RNG conserva il suo stato "$\mathbold{s}$" e fornisce un output che deve essere il risultato di una \textit{funzione a senso unico} dello stato "${rnd = f(s)}$" per assicurare che non si possa risalire allo stato a partire dall'output. Inoltre tale stato dovrebbe esser aggiornato con una diversa funzione a senso unico tale da impedire predizioni sui valori futuri in caso di precedenti stati compromessi. Questa propriet\`a prende i nomi "\textit{Forward Secrecy}" o "\textit{Backtracking Resistance}". Riprendere il corretto funzionamento dopo uno stato di compromissione \`e possibile solo mediante l'inserimento di nuova entropia. Questa propriet\`a, detta "Prediction Resistance", \`e opzionale e viene utilizzata per applicazioni che richiedono un alto livello di sicurezza.
+\\
+Si determina che la sicurezza di un RNG \`e dipendente dalla \textit{probabilit\`a massima} ${P_{MAX}}$ di generare due volte uno stesso valore: per ottenere un livello di sicurezza di $\mathbold{k}$-bit dobbiamo avere $P_{MAX} \leq 2^{-k}$.
+%I generatori di numeri casuali aventi con $P_{MAX} = 2^{-k}$ vengono detti avere un'\textit{entropia minima} di $k$ bit. 
+Infine un sistema crittografico ha un livello di sicurezza massimo pari a quello dell'RNG utilizzato per generare le chiavi private.
+\\
+Un RNG per curve ellittiche prende l'acronimo "\textbf{Dual EC RNG}", calcola la chiave privata a partire dal punto generatore $G$ ed un punto $Q$ sulla curva. Parametri interni al DualECRNG sono: "$L$", numero di bit usati per calcolare i punti sulla curva, e "$B_i$", blocco $i$-esimo di output.
+\\
+A partire dallo stato $s_0$, per generare un seed da $k$ bit si procede come segue: 
+\begin{itemize}
+    \item Viene calcolato il punto $s_0P = (x_1, y_1)$, la sua coordinata $x_1$ viene convertita ad \textit{intero} e rappresenta il nuovo stato $s_1$;
+    \item Viene calcolato il punto $s_0Q = (x_2, y_2)$, la sua coordinata $x_2$ viene convertita in una stringa di bit e vengono presi solo gli $L$ bit pi\`u a \textbf{destra}. Tale sottostringa rappresenta il blocco $B_1$;
+    \item Vengono ripetute le precedenti operazioni e vengono concatenati "$\oplus$" in successione i blocchi $B_1$, $B_2, \ldots B_j$ fin quando la loro lunghezza combinata \`e minore di $k$. 
+\end{itemize}
+Essendo ogni blocco di $L$ bit, $j$ blocchi hanno lunghezza $jL$, il seed sar\`a quindi la sottostringa dei $k$ bit pi\`u a \textbf{sinistra} di $B_1 \oplus B_2 \oplus \ldots \oplus B_j$.
+\\
+\\
+Per rafforzare curve "deboli" \`e stato introdotto un seed $S$ casuale dal quale vengono generati i coefficienti $a$ e $b$ per la curva. I seed generalmente usati e "crittograficamente sicuri" sono numeri detti "nothing up my sleeve", esempi concreti li troviamo in: MD5 in cui i seed sono dati dalle cifre decimali della funzione seno applicata a numeri interi; Blowfish in cui vengono prese le prime cifre di $\pi$; RC5 in cui vengono usati il numero di Nepero \textit{e} ed il rapporto aureo. Ci\`o che li rende appunto "sicuri" \`e che le cifre sono uniformemente distribuite ed hanno una giustificazione matematica. 
+\\
+Tutte le curve standardizzate dal NIST non hanno seed tali, non \`e mai stata fornita una spiegazione matematica sui valori utilizzati, esiste quindi la possibilit\`a che backdoor nascoste siano presenti in queste curve rendendole potenzialmente insicure. Nello standard FIPS 186-4 la NIST raccomanda l'utilizzo di cinque curve diverse, ognuna per un differente livello di sicurezza, per generare la firma digitale mediante ECDSA: tutte le curve presentano coefficiente $a=-3$, cofattore $h=1$ e cardinalit\`a $n=card(E_p)$, i numeri primi definiti sono:
+\begin{align*}
+    p_{192} &= 2^{192} - 2^{64}-1\\
+    p_{224} &= 2^{224} - 2^{96}+1\\
+    p_{256} &= 2^{256} - 2^{224}+ 2^{96}-1\\
+    p_{384} &= 2^{384} - 2^{128}-2^{96}+2^{32}-1\\
+    p_{521} &= 2^{521} -1
+\end{align*}
+Le curve ottenute sono conosciute con pi\`u nomi in base al numero di bit del campo: il campo di $p_192$ porta un nome standard \textit{P-192}, un nome usato nella pratica \textit{nistp192}, sotto gli standard SEC2 di Certicom prende il nome di \textit{secp192r1}, in OpenSSL prende la denominazione \textit{prime192v1}. Nomi analoghi sono dati per altri $p$.
+\\
+Prima dello standard FIPS 186-4 si erano chieste curve \textbf{sicure}, quanto successivamente riportato dalla NIST \`e stata l'\textit{efficienza}: si \`e reso ECDLP difficile ma l'intera ECC non sicura abbastanza, le formule di Point Addition ed i numeri primi scelti non sono ottimali, il cofattore $h=4$ \`e pi\`u efficiente di quello usato.
+\\
+\\
+\textbf{Gli errori negli standard NIST}
+\\
+L'operazione Point Addition standardizzata non soddisfa il caso di Point Doubling, n\`e il caso in cui $Q = -P$,  
+\\
+\\
+Curve ellittiche non standardizzate sono le \textbf{Curve di Edward}: $x^2+y^2=1+dx^2y^2 $ dove $d= \{0, 1\}$. Presentano le stesse formule per la legge di gruppo Point Addition ma velocit\`a superiori alle altre curve ellittiche. Due curve di questa famiglia sono Curve25519 e Ed25519 progettate per ECDH e ECDSA rispettivamente.
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
 
 
 
@@ -651,19 +881,20 @@ Allo stesso modo \`e possibile calcolare chiavi private $d$ se il segreto $k$ \`
 
 
 
-\chapter{Attacchi alle EC - Come scegliere la giusta curva}
-1 - file:/.../TESI - ATTACCHI ALLE EC.pdf
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 %\bibliografia{tesi}
 %
 %
