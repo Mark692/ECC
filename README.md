@@ -1,6 +1,6 @@
 # Elliptic Curve Cryptography
 
-Tesi sulla ECC ed analisi del protocollo Curve25519
+Tesi sulla crittografia ellittica e confronto della sicurezza offerta in rapporto ad algoritmi basati su RSA
 
 Corso di laurea: Ingegneria Informatica
 
