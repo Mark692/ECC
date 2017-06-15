@@ -96,23 +96,13 @@ Con la parola composta da ``\textit{scritto}" e ``\textit{grafia}" intendiamo qu
  \item ``\textit{sostituzione}" degli elementi del linguaggio con segni convenzionali che pur potendo essere di qualsiasi genere, sono in pratica quelli della normale scrittura, lettere o cifre
  \item ``\textit{sistema misto}" che combina le precedenti interponendole una dopo l'altra
 \end{itemize} 
-La sostituzione letterale pu\`o essere monoalfabetica e polialfabetica a seconda di uno o pi\`u alfabeti cifranti da adoperare contemporaneamente.
+Un esempio di crittografia lo troviamo nell'Antica Grecia per opera di Polibio. Una sua idea di crittografia consisteva nel disporre le lettere dell'alfabeto in una matrice avente righe e colonne numerate, questo sistema prende il nome di \textit{Scacchiera di Polibio}. L'impostazione base vede rappresentate le 26 lettere dell'alfabeto in questa scacchiera di 5 righe e 5 colonne, con la premura di porre due lettere (diciamo \textit{J} e \textit{K}) all'interno della stessa casella. Il carattere cifrato corrisponde alla coppia riga-colonna determinata dalla lettera in chiaro: oggi viene adottato un sistema analogo per far riferimento agli elementi di una matrice. L'utilizzo di questo metodo fa corrispondere al testo in chiaro ``\textit{Polibio}" il testo cifrato ``\emph{35 34 31 24 12 24 34}". 
+\\
+Pochi anni pi\`u tardi, a Roma, l'imperatore Cesare ide\`o un sistema trasposizione oggi noto come \textit{cifrario di Cesare} facente uso di un singolo alfabeto per crittografare il testo, esso \`e quindi un sistema \textit{Monoalfabetico}. Utilizzare questo cifrario con una trasposizione di 3 caratteri significa che il testo in chiaro ``\textit{Cesare}" corrisponder\`a al testo cifrato ``\textit{Fhzdvh}".
+\\
+Intorno al 16$^\circ$ secolo venne introdotto un sistema \textit{Polialfabetico} facente uso di una variante del cifrario di Cesare nel quale la trasposizione non \`e pi\`u rappresentata da un alfabeto ``\textit{ordinato}", bens\`i abbiamo ora una serie di simboli presi da molteplici alfabeti. La chiave di questo sistema consiste nel conoscere l'ordine della sequenza di tali simboli.
 \\
 \\
-Sistemi di scrittura segreta furono adoperati gi\`a nel Medioevo dove larga diffusione ebbe il \textit{sistema bizantino a trasposizione} e adoperato, oltre che nei documenti, anche nei manoscritti greci ed in alcune cancellerie regie occidentali, come in quella di Napoli (14$^\circ$ secolo). Il sistema a sostituzione fu amplissimo nelle cancellerie signorili del 15$^\circ$ e 16$^\circ$ secolo in cui venivano alternati numeri e segni arbitrari di origine cabalistica. Nel 16$^\circ$ secolo vi fu una vasta opera di sistemazione teorica della crittografia culminata nella elaborazione di pi\`u complessi sistemi miste che rappresentavano la sintesi di quelli adoperati sino ad allora. 
-Svetonio narra come Cesare usasse nelle sue comunicazioni militari un sistema di cifra che consisteva nel sostituire ciascuna lettera con quella che la segue di un numero fisso di posizioni nell'alfabeto (\textit{cifrario di Cesare}). Un sistema di questo tipo si dice monoalfabetico, in quanto ciascun simbolo del testo in chiaro \`e sostituito da un unico simbolo dell'alfabeto di cifra. Oggi non \`e pi\`u utilizzato perch\`e estremamente semplice da risolvere.
-\\
-La diffusione delle tecniche crittografiche nelle corti rinascimentali diede impulso alla generazione, nel periodo dal 1400 al 1700, di voluminosi codici nomenclatori, soprattutto per la corrispondenza diplomatica, e fece perfezionare le tecniche di cifratura, soprattutto per le comunicazioni militari. Per la sostituzione polialfabetica si ricorse all'uso di specifici apparecchi (\textit{crittografi}) che consentissero di eseguire velocemente le difficoltose operazioni. L.B. Alberti costru\`i un dispositivo, costituito da due corone circolari mobili concentriche con incise le lettere dell'alfabeto da far corrispondere tra i suoi dischi, per permettere una pi\`u rapida cifratura monoalfabetica ma, nel descriverne le modalit\`a d'uso, raccomandava che il crittografo, dopo aver scritto qualche parola, alterasse la posizione relativa dei due dischi, in modo da ottenere che simboli eguali venissero cifrati in maniera differente.
-Un semplice metodo di cifratura polialfabetica, proposto da B. de Vigen\`ere nel 16$^\circ$ secolo e in uso ancora oggi, consiste nell'utilizzare alcune (o tutte) delle 26 possibili cifre di Cesare, sia progressivamente, sia in ordine arbitrario. La chiave di questo sistema consiste in una sequenza di caratteri, da riutilizzarsi ciclicamente per tutta la lunghezza del messaggio, che indica quale alfabeto \`e utilizzato per ciascuna lettera del testo in chiaro. La fortuna di questo metodo dipende dalla sua semplicit\`a, dalla sua variabilit\`a e dalla sua sicurezza. Nelle applicazioni militari, comunque, le difficolt\`a logistiche, nella distribuzione e variazione delle chiavi, ne limitano la lunghezza e ne rendono obbligatorio il riuso e, pertanto, anche i sistemi polialfabetici non possono considerarsi efficienti.
-\\
-Un sistema proposto verso la fine del 19$^\circ$ secolo, da C. Wheatstone e adottato nella Seconda Guerra Mondiale, consisteva nel disporre i simboli dell'alfabeto in una matrice (quadrato di Polibio) in cui:
-\begin{enumerate}[label=\alph*)]
- \item i caratteri vengono presi a coppie
- \item per ogni coppia di caratteri vengono tracciate le righe e colonne corrispondenti
- \item la coppia di caratteri viene cifrata con il carattere evidenziato dall'intersezioni di righe/colonne
- \item i caratteri che si trovano sulla medesima linea (riga o colonna) vengono sostituiti dai caratteri immediatamente seguenti
- \item caratteri uguali vengono rappresentati come un unico carattere
-\end{enumerate}
 Oggi, gli scambi di messaggi sulla rete internet avvengono grazie ai protocolli della pila ISO/OSI ed arrivano al destinatario passando per mezzi di comunicazione non sicuri. Ci\`o costituisce un chiaro problema sulla riservatezza della comunicazione. Un altro problema \`e il riconoscimento dell'interlocutore: se esiste la possibilit\`a di intercettare ed inviare messaggi, allora chiunque pu\`o mascherarsi da interlocutore ed inviare messaggi sotto falso nome. Si parla di algoritmi crittografici per trasformare reversibilmente un testo, rendendolo decifrabile solo a chi dispone di opportune informazioni. 
 \\
 Per crittografare un messaggio $m$ mediante algoritmi di crittografia definiamo le funzioni ``$E(m,K)$" per la cifratura e ``$D(c, K)$" per la decifratura. Quando viene applicata $E(\cdot )$ al messaggio $m$ si ottiene il messaggio cifrato ``$c$" per mezzo di una chiave $K$. La reversibilit\`a di tali funzioni si basa sulla stessa $K$ (od una diversa per algoritmi pi\`u complicati descritti in seguito). In definitiva abbiamo le due relazioni 
@@ -124,14 +114,7 @@ Per crittografare un messaggio $m$ mediante algoritmi di crittografia definiamo 
 \end{align*}
 Le chiavi sono sostanzialmente numeri pseudo-casuali molto grandi, la cui lunghezza si misura in bit: maggiore \`e la lunghezza della chiave, pi\`u saranno onerose le operazioni di cifratura e decifratura. Essendo ciascun protocollo di crittografia aperto e \textbf{noto} a tutti, la chiave assume un ruolo critico nella sicurezza: chiunque conosca quella di decifratura pu\`o decrittare e leggere il messaggio.
 \\
-Gli algoritmi di cifratura si dividono secondo lo schema seguente:
-\begin{align*} 
-&\text{Reversibili } \begin{cases}
-          \text{Simmetrici} & \longleftrightarrow \text{ Chiave Privata}\\
-          \text{Asimmetrici} & \longleftrightarrow \text{ Chiave Pubblica}\\
-        \end{cases}\\
-&\text{Irreversibili } \longleftrightarrow \text{ Funzioni di Hash} &
-\end{align*}
+In definitiva classifichiamo gli algoritmi di cifratura in \textit{Reversibili} ed \textit{Irreversibili}. I primi si suddividono a loro volta in due classi di algoritmi: quelli simmetrici (che necessitano di una singola chiave crittografica) e quelli asimmetrici (per i quali abbiamo bisogno di due chiavi). Gli algoritmi irreversibili vengono dati dall'applicazione di funzioni di hash.
 %
 %
 %
@@ -146,12 +129,17 @@ Il messaggio in chiaro viene crittografato mediante l'algoritmo $S_c$ e chiave s
   $S_d(C_A$, $K^S) = S_d[S_c(m_A$, $K^S)$, $K^S] = m_A$
  \end{center}
 \end{enumerate}
-Solo, ed esclusivamente, con la chiave posseduta dai due interlocutori si pu\`o decifrare un messaggio cifrato. Il vantaggio dell'algoritmo \`e l'impiego di una sola chiave $K^S$ avente lunghezza in bit ridotta, segue un'elevata velocit\`a nella sua generazione e nelle operazioni di cifratura e decifratura, con la diretta conseguenza di poter esser adoperato su documenti di grossa dimensione.
-\\
-Lo svantaggio \`e rappresentato dallo \textbf{scambio}: sebbene Alice e Bob debbano concordare la chiave, non si pu\`o affidare al mezzo insicuro lo scambio di tale informazione.
-\\
-Gli algoritmi simmetrici pi\`u diffusi sono: 3-DES (Triple Data Encryption Standard), AES (Advanced Data Encryption Standard), RC4, Blowfish, IDEA.
-\\
+La chiave $K^S$, unica per entrambi gli interlocutori, determina la sicurezza dell'algoritmo e la difficolt\`a nel decifrarlo qualora non si disponga di tale informazione. Dimensione ridotta della chiave, velocit\`a elevate nella cifratura e decifratura, rendono gli algoritmi simmetrici adatti a trattare messaggi molto lunghi. D'altronde non \`e stato chiarito \textbf{come} i due interlocutori siano giunti a concordare la medesima chiave: se per scambiare messaggi si ricorre ad una chiave crittografica, come si scambia una chiave crittografica?
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
 \section{Crittografia Asimmetrica}
 Il problema dello scambio della chiave simmetrica $K^S$ viene risolto dalla crittografia asimmetrica. In questo ambito gli algoritmi prevedono che un utente sia in possesso di una \textit{coppia di chiavi complementari}, una chiave \`e detta \textbf{pubblica} $K^+$ e l'altra \`e detta \textbf{privata} $K^-$, generate al momento della comunicazione. La chiave pubblica $K^+$ viene scambiata dai due interlocutori, mentre quella privata $K^-$ deve essere mantenuta segreta. Il concetto di crittografia a chiave pubblica nasce nel 1976 per merito di Whitfield Diffie e Martin Hellman. Due anni dopo nacque l'algoritmo RSA\footnote{\footnotesize{Il nome \`e dato dalle iniziali dei tre ricercatori del MIT: Ron \textbf{R}ivest, Adi \textbf{S}hamir, Leonard \textbf{A}dleman}}, il pi\`u diffuso e utilizzato attualmente. Altri algoritmi asimmetrici sono il Diffie-Hellman, e il DSS (Digital Signature Standard) ma usato solo per le firme digitali. 
 \\
@@ -216,7 +204,7 @@ L'utente Bob richiede che Alice dimostri la sua autenticit\`a prima di procedere
  \begin{center}
  $C_A = {K_A}^-(m_A)$
  \end{center}
- La sua firma digitale sar\`a quindi la terna $F_A = (C_A, m_A, {K_A}^+)$
+ La sua firma digitale sar\`a quindi la terna $F_A = (C_A, H(m_A), {K_A}^+)$
  \item Invia quindi la firma digitale, sul canale non sicuro, a Bob
 \end{enumerate}
 In questo momento tutti possono dire che se, applicando la chiave \textit{pubblica} di Alice, vale l'uguaglianza ${K_A}^+(C_A) = m_A$ allora Alice \`e effettivamente chi dice di essere.
@@ -240,10 +228,20 @@ In questo momento, essendo vero che l'algoritmo di hash \`e noto a tutti, Bob \`
  ${K_A}^+(s) = {K_A}^+[{K_A}^-(C_A)] = C_A$
 \end{center}
 Il confronto tra i due messaggi cifrati appena computati determina se Alice sia effettivamente chi dice di essere. Infine il messaggio in chiaro viene ora mascherato dall'hash e non pi\`u decifrabile da terzi.
+%
+%
+%
+%%
+%
+%
+%
+%
+%
+%
+%%
+%
 \chapter{Nozioni fondamentali di Algebra}
-Una \textbf{curva} nel linguaggio matematico \`e sinonimo di linea. Si parla non di curva in senso assoluto, ma di tipi di curve (come curva continua, curva piana, curva liscia), ciascuno di questi \`e rigorosamente definito.
-\\
-Una curva si pu\`o rappresentare analiticamente in varie maniere qualora si introduca un sistema di coordinate nello spazio in cui essa \`e immersa: sar\`a allora rappresentata da equazioni soddisfatte dalle coordinate di tutti i punti, e solo questi, della curva stessa \cite{curva3c}.
+Una \textbf{curva} nel linguaggio matematico \`e sinonimo di linea. Si parla non di curva in senso assoluto, ma di tipi di curve (come curva continua, curva piana, curva liscia), ciascuno dei quali \`e rigorosamente definito \cite{curva3c}.
 \\
 Lo studio di una curva si effettua su di un Campo $K$: insieme di elementi, non vuoto, sul quale vengono definite le operazioni binarie della somma e del prodotto e le loro operazioni inverse, sottrazione e divisione. I campi pi\`u noti sono quelli dei numeri naturali $\mathbb{N}$, dei reali $\mathbb{R}$, dei complessi $\mathbb{C}$. Campi con un numero finito di elementi sono detti ``\textit{Campi finiti}" o anche ``\textit{Campi di Galois}", vengono rappresentati dalle notazioni, equivalenti tra loro:  $\mathbb{F}_{n^m} = \mathbb{Z}/{n^m}\mathbb{Z} = \{0, 1, \ldots, n-1\}$; con $n$ un numero primo, $m$ un numero naturale maggiore o uguale ad 1. I campi della forma $\mathbb{F}_{2^m}$ vengono detti ``\textit{campi binari}", quelli invece definiti come $\mathbb{F}_{n}$ vengono detti ``\textit{campi primi}". Il numero di elementi del campo \`e pari ad $n$, detto \textbf{ordine}.
 \\
@@ -308,7 +306,7 @@ Un gruppo $G$ viene definito \textbf{ciclico} qualora sia generato a partire da 
  &G= \{0, g, 2g, \ldots, (n-1)g\}& \text{ con }&ng=0& &\text{notazione \textit{Additiva}}\\
  &G= \{1, g, g^2, \ldots, g^{n-1}\}& \text{ con }&g^n=1& &\text{notazione \textit{Moltiplicativa}}
 \end{align*}
-ovvero ogni altro elemento del gruppo pu\`o essere ottenuto applicando ripetitivamente la Legge di gruppo o la sua inversa all'elemento $g$.\\
+ovvero ogni altro elemento del gruppo pu\`o essere ottenuto applicando ripetitivamente la Legge di Gruppo o la sua inversa all'elemento $g$.\\
 Il punto $g$ viene quindi detto \textbf{generatore} del gruppo $G$, ha un \textbf{ordine} indicato con la notazione $\langle g \rangle$ e corrisponde al pi\`u piccolo numero $m$ tale che $g^m = 1$ (in notazione Moltiplicativa) oppure tale che $mg = 0$ (in notazione Additiva) se tale $m$ esiste, altrimenti \`e infinito (a tal proposito vedasi la formula (\ref{ordineGeneratoreGruppo}) seguente):
 \begin{gather}
 m \in \mathbb{N}\text{, }m \ne 0 \text{, }\langle g \rangle = 
@@ -485,47 +483,67 @@ in unione al punto all'infinito $\mathcal{O}$.
 \textbf{Dimostrazione della condizione $\mathbold{4a^3 \ne 27b^2}$}: La condizione da imporre per una curva liscia \`e la derivabilit\`a in ogni punto della curva, va quindi rispettata la relazione\\ $\ddfrac{d}{dx}C(x) \ne 0$ $ \forall x \in C$ dove $C$ \`e l'equazione della nostra curva. Partiamo dall'equazione (\ref{Forma Breve}) della curva: 
 \begin{align*}
 &y^2 = x^3 + ax+b &\text{Applichiamo la derivata in $x$}\\
-&\ddfrac{d}{dx}y^2 = \ddfrac{d}{dx}(x^3 +Ax+B)\\
-&0 = 3x^2 +A &\text{(Eq. derivata)}\\
-&x^2 = -\ddfrac{A}{3}\\
+&\ddfrac{d}{dx}y^2 = \ddfrac{d}{dx}(x^3 +ax+b)\\
+&0 = 3x^2 +a &\text{(Eq. derivata)}\\
+&x^2 = -\ddfrac{a}{3}\\
 \\
 &\text{Riprendiamo l'equazione iniziale}\\
 &y^2 = x^3 + ax+b &\text{Consideriamo $y=0$}\\
 &x^3 + ax+b = 0 &\text{Moltiplichiamo per $x$}\\
-&x^4 + Ax^2+Bx = 0 &\text{Applichiamo la $x^2$ trovata prima}\\
-& \left (-\ddfrac{A}{3} \right )^2 + A \left (-\ddfrac{A}{3}\right )+Bx = 0 &\text{Semplifichiamo}\\
-&\left (\ddfrac{A^2}{9} \right )^2 - \ddfrac{A^2}{3}+Bx = 0 &\text{Troviamo quindi la $x$}\\
-&x = \ddfrac{2A^2}{9B} \\
+&x^4 + ax^2+bx = 0 &\text{Applichiamo la $x^2$ trovata prima}\\
+& \left (-\ddfrac{a}{3} \right )^2 + a \left (-\ddfrac{a}{3}\right )+bx = 0 &\text{Semplifichiamo}\\
+&\left (\ddfrac{a^2}{9} \right ) - \ddfrac{a^2}{3}+bx = 0 &\text{Troviamo quindi la $x$}\\
+&x = \ddfrac{2a^2}{9b} \\
 \\
 &\text{Torniamo alla (Eq. derivata)}\\
-&0 = 3x^2 +A &\text{ed applichiamovi la $x$ trovata}\\
-&0 = 3 \left (\ddfrac{2A^2}{9B} \right )^2 +A &\text{Svolgiamo il quadrato}\\
-&0 = \ddfrac{4A^4}{27B^2} +A &\text{Dividiamo per $A$}\\
-&0 = \ddfrac{4A^3}{27B^2} +1 &\text{Otteniamo dunque}\\
-&4A^3+27B^2 = 0 &\text{c.v.d.}
+&0 = 3x^2 +a &\text{ed applichiamovi la $x$ trovata}\\
+&0 = 3 \left (\ddfrac{2a^2}{9b} \right )^2 +a &\text{Svolgiamo il quadrato}\\
+&0 = \ddfrac{4a^4}{27b^2} +a &\text{Dividiamo per $a$}\\
+&0 = \ddfrac{4a^3}{27b^2} +1 &\text{Otteniamo dunque}\\
+&4a^3+27b^2 = 0 &\text{c.v.d.}
 \end{align*}
-La derivata si annulla per $4A^3+27B^2 = 0$ dimostrando la tesi iniziale.\\
+La derivata si annulla per $4a^3+27b^2 = 0$ dimostrando la tesi iniziale.
 \\
-La curva ellittica nel piano proiettivo ha un singolo punto all'infinito $\mathcal{O}$ avente coordinate omogenee $[0:1:0]$, tale punto costituisce l'elemento identit\`a del gruppo. Inoltre la curva \`e simmetrica rispetto all'asse $x$. Per ogni punto $P$ possiamo trovare $-P$ sulla curva al punto opposto rispetto all'asse di simmetria. Per convenzione il punto all'infinito $-\mathcal{O}$ viene considerato semplicemente come $\mathcal{O}$.\\
+\\
 \`E possibile affermare che le curve ellittiche formano un Gruppo date le seguenti affermazioni:
 \begin{enumerate}
- \item l'operazione ``+" lega due punti della curva ad un terzo ancora appartenente alla curva. L'operazione cos\`i definita gode della propriet\`a della ``chiusura" e risulta valida per esser definita Legge di Gruppo;
- \item l'elemento identit\`a \`e il punto all'infinito $\mathcal{O} = \infty$ o $\mathcal{O} = [0:1:0]$ in coordinate proiettive. Tale punto appartiene alla curva e lo si pu\`o dimostrare \cite{Wolfram} per ogni curva ellittica:
+%
+ \item L'operazione binaria ``+" lega due punti della curva ad un terzo ancora appartenente alla curva. Definita in tal modo, essa gode della propriet\`a della ``\textit{chiusura}" e risulta valida per esser definita Legge di Gruppo. La formula che esprime questo concetto \`e la seguente:
+ \begin{center}
+ $A+B=-C$
+ \end{center}
+ dove \textit{A}, \textit{B} e \textit{C} sono tre punti della curva
+ %
+ %
+ %
+ \item L'elemento identit\`a \`e il punto all'infinito $\mathcal{O} = \infty$ o $\mathcal{O} = [0:1:0]$ in coordinate proiettive. Tale punto appartiene alla curva e lo si pu\`o dimostrare \cite{Wolfram} per ogni curva ellittica:
  \begin{align*}
     y^2 &= x^3 + ax + b &\text{Rendiamola in forma proiettiva}\\
     Y^2Z &= X^3 + aXZ^2 + bZ^3 &\text{Calcoliamo $\mathcal{O}$ imponendo }Z=0\\
     0 &= X^3 &\text{Da cui }X=0\text{, calcoliamo la }Y\\
     Y^2Z &= bZ^3
  \end{align*}
- restando vero che $Z=0$, la $Y$ pu\`o assumere qualsiasi valore ma, trovandoci in uno spazio proiettivo tutte le terne $[0, Y_i, 0]$ sono equivalenti in quanto multipli scalari secondo $Y_i$. Si dimostra quindi che il punto trovato si comporta come elemento identit\`a, si nota che il punto $\mathcal{O} = [0:1:0]$ da noi cercato ha molteplicit\`a 3 (infatti abbiamo $X^3=0$) ed appartiene a qualsiasi curva ellittica;
- \item l'elemento inverso del punto $P$ \`e ``$-P$", il suo simmetrico rispetto all'asse $x$, ancora appartenente alla curva. La dimostrazione di quest'affermazione \`e riportata come Caso Particolare pi\`u avanti nella trattazione della legge di gruppo;
- \item la legge di gruppo ``somma" \`e definita come ``dati tre punti $A$, $B$ e $C$ della curva, diversi da $\mathcal{O}$, la loro somma \`e $A+B+C=\mathcal{O}$.
+ restando vero che $Z=0$, la $Y$ pu\`o assumere qualsiasi valore ma, trovandoci in uno spazio proiettivo tutte le terne $[0, Y_i, 0]$ sono equivalenti in quanto multipli scalari secondo $Y_i$. Si dimostra quindi che il punto trovato si comporta come elemento identit\`a, si nota che il punto $\mathcal{O} = [0:1:0]$ da noi cercato ha molteplicit\`a 3 (infatti abbiamo $X^3=0$) ed appartiene a qualsiasi curva ellittica
+ %
+ %
+ %
+ \item L'elemento inverso del punto $P$ \`e ``$-P$", il suo simmetrico rispetto all'asse $x$, ancora appartenente alla curva. La dimostrazione di quest'affermazione \`e riportata come Caso Particolare pi\`u avanti nella trattazione della legge di gruppo
+ %
+ %
+ %
+ \item Sapendo che \`e possibile applicare la legge di gruppo a due punti qualsiasi della curva e confermata l'esistenza dell'elemento inverso, \`e possibile rispettare l'assioma dell'associativit\`a. Detti A e B due punti della curva tali che la loro somma tramite Legge di Gruppo sia il punto -C, possiamo dire che vale:
+ \begin{center}
+ $(A+B)+C=(A+C)+B$
+ \end{center}
+L'associativit\`a viene dunque dimostrata considerando valido il risultato ottenuto per ogni terna di punti della curva.
 \end{enumerate}
-Quest'ultima affermazione, valida per tre punti qualsiasi della curva, ci permette di affermare che:
+Avendo rispettato gli assiomi di gruppo, abbiamo provato che le curve ellittiche costituiscano effettivamente un Gruppo.
+\\
+Infine, generalizzando l'associativit\`a del gruppo, possiamo concludere che la seguente formula
 \begin{center}
 $A+(B+C)=B+(A+C)=C+(A+B)=C+(B+A)=\cdots = \mathcal{O}$
 \end{center}
-dimostrando che la legge di gruppo riveste la duplice qualit\`a di essere sia associativa che commutativa. Il gruppo definito da una curva ellittica \`e quindi un \textit{Gruppo Additivo Abeliano}.
+sia sempre valida per ogni curva ellittica. Quello cos\`i definito corrisponde ad un \textit{Gruppo Additivo Abeliano}.
 \begin{figure}[H]
  \includegraphics[width=\textwidth,center]{CommonEC}
  \caption{Tipiche rappresentazioni di curve ellittiche}
@@ -545,17 +563,10 @@ La figura (\ref{CommonEC}) mostra la curva $y^2 = x^3 + ax+b$ in due momenti div
 %
 %
 %
-\section{La Legge di gruppo}
-Usiamo il termine ``Point Addition" per far riferimento alla somma ``+" di due punti sulla curva, questa operazione costituisce la Legge di gruppo per le curve ellittiche. Definiamo questa operazione come: ``Dati tre punti distinti, $K$-razionali, $A$, $B$ e $C$ sulla curva, la loro somma \`e 
-\begin{center}
- $A+B+C = \mathcal{O}$
-\end{center}
-ovvero l'identit\`a". Per definizione di ``elemento identit\`a" possiamo scrivere 
-\begin{center}
- $A+B = \mathcal{O} -C = -C$
-\end{center}
-Il terzo punto $C(x_C, y_C)$ \`e dato dall'intersezione della retta passante per $A$ e $B$ con la curva. Il suo simmetrico $-C(x_C, -y_C)$ rappresenta il risultato della legge di gruppo applicata a due punti $A$ e $B$. 
+\section{La Legge di Gruppo}
+Usiamo il termine ``\textit{Point Addition}" per far riferimento alla somma ``+" di due punti sulla curva, questa operazione costituisce la Legge di Gruppo per le curve ellittiche. Definiamo rigorosamente la Point Addition come ``\emph{Operazione binaria tra due punti A e B, $K$-razionali, di una curva ellittica $E$ tale per cui $A+B = -C$. Il risultato $-C$ \`e anch'esso un punto $K$-razionale appartenente alla curva $E$}".
 \\
+In alcuni casi, si fa riferimento alla Point Addition non come operatore binario ma come ternario ``$A+B+C = \mathcal{O}$" evidenziando il legame dei tre punti con l'elemento identit\`a $\mathcal{O}$.
 %Il significato di tale risultato \`e che la curva ellittica ha un singolo punto all'infinito rappresentato da un punto di flesso. Si pu\`o aggiungere che la linea all'infinito incontrer\`a una sola volta la curva, precisamente nel punto all'infinito, quindi tale punto determina un'intersezione di molteplicit\`a tre.
 \begin{figure}[H]
  \includegraphics[width=.6\textwidth,center]{PA_P+Q}
@@ -564,43 +575,7 @@ Il terzo punto $C(x_C, y_C)$ \`e dato dall'intersezione della retta passante per
   $P=(1, 2)$, $ Q=(3, 4)$, $ R=-(P+Q)=(-3, 2)$
   \end{center}
  \end{figure}
-Esistono per\`o dei casi particolari:
-\begin{enumerate}
- \item Somma un punto $P$ ed il suo simmetrico $Q = -P$. 
- \\
- Tramite il metodo della Point Addition si costruisce una retta per i due punti che risulta parallela all'asse y che andr\`a ad intersecare il punto all'infinito $\mathcal{O}$. Definiamo quindi $P + Q = P+(-P) = \mathcal{O}$ (fig. \ref{PA_P+(-P)});
- \begin{figure}[H]
-  \includegraphics[width=.6\textwidth,center]{PA_P+(-P)}
-  \caption{Curva $y^2 = x^3-7x+10$, $P=(1, 2)$, $Q=-P=(1, -2)$}
-  \label{PA_P+(-P)}
- \end{figure}
- \label{CPsimmetrici}
- \item Somma di un punto $P$ ed il punto all'infinito $\mathcal{O}$. 
- \\ 
- La retta che unisce il punto $P$ ed il punto $\mathcal{O}$ interseca la curva in un punto 
- \\$Q = -P$. Simmetrizzando e calcolando il punto $-Q$ otteniamo il risultato ``$-(-Q) = P$".
- Ricordando che il punto $\mathcal{O}$ viene trattato come elemento identit\`a del gruppo possiamo scrivere $P+\mathcal{O} = \mathcal{O}+P = P$. Si consideri, a tal proposito, la stessa figura (\ref{PA_P+(-P)}) del caso precedente;
- \item Somma di un punto $P$ e se stesso. 
- \\
- Non avendo due punti distinti non \`e possibile tracciare la retta per i due punti. Fissato il punto $P$, immaginiamo di prendere un secondo punto ed avvicinarlo a $P$: la retta tra i due punti diventa tangente alla curva nel punto $P$. La tangente intercetta quindi il punto $-R$ sulla curva, il punto simmetrico \`e il risultato cercato: $P + P = -(-R) = R$,
- \begin{figure}[H]
-  \includegraphics[width=.6\textwidth,center]{PA_P+P}
-  \caption{Curva $y^2 = x^3-7x+10$, $P=Q=(-1, 4)$}
- \end{figure}
- \label{PointDoubling}
- \item Somma di $P+P$ quando $P$ \`e un flesso per la curva. 
- \\
- In un punto di flesso la concavit\`a della curva cambia
- %\footnote{\footnotesize{In ogni curva ellittica esistono esattamente 9 punti di flesso: 4 punti con coordinata $y$ positiva, altri 4 corrispondenti ai loro simmetrici ed, infine, il punto all'infinito.}}
- , la tangente nel punto $P$ \textbf{non} interseca nuovamente la curva, di conseguenza non intercetter\`a neanche il punto all'infinito. Il punto $P$ ha un \textbf{ordine} $n$ (formula \ref{ordineGeneratoreGruppo})), per il quale vale l'uguaglianza $nP = \mathcal{O}$. Un punto che presenti un ordine \textbf{finito} viene detto ``\textit{Punto di Torsione}" \cite{P_Torsione p9}. Essendo un punto di flesso, $P$ assume ordine 3 ed \`e quindi un punto di Torsione.
- \\
- Imponiamo $n=3$ per il nostro punto, la relazione $P+P+P = \mathcal{O}$ \`e la diretta conseguenza dell'ordine di un punto di Torsione e ci permette di scrivere: 
- \begin{center}
-  $P+P=-P \iff P = flesso$
- \end{center}
- %\begin{figure}[H]  \includegraphics[width=.6\textwidth,center]{Flesso2}  \caption{Curva $y^2 = x^3-7x+10$} \begin{center} $P=Q=(0.49139, 2.58436), R=(0.49138, -2.58437)$ \\ \textit{Si \`e cercato di approssimare quanto pi\`u possibile il punto di flesso.}
-\end{enumerate}
-Possiamo ora determinare come calcolare il punto $C(x_C, y_C) = -(A + B)$ per ogni coppia di punti $A$, $B$ sulla curva. Passiamo allora alle formule. Per semplice costruzione geometrica, la retta $r_{AB}$ passante per i punti $A(x_A, y_A)$ e $B(x_B, y_B)$ presenter\`a un coefficiente angolare $m$ ed una quota $q$; l'intersezione della retta con la curva fornisce le coordinate del punto simmetrico a quello cercato. Le formule per determinare direttamente la coppia $(x_C, y_C)$ sono:
+Detta $(x_C, y_C)$ la coppia di coordinate che rappresenta il punto $C$, intersezione della retta passante per $A=(x_A, y_A)$ e $B=(x_B, y_B)$ con la curva $E$, il suo simmetrico $-C=(x_C, -y_C)$ costituisce il risultato della legge di gruppo. Per semplice costruzione geometrica, la retta $r_{AB}$ passante per i due punti $A$ e $B$ presenter\`a un coefficiente angolare $m$ ed una quota $q$. Le formule per determinare direttamente la coppia $(x_C, y_C)$ sono:
 \begin{align*}
 \begin{cases}
 m = \ddfrac{y_A - y_B}{x_A - x_B}\\
@@ -608,7 +583,7 @@ x_C = m^2 - (x_A + x_B)\\
 y_C = m(x_A - x_C)-y_A
 \end{cases}
 \end{align*}
-\textbf{Dimostrazione}: definiamo la retta come $y = mx+q$ e la curva ellittica come $y^2 = x^3 + ax+b$, l'intersezione della retta con la curva d\`a luogo ai tre punti $A$, $B$, $C$ per cui possiamo scrivere
+\textbf{Dimostrazione}: definiamo la retta come $y = mx+q$ e la curva ellittica come $y^2 = x^3 + ax+b$. L'intersezione della retta con la curva d\`a luogo ai tre punti $A$, $B$, $C$ per cui possiamo scrivere
 \begin{center}$
     \begin{cases}
         y = mx+q\\
@@ -616,23 +591,27 @@ y_C = m(x_A - x_C)-y_A
     \end{cases}
      \iff (mx+q)^2 = x^3 + ax+b$
 \end{center}
-Possiamo allora portare tutto nello stesso membro dell'equazione ed uguagliare il risultato a zero. Svolgendo i conti otteniamo un'equazione di terzo grado nell'incognita $x$. Eguagliamo infine tale equazione al prodotto delle radici determinate delle intersezioni nelle ascisse $x_A$, $x_B$ ed $x_C$:
+Portiamo tutto nello stesso membro dell'equazione ed uguagliamo il risultato a zero. Svolgendo i conti otteniamo un'equazione di terzo grado nell'incognita $x$:
 \begin{align*}
  x^3 + ax+b - (mx+q)^2 &= 0\\
  x^3 + ax+b - (m^2x^2+q^2+2mqx) &= 0\\
- x^3 - m^2x^2 + (a-2mq)x+(b-q^2) &= 0\\
- &= (x-x_A)(x-x_B)(x-x_C)
+ x^3 - m^2x^2 + (a-2mq)x+(b-q^2) &= 0
 \end{align*}
-Svolgendo il termine destro ed uguagliando i coefficienti legati ad $x$ dello stesso grado otteniamo le uguaglianze:
+Eguagliamo infine tale equazione al prodotto delle radici $x_A$, $x_B$ ed $x_C$:
+\begin{align*}
+ 0 &= (x-x_A)(x-x_B)(x-x_C)\\
+ x^3 - m^2x^2 + (a-2mq)x+(b-q^2) &= (x-x_A)(x-x_B)(x-x_C)
+\end{align*}
+Svolgendo il termine destro ed uguagliando i coefficienti legati alle incognite $x$ dello stesso grado otteniamo le uguaglianze:
 \begin{center}
 $\begin{cases}
  x^3 = x^3\\
- -m^2x^2 = -(x_A+x_B+x_C)x^2\\
+ -m^2\mathbold{x^2} = -(x_A+x_B+x_C)\mathbold{x^2}\\
  (a-2mq)x = (x_Ax_B+x_Ax_C+x_Bx_C)x\\
  b-q^2 = x_Ax_Bx_C
 \end{cases}$
 \end{center}
-Dall'uguaglianza in $x^2$ troviamo 
+Dall'uguaglianza in $\mathbold{x^2}$ troviamo 
 \begin{center}
  $x_C = m^2 - x_A - x_B = m^2 - (x_A+x_B)$
 \end{center}
@@ -661,12 +640,31 @@ Mediante queste formule \`e possibile calcolare anche la differenza tra due punt
  \\
  \\
 \end{figure}
-%
-%
-%
-%
-%
-Nel caso particolare (\ref{PointDoubling}) si \`e parlato della somma di un punto $A$ e se stesso, quando questo non \`e un flesso: denominiamo tale caso come ``\textit{Point Doubling}". Le equazioni viste per la legge di gruppo tuttavia non permettono di calcolare il punto $2A$: bisogna trovare delle formule che tengano conto della \textbf{tangente} alla curva $E$ nel punto $A$. La retta tangente $y = mx+q$ presenter\`a un coefficiente angolare $m$ dato dal gradiente dell'equazione (\ref{Forma Breve}):
+Illustrate le formule che governano la legge di gruppo, \`e bene discutere riguardo i casi particolari di questa operazione:
+\begin{enumerate}
+ \item Somma un punto $P$ ed il suo simmetrico $Q = -P$. 
+ \\
+ Tramite il metodo della Point Addition si costruisce una retta per i due punti che risulta parallela all'asse $y$ e che andr\`a ad intersecare la curva nel punto all'infinito $\mathcal{O}$. Definiamo quindi $P + Q = P+(-P) = \mathcal{O}$ (fig. \ref{PA_P+(-P)})
+ \begin{figure}[H]
+  \includegraphics[width=.6\textwidth,center]{PA_P+(-P)}
+  \caption{Curva $y^2 = x^3-7x+10$, $P=(1, 2)$, $Q=-P=(1, -2)$}
+  \label{PA_P+(-P)}
+ \end{figure}
+ \label{CPsimmetrici}
+ \item Somma di un punto $P$ ed il punto all'infinito $\mathcal{O}$. 
+ \\ 
+ La retta che unisce il punto $P$ ed il punto $\mathcal{O}$ interseca la curva in un punto 
+ \\$Q = -P$. Simmetrizzando e calcolando il punto $-Q$ otteniamo il risultato ``$-(-Q) = P$".
+ Ricordando che il punto $\mathcal{O}$ viene trattato come elemento identit\`a del gruppo possiamo infine scrivere $P+\mathcal{O} = \mathcal{O}+P = P$. Si consideri, a tal proposito, la stessa figura (\ref{PA_P+(-P)}) del caso precedente
+ \item Somma di un punto $P$ e se stesso. 
+ \\
+ Non avendo due punti distinti non \`e possibile tracciare la retta per i due punti. Fissato il punto $P$, immaginiamo di prendere un secondo punto ed avvicinarlo a $P$: la retta tra i due punti diventa tangente alla curva nel punto $P$. La tangente intercetta quindi il punto $-R$ sulla curva, il punto simmetrico \`e il risultato cercato: $P + P = -(-R) = R$,
+ \begin{figure}[H]
+  \includegraphics[width=.6\textwidth,center]{PA_P+P}
+  \caption{Curva $y^2 = x^3-7x+10$, $P=Q=(-1, 4)$}
+ \end{figure}
+ \label{PointDoubling}
+Definiamo questo caso con la dicitura ``\textit{Point Doubling}". Le equazioni viste per la legge di gruppo tuttavia non permettono di calcolare il punto $2P$: bisogna trovare delle formule che tengano conto della \textbf{tangente} alla curva $E$ nel punto $P$. La retta tangente $y = mx+q$ presenter\`a un coefficiente angolare $m$ dato dal gradiente dell'equazione (\ref{Forma Breve}):
 \begin{align*}
 E : y^2 &= x^3 + ax + b &\text{Dividiamo tutto per $y^2$}\\
 1 &= \ddfrac{x^3 + ax + b}{y^2} &\text{Applichiamo il gradiente}\\
@@ -675,9 +673,9 @@ m &= \ddfrac{dy (x^3 + ax + b)}{dx (y^2)} &\text{Che possiamo vedere come}\\
 m &= \ddfrac{\ddfrac{d}{dx}(x^3 + ax + b)}{\ddfrac{d}{dy}(y^2)} &\text{Otteniamo dunque}\\
 m &= \ddfrac{3x^2 + a}{2y}
 \end{align*}
-Si noti come il coefficiente angolare $m$ dipenda non solo dalle coordinate del punto $A$ ma anche dal coefficiente ``$a$" presente nell'equazione della curva.
+Si noti come il coefficiente angolare $m$ dipenda non solo dalle coordinate del punto $P$ ma anche dal coefficiente ``$a$" presente nell'equazione della curva.
 \\
-Definiti quindi i punti $A = (x_A, y_A)$ e $C=(x_C, y_C) = -2A$, le operazioni per effettuare una Point Doubling sono:
+Definiti quindi i punti $A = (x_A, y_A)$ e $C=(x_C, y_C) = -2A$ della curva, le operazioni per effettuare una Point Doubling sono:
 \begin{gather}
 \begin{cases}
 m = \ddfrac{3{x_A}^2 + a}{2y_A}\\
@@ -686,11 +684,35 @@ y_C = m(x_A - x_C)-y_A
 \label{point doubling 1234}
 \end{cases}
 \end{gather}
-Le coordinate di $C$ sono calcolate mediante formule analoghe alla Point Addition: si considera l'intersezione della tangente con la curva $E$, si eguaglia il risultato al prodotto delle radici $x_A$ e $x_C$ ricordando che la prima ha molteplicit\`a 2. Tale operazione consiste nel considerare le precedenti coordinate $(x_B, y_B)$ come se fossero $(x_A, y_A)$. Infine si considerano i monomi dello stesso grado, esattamente come fatto per la Legge di gruppo, trovando le formule qui sopra descritte.
+Le coordinate di $C$ sono calcolate mediante formule analoghe alla Point Addition: si considera l'intersezione della tangente con la curva $E$, si eguaglia il risultato al prodotto delle radici $x_A$ e $x_C$ ricordando che la prima ha molteplicit\`a 2. Infine si considerano i monomi dello stesso grado, esattamente come fatto per la Legge di Gruppo, trovando le formule qui sopra descritte
+%
+%
+%
+%
+%
+%
+%
+ \item Somma di $P+P$ quando $P$ \`e un flesso per la curva. 
+ \\
+ In un punto di flesso la concavit\`a della curva cambia
+ %\footnote{\footnotesize{In ogni curva ellittica esistono esattamente 9 punti di flesso: 4 punti con coordinata $y$ positiva, altri 4 corrispondenti ai loro simmetrici ed, infine, il punto all'infinito.}}
+ , la tangente nel punto $P$ \textbf{non} interseca nuovamente la curva, di conseguenza non intercetter\`a neanche il punto all'infinito. Il punto $P$ ha un \textbf{ordine} $n$ (formula \ref{ordineGeneratoreGruppo}), per il quale vale l'uguaglianza $nP = \mathcal{O}$. Un punto che presenti un ordine \textbf{finito} viene detto ``\textit{Punto di Torsione}" \cite{P_Torsione p9}. Essendo un punto di flesso, $P$ assume ordine 3 ed \`e quindi un punto di Torsione.
+ \\
+ Imponiamo $n=3$ per il nostro punto, la relazione $P+P+P = \mathcal{O}$ \`e la diretta conseguenza dell'ordine di un punto di Torsione e ci permette di scrivere: 
+ \begin{center}
+  $P+P=-P \iff P = flesso$
+ \end{center}
+ %\begin{figure}[H]  \includegraphics[width=.6\textwidth,center]{Flesso2}  \caption{Curva $y^2 = x^3-7x+10$} \begin{center} $P=Q=(0.49139, 2.58436), R=(0.49138, -2.58437)$ \\ \textit{Si \`e cercato di approssimare quanto pi\`u possibile il punto di flesso.}
+\end{enumerate}
+%
+%
+%
+%
+%
 \section{Moltiplicazione Scalare}
-Calcolare $nP$, con $n$ un numero intero, su una curva ellittica costituisce l'operazione detta ``\textit{moltiplicazione scalare}" o Point Multiplication. Nelle applicazioni crittografiche vengono richieste moltiplicazioni scalari con coefficienti molto elevati, applicare numerose volte la Legge di gruppo non fornisce un'elevata efficienza nei calcoli. Allo scopo, supponiamo di voler calcolare il punto $100P$ ed illustriamo alcune tecniche utilizzate in pratica.
+Calcolare $nP$, con $n$ un numero intero, su una curva ellittica costituisce l'operazione detta ``\textit{moltiplicazione scalare}" o Point Multiplication, operazione molto comune nelle applicazioni crittografiche. Allo scopo, supponiamo di voler calcolare il punto $100P$ ed illustriamo alcune tecniche utilizzate in pratica per ottenere un risultato nel minor tempo possibile.
 \\
-La tecnica pi\`u intuitiva consiste nell'applicare ripetutamente la Legge di gruppo per computare i successivi $n-1$ punti ma la scelta diventa impraticabile qualora $n$ sia un numero grande (possiamo definire tale anche un $n=100$ per motivi che verranno mostrati nei prossimi algoritmi).
+La tecnica pi\`u intuitiva consiste nell'applicare ripetutamente la Legge di Gruppo per computare i successivi $n-1$ punti ma la scelta diventa impraticabile qualora $n$ sia un numero grande (possiamo definire tale anche un $n=100$ per motivi che verranno mostrati nei prossimi algoritmi).
 \subsection{Double \& Add} 
 \label{doub add}
 Per introdurre questo algoritmo, ragioniamo inizialmente all'interno dei numeri naturali $\mathbb{N}$. Il nostro scopo \`e partire dal numero $m_0=1$ ed arrivare ad $m_i=100$ tramite $i$ passi e le sole operazioni di somma unitaria (detta ``\textit{Add}") e moltiplicazione con fattore 2 (detta ``\textit{Double}"):
@@ -708,7 +730,7 @@ Per introdurre questo algoritmo, ragioniamo inizialmente all'interno dei numeri 
  $8$ &$50$ & Double &$100$\\
 \end{tabular}
 \end{center}
-Abbiamo raggiunto il nostro scopo in un totale di 8 passi, un risultato nettamente migliore degli $n-1$ visti precedentemente. Applicare questo algoritmo su di una curva ellittica significa nel computare una Point Addition per ogni \textit{Add} ed una Point Doubling per ogni \textit{Double}. 
+Abbiamo raggiunto il nostro scopo in un totale di 8 passi, un risultato nettamente migliore degli $n-1=99$ passi visti precedentemente. Applicare questo algoritmo su di una curva ellittica significa nel computare una Point Addition per ogni \textit{Add} ed una Point Doubling per ogni \textit{Double}. 
 \\
 Parliamo allora di una possibile implementazione del metodo appena visto. Consideriamo il nostro $n = 100$ ed esprimiamolo in notazione binaria:
 \begin{center}
@@ -730,9 +752,9 @@ Il procedimento da utilizzare consiste nel calcolare $n_2$ tramite l'operazione 
   $d_0 = $ 0 & Double &1100100\\
 \end{tabular}
 \end{center}
-Questo metodo, detto \textit{Double \& Add}, permette il calcolo di $nP$ in $\floor{log_2(n)}+ \theta$ operazioni. Le point doubling sono $\floor{log_2(n)}$ mentre le point addition sono $\theta$, un numero corrispondente al totale di ``1" nella notazione binaria, per cui $\theta \leq \floor{log_2(n)}$. Il costo computazionale \`e nettamente ridotto rispetto alle $n-1$ operazioni del primo metodo. 
+Questo metodo, detto \textit{Double$\&$Add}, permette il calcolo di $nP$ in $\floor{log_2(n)}+ \theta$ operazioni. Le point doubling sono $\floor{log_2(n)}$ mentre le point addition sono $\theta$, un numero corrispondente al totale di ``1" nella notazione binaria, per cui $\theta \leq \floor{log_2(n)}$. Il costo computazionale \`e nettamente ridotto rispetto alle $n-1$ operazioni del primo metodo. 
 \subsection{Montgomery Ladder}
-Esiste un metodo simile alla Double \& Add, e viene detto \textbf{Montgomery Ladder}. Detti $P$ il punto da moltiplicare ed $n$ il moltiplicatore la cui rappresentazione binaria $n_2$ \`e ancora $d_{j}d_{j-1}\ldots d_2d_1d_0$, definiamo due parametri come $P_1=P$ e $P_2 = 2P$. La Montgomery Ladder procede come segue: \\
+Esiste un metodo simile alla Double$\&$Add, e viene detto \textbf{Montgomery Ladder}. Detti $P$ il punto da moltiplicare ed $n$ il moltiplicatore la cui rappresentazione binaria $n_2$ \`e ancora $d_{j}d_{j-1}\ldots d_2d_1d_0$, definiamo due parametri come $P_1=P$ e $P_2 = 2P$. La Montgomery Ladder procede come segue: \\
 $\text{da }i=j-1 \text{, fino a }i=0$
 \begin{align*}
  \text{se } d_i = 1 \to
@@ -751,7 +773,7 @@ A fine ciclo, il punto cercato $nP$ \`e il valore di $P_1$.
 \\
 Una differenza con l'algoritmo precedente \`e il calcolo di entrambe le operazioni, una Double ed una Add, per ogni cifra $d_j$. La moltiplicazione scalare mediante la Montgomery Ladder richiede dunque $2 \floor{log_2(n)}$ operazioni. Il numero trovato corrisponde alle operazioni necessarie in una Double\&Add qualora $n=2^x-1$, $x\in \mathbb{N}$, la cui notazione binaria \`e data soli ``1".
 \\
-Una riduzione del tempo computazionale \`e possibile mediante la parallelizzazione della Montgomery Ladder su due processori: uno si occuper\`a della Point Addition e l'altro della Point Doubling riuscendo a dimezzare il tempo di calcolo ed arrivare a $O(\floor{log_2(n)})$ tempo di operazioni. Lo stesso tempo computazionale viene impiegato dalla Double\&Add solo nel caso in cui $n=2^x$, $x\in \mathbb{N}$.
+Una riduzione del tempo computazionale \`e possibile mediante la parallelizzazione della Montgomery Ladder su due processori: uno si occuper\`a della Point Addition e l'altro della Point Doubling riuscendo a dimezzare il tempo di calcolo ed arrivare a $O(\floor{log_2(n)})$ tempo di operazioni. Lo stesso tempo computazionale viene impiegato dalla Double\&Add solo nel caso in cui la notazione binaria sia del tipo $n=2^x$, $x\in \mathbb{N}$. Si conclude che la Montgomery Ladder parallelizzata \`e generalmente pi\`u veloce della Double$\&$Add.
 %
 %
 %
@@ -767,7 +789,7 @@ Una riduzione del tempo computazionale \`e possibile mediante la parallelizzazio
 \section{Campi Finiti}
 Prima di iniziare a parlare di algoritmi fondati sulle curve ellittiche, \`e bene precisare che la quantit\`a \textit{finita} di memoria dei calcolatori non \`e sufficiente per gestire punti di \textit{infinite} cifre. I campi modulari $\mathbb{F}_p$ restringono le coordinate dei punti nell'intervallo $[0, p-1]$ e favoriscono l'implementazione dei concetti studiati fino ad ora. In ambito crittografico, vanno esaminate tre propriet\`a in particolare: la cardinalit\`a (o ordine) di gruppi e sottogruppi; il punto generatore del sottogruppo; il cofattore del sottogruppo.
 \\
-Un campo finito sul quale si intende definire una curva ellittica deve rispondere a due propriet\`a principali: il suo ordine $p$ deve essere un numero primo; la caratteristica $char(\mathbb{F}_p)$ deve essere diversa da 2 e da 3 per garantire la scrittura nella forma estesa di Tate-Weierstrass (\ref{Forma Estesa}).
+Un campo finito sul quale si intende definire una curva ellittica deve rispondere a due propriet\`a principali: il suo ordine $p$ deve essere un numero primo; la caratteristica $char(\mathbb{F}_p)$ deve essere diversa da 2 e da 3 per garantire la scrittura nella forma estesa di Tate-Weierstrass (\ref{Forma Estesa})
 \begin{center}
  $\mathbb{F}_p$, $p \ne \{2, 3\}$\\
  $Y^{2} + a_1XY + a_3Y =X^3 + a_2X^2 + a_4X + a_6$ mod(p)
@@ -848,7 +870,7 @@ Prendiamo la curva $E: y^2 = x^3 +2x +2$ mod$(17)$ ed il punto $P = (5, 1)$. La 
     \includegraphics[scale=0.5, center]{PD_mod(17)} 
     \caption{Curva $y^2=x^3+2x+2$ mod$(17)$, punto $P = (5, 1)$, $Q=2P = (6, 3)$} 
 \end{figure} 
-Si noti che ora \textbf{l'asse di simmetria} non risulta pi\`u essere $y=0$ ma \textbf{diventa} $\mathbold{y=p\big / 2}$. 
+Si noti che ora \textbf{l'asse di simmetria} non risulta pi\`u essere $y=0$ ma \textbf{diventa} $\mathbold{y=p\big / 2}$ eccezion fatta per i punti che giacciono sull'asse $x$. Questi punti, descritti con le notazioni equivalenti tra loro $(x, y)=(x, 0)$ mod$(y)$, risultano simmetrici a loro stessi essendo vero che $y=0$ mod$(y)$.
 \\
 \`E possibile fare un'ulteriore verifica del risultato contando i punti tramite una serie di Point Addition: partiamo dal punto $A=(5, 1)$ identifichiamo le coordinate di $nA$ con $(nA_x, nA_y)$ 
 \begin{center}
@@ -872,7 +894,7 @@ Il punto $19A$ rappresenta il punto all'infinito e verifica che la cardinalit\`a
 [k \text{ mod} (\#E_K)] \cdot P
 \label{punti modulari}
 \end{gather}
-Come anticipato nel ``Caso Particolare (\ref{CPsimmetrici})" abbiamo $A+18A = 19A = \mathcal{O}$ poich\`e si applica la Legge di gruppo a due punti distinti di eguale ascissa ($x_A=x_{18A}=5$) ma ordinata diversa ($y_A=1$, $y_{18A}=16$). Sebbene tale caso presupponesse che i due punti sommati dovessero essere simmetrici tra loro, ora la simmetria sembra venir meno. Ricordando che l'asse di simmetria \`e $y= p \big / 2 = 17 \big / 2 = 8.5$ possiamo facilmente verificare che i due punti rispettino effettivamente la simmetria. Possiamo, ad esempio, sommare le ordinate dei due punti e dividere per due, ottenendo il punto medio tra $A$ e $18A$:
+Come anticipato nel ``Caso Particolare (\ref{CPsimmetrici})" abbiamo $A+18A = 19A = \mathcal{O}$ poich\`e si applica la Legge di Gruppo a due punti distinti di eguale ascissa ($x_A=x_{18A}=5$) ma ordinata diversa ($y_A=1$, $y_{18A}=16$). Sebbene tale caso presupponesse che i due punti sommati dovessero essere simmetrici tra loro, ora la simmetria sembra venir meno. Ricordando che l'asse di simmetria \`e $y= p \big / 2 = 17 \big / 2 = 8.5$ possiamo facilmente verificare che i due punti rispettino effettivamente la simmetria. Possiamo, ad esempio, sommare le ordinate dei due punti e dividere per due, ottenendo il punto medio tra $A$ e $18A$:
 \begin{center}
  $\ddfrac{y_A+y_{18A}}{2}=\ddfrac{1+16}{2}=\ddfrac{17}{2}=8.5$
 \end{center}
@@ -895,10 +917,10 @@ nei valori delle \textbf{ascisse}: i primi 9 punti hanno ascissa nella sequenza 
 \end{cases}
  \label{CPcard_dispari}
 \end{equation}
- sono vere e la cardinalit\`a \`e sempre \textbf{dispari}. \`E possibile generalizzare la (\ref{CPcard_dispari}) per ogni coppia di punti $(n-k)G$ e $(n+1+k)G$ aventi ascisse uguali $x_{n-k} = x_{n+k+1}$. La distanza, in termini di successive Point Addition tra i due punti, \`e pari a $2k+1$. Alcuni esempi di quanto affermato sono dati dalle seguenti coppie di punti: $(2A, 17A)$, $(3A + 16A)$, $(4A + 15A)$.
+ sono vere e la cardinalit\`a \`e sempre \textbf{dispari}. \`E possibile generalizzare la (\ref{CPcard_dispari}) per ogni coppia di punti $(n-k)G$ e $(n+1+k)G$ aventi ascisse uguali $x_{n-k} = x_{n+k+1}$. La distanza, in termini di successive Point Addition tra i due punti, \`e pari a $2k+1$. Alcuni esempi di quanto affermato sono dati dalle seguenti relazioni: $(2A + 17A)=(3A + 16A)=(4A + 15A)=\mathcal{O}$.
  \\
  \\
- Se invece si trova che, dati due punti $(n-1)G$ ed $(n+1)G$, le loro ascisse coincidano $x_{n+1} = x_{n+1}$, allora la (\ref{CPcard_dispari}) diventa
+ Se invece si trova che, dati due punti $(n-1)G$ ed $(n+1)G$, le loro ascisse coincidano $x_{n-1} = x_{n+1}$, allora la (\ref{CPcard_dispari}) diventa
  \begin{equation}
 \begin{cases}
  2nG = \mathcal{O}\\
@@ -918,7 +940,7 @@ in questo caso abbiamo sempre cardinalit\`a \textbf{pari}. Anche in questo caso 
  %
  \item In un sottogruppo, possiamo calcolare il punto simmetrico di $Q = (x_Q, y_Q)$ considerando ``$-Q = (x_Q, \#H-y_Q)$", dove $\#H$ \`e cardinalit\`a del sottogruppo $H \subset \mathbb{F}_{31}$. Utilizzando i punti $Q$ e $-Q$, cerchiamo di determinare $\#H$.
  \\
- La Legge di gruppo ci permette di dire che $Q-Q = \mathcal{O} = \#H \cdot Q$ in quanto simmetrici ed appartenenti ad un campo modulare. Dette $n$ e $m$ le loro molteplicit\`a tali per cui $Q = nG$ e $-Q = mG$, la considerazione precedente ci porta ad affermare che $n+m = \#H$. La conclusione alla quale arriviamo \`e che
+ La Legge di Gruppo ci permette di dire che $Q-Q = \mathcal{O} = \#H \cdot G$ in quanto simmetrici ed appartenenti ad un campo modulare. Dette $n$ e $m$ le loro molteplicit\`a tali per cui $Q = nG$ e $-Q = mG$, la considerazione precedente ci porta ad affermare che $n+m = \#H$. La conclusione alla quale arriviamo \`e che, per due numeri naturali $n$ ed $m$
  \begin{gather}
   n, m \in \{0, 1, \ldots, q-1\} \mid Q = nG, -Q = mG \Rightarrow \#H = n+m
   \label{Cons Pers 2}
@@ -944,7 +966,7 @@ Riprendiamo il concetto di cofattore di un sottogruppo. Come detto nel capitolo 
 \end{center}
 Dove con $h$ si esprime il cofattore di $H$.
 \\
-Possiamo far uso del cofattore per determinare la cardinalit\`a di un sottogruppo partendo dalla sola $\#G$. Prendiamo in esempio la curva $E : y^2 = x^3+4x+5$ nel campo $\mathbb{F}_{31}$. La curva presenta cardinalit\`a $\#G=28$ i cui divisori interi sono $T = \{1, 2, 4, 7, 14, 28\}$. A questo punto dobbiamo introdurre un generatore: preso il punto $P=(18, 9)$ cerchiamo di ottenere il punto $\mathcal{O}$ mediante moltiplicazioni della forma $tP$ dove $t \in T$ \`e il generico elemento di $T$ e corrisponde ai divisori interi di $\#G$. Troviamo che $7P = 14P=28P= \mathcal{O}$ e la relazione (\ref{punti modulari}) non \`e pi\`u valida nel sottogruppo poich\`e viene verificata per pi\`u di un valore. Possiamo esporre tale formula in modo pi\`u generale dicendo che \begin{gather}
+Possiamo far uso del cofattore per determinare la cardinalit\`a di un sottogruppo partendo dalla sola $\#G$. Prendiamo in esempio la curva $E : y^2 = x^3+4x+5$ nel campo $\mathbb{F}_{31}$. La curva presenta cardinalit\`a $\#G=28$ i cui divisori interi sono $T = \{1, 2, 4, 7, 14, 28\}$. A questo punto dobbiamo introdurre un generatore: preso il punto $P=(18, 9)$ cerchiamo di ottenere il punto $\mathcal{O}$ mediante successive Point Multiplication $tP$ dove $t \in T$ \`e il generico elemento di $T$ e corrisponde ai divisori interi di $\#G$. Troviamo che $7P = 14P=28P= \mathcal{O}$ e la relazione (\ref{punti modulari}) non \`e pi\`u valida nel sottogruppo poich\`e viene verificata per pi\`u di un valore. Possiamo esporre tale formula in modo pi\`u generale dicendo che \begin{gather}
 [k \text{ mod} (\#H)] \cdot P
 \end{gather}
 In questa ottica affermiamo che $\#H=7$ per la curva in considerazione per via del fatto che $t_5=14$, $t_6=28$ sono multipli interi di $\#H$: per la ciclicit\`a dell'algebra modulare questi valori corrispondono allo stesso elemento in modulo 7. In conclusione solo il pi\`u grande divisore primo $t$ rappresenta la cardinalit\`a del sottogruppo, in questo caso $\#H = 7$ e rispettivo cofattore $h = \#G/\#H=28/7 = 4$.
@@ -953,7 +975,7 @@ Una curva come $E: y^2 = x^3 +2x+4$ mod$(13)$ presenta cardinalit\`a $N=17$ e, p
 \begin{center}
  $\#H \cdot P = 1P = P = \mathcal{O}$
 \end{center}
-si sarebbe identificato quindi un sottogruppo con il solo elemento neutro della Legge di gruppo e nessun altro punto.
+si sarebbe identificato quindi un sottogruppo avente il solo elemento neutro della Legge di Gruppo e nessun altro punto.
 \\
 Sulla base di quanto detto finora possiamo concludere che i sottogruppi $H$ presentano cofattore $h=1$ qualora tale sottogruppo comprenda tutti (e soli) i punti della curva.
 
@@ -1183,7 +1205,7 @@ Si evidenzia adesso come avviene l'invio in modo sicuro di un messaggio da parte
 \end{enumerate}
 Bob \`e in grado di decifrare il messaggio trovando dapprima $M= C-dP$ ed infine estraendo il messaggio $m$ dal punto $M$.
 \\
-Verifichiamo il corretto funzionamento dell'algoritmo: sappiamo che il messaggio crittografato \`e $C = M + dP$ e che $P = dG$; il coefficiente $d$ \`e analogo alla chiave simmetrica di ElGamal. Essendo vero che tale chiave simmetrica \`e conosciuta da entrambi gli interlocutori e loro solamente, Bob (come anche Alice) sar\`a in grado di calcolare il punto $dP$ usando l'algoritmo della Double\&Add o la Montgomery Ladder. L'ultimo passo da compiere \`e applicare la Legge di gruppo tra il punto $C$ ed il punto $S = -dP$.
+Verifichiamo il corretto funzionamento dell'algoritmo: sappiamo che il messaggio crittografato \`e $C = M + dP$ e che $P = dG$; il coefficiente $d$ \`e analogo alla chiave simmetrica di ElGamal. Essendo vero che tale chiave simmetrica \`e conosciuta da entrambi gli interlocutori e loro solamente, Bob (come anche Alice) sar\`a in grado di calcolare il punto $dP$ usando l'algoritmo della Double\&Add o la Montgomery Ladder. L'ultimo passo da compiere \`e applicare la Legge di Gruppo tra il punto $C$ ed il punto $S = -dP$.
 \\
 \\
 Per questo algoritmo, parliamo di ECDLP riferendoci al problema di calcolare la chiave privata $d$ a partire dal punto $P$. La sigla ECDLP, intesa come \textbf{E}lliptic \textbf{C}urve \textbf{D}iscrete \textbf{L}ogarithm \textbf{P}roblem, \`e data per analogia al problema visto con ElGamal. Inoltre, sebbene le curve ellittiche non presentino calcoli di esponenziali o di logaritmi, la sigla mira ad evidenziare la difficolt\`a computazionale del problema. Risolvere l'ECDLP si ritiene essere un compito ben pi\`u oneroso del DLP come verr\`a mostrato nel capitolo \ref{ecdlp}.
@@ -1296,9 +1318,9 @@ I calcoli compiuti da Alice sono: $x$ passaggi per calcolare $dP$; $y$ passaggi 
 %
 %
 %
-\section{ECDH}
+\subsection{ECDH}
 \label{ecdh}
-L'algoritmo ECDH \`e l'acronimo di \textbf{E}lliptic \textbf{C}urve \textbf{D}iffie-\textbf{H}ellman e si basa sull'accordo di una chiave. Dette Alice e Bob le parti in gioco, l'algoritmo si basa sui seguenti passi:
+L'algoritmo ECDH, acronimo di \textbf{E}lliptic \textbf{C}urve \textbf{D}iffie-\textbf{H}ellman, si basa sull'accordo di una chiave. Dette Alice e Bob le parti in gioco, l'algoritmo si basa sui seguenti passi:
 \begin{enumerate}
  \item Entrambi $A$ e $B$ generano le loro chiavi private e pubbliche. Alice avr\`a chiave privata un numero casuale compreso tra 1 ed n-1, $d_A = random(1, n-1)$, e pubblica $P_A = d_AG$; Bob avr\`a invece la chiave privata $d_B = random(1, n-1)$, e pubblica $P_B = d_BG$
  
@@ -1315,7 +1337,7 @@ Alice e Bob possono ora comunicare in modo sicuro usando una crittografia simmet
 \subsection{Un esempio reale}
 L'istituto NIST\footnote{\footnotesize{National Institute of Standards and Technology}} ha proceduto alla standardizzazione di diverse curve ellittiche con il risultato di aver definito un diverso ``protocollo" sulla base della curva considerata. Parliamo in questo esempio del protocollo \textbf{secp256k1}; le notazioni usate sono in base esadecimale:
 \begin{itemize}
- \item \textbf{p} = $0x$FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFE FFFFFC2F = $2^{256} - 2^{32}-2^9-2^8-2^7-2^6-2^4-2^0$;
+ \item \textbf{p} = FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFE FFFFFC2F = $2^{256} - 2^{32}-2^9-2^8-2^7-2^6-2^4-2^0$;
  
  \item \textbf{a} $=0$;
  
@@ -1323,41 +1345,40 @@ L'istituto NIST\footnote{\footnotesize{National Institute of Standards and Techn
  
  \item \textbf{G} $= (x_G, y_G)$
  \\
- $x_G$ = $0x$79BE667E F9DCBBAC 55A06295 CE870B07 029BFCDB 2DCE28D9 59F2815B 16F81798,
+ $x_G$ = 79BE667E F9DCBBAC 55A06295 CE870B07 029BFCDB 2DCE28D9 59F2815B 16F81798,
  \\
- $y_G$ = $0x$483ADA77 26A3C465 5DA4FBFC 0E1108A8 FD17B448 A6855419 9C47D08F FB10D4B8;
+ $y_G$ = 483ADA77 26A3C465 5DA4FBFC 0E1108A8 FD17B448 A6855419 9C47D08F FB10D4B8;
  
- \item \textbf{n} = $0x$FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFE BAAEDCE6 AF48A03B BFD25E8C D0364141;
+ \item \textbf{n} = FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFE BAAEDCE6 AF48A03B BFD25E8C D0364141;
  
  \item \textbf{h} $ = 1$
 \end{itemize}
 Usando la curva $E : y^2 = x^3+ax+b$ descritta, l'algoritmo ECDH applicato al protocollo secp256k1 permette ad Alice di calcolare:
 \begin{itemize}
 
-\item $d_A$ = hex(random(1, n-1)) = $0x$CA26D640 64C04556 8BC087B7 73137390 D2D412D8 E85E3BBA 11E7A87A F02A460C,
+\item $d_A$ = random(1, n-1) = CA26D640 64C04556 8BC087B7 73137390 D2D412D8 E85E3BBA 11E7A87A F02A460C
 
-\item $P_A = (x_A, y_A) = d_AG$,
+\item $P_A = (x_A, y_A) = d_AG$
 
-\item $x_A$ = $0x$50F1D077 DE0807EB 17E45781 BAD7AC8A 85EFBE48 5DB3988F 546CF300 E50F4750,
+\item $x_A$ = 50F1D077 DE0807EB 17E45781 BAD7AC8A 85EFBE48 5DB3988F 546CF300 E50F4750
 
-\item $y_A$ = $0x$C5C0324A F29FE9CF 4FC0E305 EE406E4D CF1D6166 9877CA62 B16ADE01 2466C0C7;
+\item $y_A$ = C5C0324A F29FE9CF 4FC0E305 EE406E4D CF1D6166 9877CA62 B16ADE01 2466C0C7
 \end{itemize}
 Bob invece calcola:
 \begin{itemize}
-\item $d_B$ = hex(random(1, n-1)) = $0x$8840D8F4 08C63786 693A58C3 431489FE 6452C91E 2BD85B5A A982EC04 82B7D965,
+\item $d_B$ = random(1, n-1) = 8840D8F4 08C63786 693A58C3 431489FE 6452C91E 2BD85B5A A982EC04 82B7D965,
 
-\item $P_B = (x_B, y_B) = d_BG$,
+\item $P_B = (x_B, y_B) = d_BG$
 
-\item $x_B$ = $0x$D9852BD0 8856BF07 1FF719E4 2B8D4CB1 E82D66F5 B0CB00CF C6B62892 E1A8FFCD,
+\item $x_B$ = D9852BD0 8856BF07 1FF719E4 2B8D4CB1 E82D66F5 B0CB00CF C6B62892 E1A8FFCD
 
-\item $y_B$ = $0x$C28B6FCA 34E247C8 32EE7C4F 55EC1DD5 150E6800 66BDFD86 1A8A26A7 724CE7E9.
+\item $y_B$ = C28B6FCA 34E247C8 32EE7C4F 55EC1DD5 150E6800 66BDFD86 1A8A26A7 724CE7E9
 \end{itemize}
 Il segreto condiviso sar\`a il punto di coordinate: $S = (x_S, y_S)$,
 \begin{itemize}
-    \item $x_S$ = $0x$11F9892D 57C6EAAD B9DE6475 BBCA2204 01FEAA84 3B7A1DB1 3C44C348 C0FB92F1,
-    \item $y_S$ = $0x$89FC9ED0 FF4B1D91 3E4978EF DF23BAD8 947528E0 C4DDD00D C0119149 DD5C08ED
+    \item $x_S$ = 11F9892D 57C6EAAD B9DE6475 BBCA2204 01FEAA84 3B7A1DB1 3C44C348 C0FB92F1
+    \item $y_S$ = 89FC9ED0 FF4B1D91 3E4978EF DF23BAD8 947528E0 C4DDD00D C0119149 DD5C08ED
 \end{itemize}
-
 %
 %
 %
@@ -1424,10 +1445,10 @@ I parametri in gioco sono:
   \item \textbf{x} la chiave privata, la scelta di $x$ deve ricadere nell'intervallo $[1, q-1]$;
  \item \textbf{y} la chiave pubblica, viene calcolata come $y=g^x$ mod$(p)$;
  \item \textbf{k} un numero segreto, da mantenersi unico per ogni messaggio. La scelta di $k$ deve ricadere nell'intervallo $[1, q-1]$;
- \item \textbf{z} stringa corrispondente ai primi $\mu$ bit pi\`u a sinistra di $H$, tuttavia deve esser convertita in un numero intero prima di poter essere utilizzata,
+ \item \textbf{z} stringa corrispondente ai primi $\mu$ bit pi\`u a sinistra di $H$; tuttavia deve esser convertita in un numero intero prima di poter essere utilizzata (come espresso in \cite{dss}, pagine 19, 68 e 69),
  \begin{itemize}
   \item $\mathbold{\mu} = min(N, h)$ \`e il valore minimo tra $N$ ed $h$,
-  \item dato il messaggio $M$, l'impronta $H = hash(M)$ ha una lunghezza di $h$ bit.
+  \item dato il messaggio $M$, l'impronta $\mathbold{H} = hash(M)$ ha una lunghezza di $\mathbold{h}$ bit.
  \end{itemize}
 \end{itemize}
 La conoscenza di questi parametri permette di proseguire lo studio dell'algoritmo.
@@ -1538,21 +1559,24 @@ Il paradigma di firma utilizzato necessita quindi di una buona entropia dalla qu
 %
 %
 %
-\chapter{Elliptic Curve Discrete Logarithm Problem}
+\chapter{Sicurezza dell'ECDLP}
 \label{ecdlp}
-Nella sicurezza informatica dire che un problema \`e difficile da risolvere significa che algoritmi e protocolli basati su di esso risultano crittograficamente pi\`u sicuri di altri che fanno uso di procedure semplici o prevedibili. Gli algoritmi analizzati nel capitolo \ref{ecc algo} sono costruiti sulla base di problemi DLP, ognuno con lo scopo di proteggere dati sensibili da utenti malintenzionati.
+Nella sicurezza informatica dire che un problema \`e difficile da risolvere significa che algoritmi e protocolli basati su di esso risultano crittograficamente pi\`u sicuri di altri che fanno uso di procedure semplici o prevedibili. Gli algoritmi (ElGamal, RSA, DSA) analizzati nel capitolo \ref{ecc algo} sono costruiti sulla base di problemi del logaritmo discreto (DLP), ognuno con lo scopo di proteggere dati sensibili da utenti malintenzionati.
 \\
-Sappiamo che il problema del logaritmo discreto (DLP) viene descritto a partire dalla generica equazione
+Sappiamo che il DLP viene descritto a partire dalla generica equazione
 \begin{center}
  $y = a^x$ mod$(n)$
 \end{center}
 con l'intento di calcolare $x$ dati per noti gli altri valori $y, a, n$. L'algoritmo pi\`u veloce \cite{libro 900 pagine, dlp fast1} per la risoluzione di questo problema presenta complessit\`a temporale pari a
-\begin{center}
- $e^{\sqrt[3]{ln(n) \cdot ln( ln( n) )^2}}$
+\begin{gather}
+ e^{\sqrt[3]{ln(n) \cdot ln( ln( n) )^2}}
  \label{dlp enorme}
-\end{center}
-Nel 2010 si \`e difatti riusciti a fattorizzare \cite{dlp fast2} una chiave RSA da 768 bit, per una lunghezza totale di 232 cifre. Progresso tecnologico e nuove teorie matematiche contribuiscono ad abbassare la difficolt\`a nel risolvere il DLP facendo emergere il bisogno di nuovi algoritmi che possano garantire l'integrit\`a e la riservatezza delle informazioni in modo efficace. A questo proposito si evidenzia come le curve ellittiche offrano attualmente quanto richiesto. 
-Gli algoritmi basati su curve ellittiche sono costruiti a partire dal problema del logaritmo discreto, l'ECDLP, ovvero: dati due punti $P$ e $Q$ di una curva ellittica definiti come $Q = kP$, qual \`e la difficolt\`a computazionale nel calcolare $k$? 
+\end{gather}
+Nel 2010 si \`e difatti riusciti a fattorizzare \cite{dlp fast2} una chiave RSA da 768 bit, per una lunghezza totale di 232 cifre. Progresso tecnologico e nuove teorie matematiche contribuiscono ad abbassare la difficolt\`a nel risolvere il DLP facendo emergere il bisogno di nuovi algoritmi che possano garantire l'integrit\`a e la riservatezza delle informazioni in modo efficace. A questo proposito si evidenzier\`a, nel corso di questo capitolo, come le curve ellittiche offrano quanto richiesto. 
+\section{Attacchi all'ECDLP}
+Questa sezione viene incentrata su differenti algoritmi che permettono di risolvere il problema del logaritmo discreto per le curve ellittiche avendo la conoscenza dei soli parametri pubblici $t$ descritti fino ad ora.
+\\
+ECDH, ECDSA e tutti gli algoritmi basati su curve ellittiche fondano la loro sicurezza crittografica sull'ECDLP, ovvero: \emph{dati due punti $P$ e $Q$ di una curva ellittica definiti come $Q = kP$, qual \`e la difficolt\`a computazionale nel calcolare $k$?}
 %
 %
 %
@@ -1564,7 +1588,7 @@ Gli algoritmi basati su curve ellittiche sono costruiti a partire dal problema d
 %
 %
 %
-\section{Baby Step, Giant Step}
+\subsection{Baby Step, Giant Step}
 L'algoritmo di Shank, il ``\textit{Baby Step, Giant Step}" divide il problema del logaritmo discreto in due problemi pi\`u semplici. La prima parte dell'algoritmo consiste nel calcolo di $\sqrt{n}$ punti della curva. La seconda parte mira a trovare una combinazione lineare di punti tale da ottenere una corrispondenza tra i punti calcolati nella prima parte. Partiamo dal considerare una generica combinazione lineare secondo la quale il nostro segreto $k$ venga visto come $rs+t$, definendo ogni parametro come numeri interi $r, s, t \in \mathbb{Z}$. In definitiva, il problema ECDLP espresso come $Q=kP$ pu\`o esser visto nella forma $Q = (rs+t)P$ e quindi scomposto in
 \begin{gather}
  Q -rsP = tP \label{bsgs base}
@@ -1579,7 +1603,7 @@ Imponiamo il valore di $s$ fisso e consideriamo $r$, $t$ variabili secondo quant
  t \in [0, s]
 \end{cases}$
 \end{center}
-Come anticipato inizialmente, il primo problema \`e il Baby Step: calcolare i punti $tP$ al variare di $t$ ovvero $\{\mathcal{O}, P, 2P, \ldots, (s-1)P, sP\}$. Non possiamo dunque pensare di ricorrere ad una Double\&Add o alla Montgomery Ladder: bisogna usare $t$ volte la Legge di gruppo. In aggiunta, bisogna tener traccia dei punti trovati rendendo necessario salvarli in una ``\textit{hash table}"\footnote{\footnotesize{Matrice data da array associativi. Nel nostro caso le chiavi di tali array sono i valori computati di $t$; i valori degli array sono le coordinate di ciascun punto ottenuto.}} evidenziando entrambe le coordinate del punto ottenuto ed il valore di $t$ utilizzato.
+Come anticipato inizialmente, il primo problema \`e il Baby Step: calcolare i punti $tP$ al variare di $t$ ovvero $\{\mathcal{O}, P, 2P, \ldots, (s-1)P, sP\}$. Non possiamo dunque pensare di ricorrere ad una Double\&Add o alla Montgomery Ladder: bisogna usare $t$ volte la Legge di Gruppo. In aggiunta, bisogna tener traccia dei punti trovati rendendo necessario salvarli in una ``\textit{hash table}"\footnote{\footnotesize{Matrice data da array associativi. Nel nostro caso le chiavi di tali array sono i valori computati di $t$; i valori degli array sono le coordinate di ciascun punto ottenuto.}} evidenziando entrambe le coordinate del punto ottenuto ed il valore di $t$ utilizzato.
 \\
 Adesso dobbiamo occuparci del Giant Step: calcolare i punti $R_i=Q-rsP$ al variare di $r$. L'algoritmo termina quando un $R_i$ corrisponde ad un punto salvato nella hash table. Recuperare il valore di $t$ e di $r$ determina la soluzione dell'ECDLP portandoci a calcolare $rs+t \to k$.
 \\
@@ -1612,7 +1636,7 @@ Dover salvare $s$ punti nella hash table che comporta una complessit\`a spaziale
  O \Big (\, \Big \lceil \ddfrac{s}{4} \Big \rceil \, \Big ) = O \Big (\, \Big \lceil \ddfrac{\ceil{\sqrt{n}\,}}{4} \Big \rceil \, \Big ) 
  \label{bsgs migliorato}
 \end{gather}
-Esempio: la curva P-192 (standardizzata dal NIST in \cite{ec standard}) presenta cardinalit\`a $n = $ 0x\textit{FFFFFFFF FFFFFFFF FFFFFFFF 99DEF836 146BC9B1 B4D22831}, il numero di operazioni per calcolare tutti i punti $tP$ sar\`a $s = \sqrt{n} \approx 7.9 \cdot 10^{28}$. Ciascuna coordinata \`e costituita da 48 bytes portando ciascun punto a pesare 96 bytes di memoria per esser salvato. L'intera tabella di hash richieder\`a $96 \cdot 7.9\cdot 10^{28} = 7.5 \cdot 10^{30}$ bytes di memoria per l'algoritmo base (\ref{bsgs base}) e circa $1.8 \cdot 10^{30}$ bytes mediante la complessit\`a (\ref{bsgs migliorato}). In entrambi i casi abbiamo valori troppo grandi da memorizzare.
+Esempio: la curva P-192 (standardizzata dal NIST in \cite{ec standard}) presenta cardinalit\`a, espressa in notazione esadecimale, $n = $ \textit{FFFFFFFF FFFFFFFF FFFFFFFF 99DEF836 146BC9B1 B4D22831}; il numero di operazioni per calcolare tutti i punti $tP$ sar\`a $s = \sqrt{n} \approx 7.9 \cdot 10^{28}$. Ciascuna coordinata \`e costituita da 48 bytes portando ciascun punto a pesare 96 bytes di memoria per esser salvato. L'intera tabella di hash richieder\`a $96 \cdot 7.9\cdot 10^{28} = 7.5 \cdot 10^{30}$ bytes di memoria per l'algoritmo base (\ref{bsgs base}) e circa $1.8 \cdot 10^{30}$ bytes mediante la complessit\`a (\ref{bsgs migliorato}). In entrambi i casi abbiamo valori troppo grandi da memorizzare.
 %
 %
 %
@@ -1625,14 +1649,16 @@ Esempio: la curva P-192 (standardizzata dal NIST in \cite{ec standard}) presenta
 %
 %
 %
-\section{La \texorpdfstring{$\mathbold{\rho}$}{p} di Pollard}
-Un altro algoritmo per la risoluzione del Problema del Logaritmo Discreto \`e la $\rho$ di Pollard.
+\subsection{La \texorpdfstring{$\mathbold{\rho}$}{p} di Pollard}
+Un altro algoritmo per la risoluzione dell'ECDLP \`e la $\rho$ di Pollard. Quella che verr\`a mostrata di seguito \`e una variante del classico algoritmo di Pollard introdotto nel 1975 (nel quale si parlava di fattorizzare un numero primo), ora applicata alla teoria delle curve ellittiche come riportato in \cite{parall rho}. L'approccio che stiamo per mostrare, riprende l'idea della combinazione lineare di punti vista con il BSGS ma necessita di una complessit\`a spaziale nettamente inferiore. 
 \\
-Ancora una volta si vuole risolvere l'ECDLP mediante una combinazione lineare di punti. Ogni punto della curva si pu\`o scrivere come somma di altri due punti per definizione della legge di gruppo. Partendo dall'equazione $Q=kP$ determiniamo $Q=aP + bQ$, $P=AP + BQ$ dove $a$, $b$, $A$, $B$ sono numeri interi, in modulo $n$. Sull'esempio della curva $y^2=x^3+2x+2$ mod$(17)$ riportato nel capitolo (\ref{cardin}), supponiamo essere $Q=3P=(10, 6)$. Una combinazione lineare di punti per ottenere $Q$ pu\`o essere $a=6$, $b=-1$ secondo la quale otteniamo $Q=aP+bQ=6P-Q$ dove $6P=(16, 13)$ e $-Q=-3P=(10, 11)$. Computare la legge di gruppo tra questi due punti conduce al valore cercato $Q=(10, 6)$ corrispondente a $3P$. Essendo vero che $k=3$ abbiamo correttamente risolto il problema. In formule abbiamo che:
+Partendo dall'equazione $Q=kP$ determiniamo $Q=aP + bQ$, $kP=AP + BQ$ dove $a$, $b$, $A$, $B$ sono numeri interi, in modulo $n$. Sull'esempio della curva $y^2=x^3+2x+2$ mod$(17)$ riportato nel capitolo (\ref{cardin}), supponiamo essere $Q=3P=(10, 6)$. Una combinazione lineare di punti per ottenere $Q$ pu\`o essere $a=6$, $b=-1$ secondo la quale otteniamo $Q=aP+bQ=6P-Q$ dove $6P=(16, 13)$ e $-Q=-3P=(10, 11)$. Computare la legge di gruppo tra questi due punti conduce al valore cercato $Q=(10, 6)$ corrispondente a $3P$. Essendo vero che $k=3$ abbiamo correttamente risolto il problema. In formule abbiamo che:
 \begin{center}
 Dati i parametri $a$, $b$, $A$, $B \in s$\\
  $\exists(a, b) \ne (A, B) \mid aP+bQ = AP+BQ$.
 \end{center}
+dove con $s$ intendiamo una sequenza finita di parametri (verr\`a meglio definita a breve).
+\\
 L'algoritmo lo possiamo dunque esporre partendo dal calcolo di $k$ nell'equazione del logaritmo discreto per le curve ellittiche:
 \begin{align*}
  Q &=kP &\text{Applichiamo la combinazione lineare}\\
@@ -1650,24 +1676,24 @@ Per procedere con l'algoritmo abbiamo bisogno di generare una \textbf{sequenza f
 \begin{center}
  $s=\{(a_1, b_1), (a_2, b_2), \ldots, (a_j, b_j)\}$ 
 \end{center}
-Per ogni coppia di $s$ calcoliamo il corrispondente punto $aP+bQ$. Chiamata $S$ la sequenza data dai punti $R_i = a_iP+b_iQ$, la sua struttura estesa \`e:
+Per ogni coppia di $s$ calcoliamo il corrispondente punto $R_i = a_iP+b_iQ$ e determiniamo una seconda sequenza, che chiameremo $S$, data dai punti $R_i$:
 \begin{center}
  $S=\{R_1, R_2, \ldots, R_j\}$
 \end{center}
 Essendo i punti $P$ e $Q$ due elementi di un gruppo ciclico, la sequenza $S$ delle loro combinazioni lineari $R_i$ risulta essere ciclica. La $\rho$ di Pollard si basa sul trovare due coppie diverse di $s$ che determinano due punti $R_i$ uguali in $S$. 
 \\
-La $\rho$ di Pollard prosegue mediante algoritmi di ricerca dei cicli. Uno di questi \`e l'algoritmo di Floyd, ``\textit{la Lepre e la Tartaruga}": data la sequenza $S$ leggiamo ogni suo punto ma a due velocit\`a differenti. Chiamiamo $T$ la tartaruga, questa ha il compito di leggere ogni singolo punto; chiamiamo invece $L$ la lepre che ha il compito di leggere i punti $R_i$ alternati. Confrontando i punti trovati da $T$ ed $L$ ad ogni loro passo arriviamo a trovare due punti $R_T$ e $R_L$ con le stesse coordinate ma generati da diverse coppie di $s$. Terminiamo l'algoritmo con il calcolo del segreto $k$ per mezzo della $k=(a -A)(B -b)^{-1}$ mod$(n)$.
+La $\rho$ di Pollard prosegue mediante algoritmi di ricerca dei cicli. Uno di questi \`e l'algoritmo di Floyd, ``\textit{la Lepre e la Tartaruga}", che data la sequenza $S$ permette di leggere ogni suo elemento facendo uso di due velocit\`a differenti. Chiamiamo $T$ la tartaruga, questa ha il compito di leggere ogni singolo punto $R_i$; chiamiamo invece $L$ la lepre, questa legger\`a i punti $R_i$ alternati. Confrontando i punti trovati da $T$ ed $L$ ad ogni loro passo arriviamo a trovare due punti $R_T$ e $R_L$ con le stesse coordinate ma generati da diverse coppie di $s$. Terminiamo l'algoritmo con il calcolo del segreto $k$ per mezzo della $k=(a -A)(B -b)^{-1}$ mod$(n)$.
 \\
 Come riportato da Certicom in \cite{Certicom pollard p} la $\rho$ di Pollard \`e l'algoritmo pi\`u veloce nel risolvere l'ECDLP mediante una complessit\`a temporale 
-\begin{center}
- $O\Big (\sqrt{\ddfrac{\pi n}{2}}\, \Big )$
+\begin{gather}
+ O\Big (\sqrt{\ddfrac{\pi n}{2}}\, \Big )
  \label{p parallelo}
-\end{center}
-Una sua versione parallelizzata su 2600 computer \`e stata utilizzata da Chris Monico nel 2004 \cite{monico} per una sfida lanciata dalla Certicom. La sfida consisteva nel riuscire a trovare il segreto $k$ data una curva ellittica di lunghezza pari a $109$ bit. L'ordine di tale curva corrisponde quindi a $n = 2^{109}$. La versione dell'algoritmo proposta da Monico ha richiesto 17 mesi di computazioni.
+\end{gather}
+Una sua versione parallelizzata su 2600 computer \`e stata utilizzata da Chris Monico nel 2004 \cite{monico} per una sfida lanciata dalla Certicom. La sfida consisteva nel riuscire a trovare il segreto $k$ di lunghezza pari a $109$ bit su una determinata curva ellittica. L'ordine di tale curva corrisponde a $n = 2^{109}$ ed il tempo richiesto per risolvere l'ECDLP \`e stato pari a 17 mesi di computazioni.
 \\
 Mostriamo, in proporzione, quanto tempo sarebbe stato necessario al professor Monico ed il suo team per risolvere lo stesso problema ma su differenti curve ellittiche. Detto $t$ il coefficiente di tempo impiegato, ossia 17 mesi, detta $B$ la lunghezza in bit della curva considerata; il tempo complessivo $T$ lo assumiamo corrispondere a:
 \begin{center}
- $T = t \cdot \ddfrac{\sqrt{\ddfrac{\pi 2^B}{2}}}{\sqrt{\ddfrac{\pi n}{2}}} = t \cdot \ddfrac{\sqrt{2^{B}}}{\sqrt{2^{109}}}$
+ $T = t \cdot \ddfrac{\sqrt{\ddfrac{\pi 2^B}{2}}}{\sqrt{\ddfrac{\pi n}{2}}} = t \cdot \ddfrac{\sqrt{2^{B}}}{\sqrt{2^{109}}} = t \cdot \sqrt{2^{B-109}}$
 \end{center}
 Vediamo qualche esempio con alcune lunghezze $B$ standard per le curve ellittiche:
 \begin{center}
@@ -1675,17 +1701,15 @@ Vediamo qualche esempio con alcune lunghezze $B$ standard per le curve ellittich
  B & T (mesi)\\
  \hline
  $160$ &$8 \cdot 10^8$\\
- $192$ &$5.2 \cdot 10^{13}$\\
  $224$ &$3.4 \cdot 10^{18}$\\
  $256$ &$2.2 \cdot 10^{23}$\\
  $384$ &$4.1 \cdot 10^{42}$\\
- $520$ &$1.2 \cdot 10^{63}$
+ $512$ &$4.5 \cdot 10^{60}$
 \end{tabular}
 \end{center}
 Sebbene sia una semplice proporzione i tempi di riuscita sono troppo elevati.
 \\
-L'algoritmo parallelizzato con $M$ processori comporta un miglioramento di sole $\sqrt{M}$ operazioni%http://people.scs.carleton.ca/~paulv/papers/JoC97.pdf
-. La spiegazione deriva dal fatto che non salvando i punti in una hash table, ogni processore dovr\`a calcolare una propria sequenza di punti. Ogni processore avr\`a la medesima probabilit\`a degli altri $M-1$ di trovare una collisione. Per diminuire linearmente i passi da computare bisogna assegnare ad ogni processore la medesima sequenza ma facendoli partire da punti iniziali $P_M$ diversi. 
+Eseguire la $\rho$ di Pollard su $M$ processori \`e un compito che pu\`o essere svolto in due modi differenti, apportando diversi tempi di risoluzione. Un primo approccio consiste nel calcolare $M$ sequenze $S_m$ ed assegnarne una ad ogni processore. Ognuno di questi dovr\`a eseguire l'algoritmo di Pollard riducendo il costo computazionale finale di sole $\sqrt{M}$ operazioni. Infatti, ogni processore avr\`a la medesima probabilit\`a degli altri $M-1$ di trovare una collisione \cite{rho speed1, rho speed2}, il miglioramento introdotto \`e sublineare. Per diminuire linearmente il costo computazionale bisogna assegnare ad ogni processore la medesima sequenza $S$ ma ognuno dovr\`a partire da punti iniziali $P_m$ diversi. 
 \\
 Descriviamo infine le complessit\`a computazionali che abbiamo ottenuto con il metodo base e le due differenti versioni parallelizzate:
 \begin{center}
@@ -1703,44 +1727,38 @@ Descriviamo infine le complessit\`a computazionali che abbiamo ottenuto con il m
 %
 %
 %
-\section{La \texorpdfstring{$\mathbold{\lambda}$}{l} di Pollard}
+\subsection{La \texorpdfstring{$\mathbold{\lambda}$}{l} di Pollard}
 Un secondo algoritmo ideato da Pollard \`e il cosidetto $\lambda$ o ``\textit{metodo del canguro}" \cite{pollard el-psy-kongru}. La sua applicazione \`e valida qualora sia possibile restringere in un intervallo $[min, max]$ i valori in cui si trova il segreto $k$.
 \\
 Si parte dal considerare due punti: uno noto, ad esempio il punto generatore $G$, ed uno casuale calcolato al momento. Saltare da un punto ad un altro \`e un compito dato a due canguri. Il comportamento di ciascun canguro viene descritto da una funzione di iterazione $x_{i+1}=f(x_i, d_i)$ espressa come
-\begin{center}
 \begin{align*}
     f(x_i, d_i) &= x_i \cdot c^{d_i \cdot x_i \text{ mod}(M)} \text{ mod}(n)\\
     c \mid x_0 &= c^b \text{ mod}(n)\\
     d&=\text{ distanza di salto}
 \end{align*}
-\end{center}
-La distanza di salto $d$ viene generalmente identificata \cite{el-psy 2} da un elemento dell'insieme finito $S$ delle potenze di 2 $S=\{2^0, 2^1, \ldots, 2^M\}$. La scelta di un elemento $d$ di $S$ \`e casuale ad ogni salto (iterazione).
+La distanza di salto $d$ viene generalmente identificata \cite{el-psy 2} da un elemento dell'insieme finito $S$ delle potenze di 2, per cui $S=\{2^0, 2^1, \ldots, 2^M\}$. La scelta di un elemento $d_i$ di $S$ \`e casuale ad ogni salto (iterazione).
 \\
 Il canguro addestrato $T$ inizia la sua serie di salti tramite la funzione $f(t_i, d_i)$, partendo dal punto iniziale $t_0$. Concludiamo le iterazioni dopo $j$ salti ottenendo:
-\begin{center}
 \begin{align*}
     t_j & = c^{b + D_T(j-1)} \text{ mod}(n)\\
     D_T(j) & =\sum_{i=0}^{j} d_i \cdot t_i \text{ mod}(M)
 \end{align*}
-\end{center}
 Parte ora il secondo canguro, quello selvatico $W$, da un punto iniziale, casuale $w_0=c^k$. Applichiamo la medesima funzione di iterazione per calcolare i suoi salti successivi e memorizziamo le coppie $(w_i, d_i)$. Per ogni salto di $W$ controlliamo se sia arrivato su un punto gi\`a trovato da $T$. Indichiamo con $\alpha$ il numero di salti necessari a $T$ per arrivare al punto di collisione; con $\beta$ il numero di salti di $W$ per raggiungere lo stesso punto. Il punto di collisione identifica $w_\beta = t_\alpha$ dai quali, espressi nelle loro forme esponenziali, otteniamo 
-\begin{center}
-\begin{align}
+\begin{gather}
     k = b + D_T(\alpha-1)-D_W(\beta-1)
-    \label{k lambda}
-\end{align}
-\end{center} 
+    \label{k lambda1234}
+\end{gather} 
 ovvero il coefficiente che risolve l'ECDLP \cite{parall rho}.
 \\
 \\
-Anche questo algoritmo pu\`o venir parallelizzato su molteplici processori. Presi $M$ processori, ognuno ricopre il ruolo del canguro addestrati. Applichiamo l'algoritmo appena visto con delle piccole modifiche: invece di un punto iniziale $G$ ci serviranno $M$ punti distinti per i canguri addestrati $T$; similmente avremo bisogno di $M$ punti casuali dai quali far partire i canguri selvatici $W$. L'algoritmo termina quando due canguri di natura diversa saltano sullo stesso punto. Il calcolo del coefficiente $k$ segue la stessa formulazione di (\ref{k lambda}).
+Anche questo algoritmo pu\`o venir parallelizzato su molteplici processori. Presi $M$ processori, ognuno ricopre il ruolo del canguro addestrati. Applichiamo l'algoritmo appena visto con delle piccole modifiche: invece di un punto iniziale $G$ ci serviranno $M$ punti distinti per i canguri addestrati $T$; similmente avremo bisogno di $M$ punti casuali dai quali far partire i canguri selvatici $W$. L'algoritmo termina quando due canguri di natura diversa saltano sullo stesso punto. Il calcolo del coefficiente $k$ segue la stessa formulazione di (\ref{k lambda1234}).
 \\
 L'algoritmo della $\lambda$ di Pollard \`e probabilistico, riuscire a trovare $k$ dipende dalla scelta per il punto iniziale del canguro selvatico. Se l'algoritmo dovesse fallire, lo si pu\`o ripetere cambiando il punto iniziale $w_0$. Per concludere analizziamo i costi computazionali delle due versioni: 
 \begin{align*}
 \text{Versione Base}& &\text{Versione Parallelizzata} \\
  O\Big(\sqrt{\ddfrac{\pi n}{2}}\, \Big)& &O\Big(\ddfrac{1}{M}{\sqrt{\ddfrac{\pi n}{2}}} \, \Big)
 \end{align*}
-Entrambi rispecchiano l'analoga versione della $\rho$ di Pollard, tuttavia bisogna conoscere un intervallo molto ristretto di valori nel quale cercare $k$ ed \`e possibile dover ripetere l'algoritmo se la scelta di $w_0$ non porti a soluzione, aumentando notevolmente il tempo di riuscita. Per questi motivi l'algoritmo della $\rho$ viene ritenuto pi\`u efficiente della $\lambda$.
+Entrambi rispecchiano l'analoga versione della $\rho$ di Pollard, tuttavia bisogna conoscere un intervallo molto ristretto di valori nel quale cercare $k$, un requisito difficilmente noto. Per questo motivo l'algoritmo della $\rho$ viene ritenuto pi\`u efficiente della $\lambda$.
 %
 %
 %
@@ -1757,7 +1775,7 @@ Entrambi rispecchiano l'analoga versione della $\rho$ di Pollard, tuttavia bisog
 %
 %
 %
-\section{Poligh-Hellman}
+\subsection{Poligh-Hellman}
 \label{poliwag}
 L'algoritmo di Pohlig-Hellman \cite{rho for poliwag} si adatta molto bene a curve di ordine $n$ non primo, portando alla risoluzione dell'ECDLP in breve tempo. Per trovare il coefficiente $k$ in $Q=kP$, scomponiamo $n$ nei suoi fattori primi:
 \begin{center}
@@ -1811,8 +1829,8 @@ $O \Big ({\displaystyle \sum_{i=1}^r }e_i($log$(n) +\sqrt{p_i} )\Big )$
 %
 %
 %
-\section{Side Channel}
-Gli attacchi detti ``\textit{Side Channel}" non sono intrusivi, non necessitano di raccogliere i dati scambiati tra due interlocutori per determinare la chiave privata $K^-$ in gioco. Questi attacchi mirano a calcolare $K^-$ in base a fattori fisici quali: tempo di elaborazione per l'algoritmo e consumo di potenza del processore. La vulnerabilit\`a maggiore nella crittografia ellittica risiede in come viene calcolata la chiave pubblica, ossia quante volte venga usata la Legge di gruppo, quante volte la Point Doubling ed ``\textit{ascoltando}" in che ordine queste vengano elaborate. Come visto nel capitolo \ref{doub add} la Double\&Add usa una determinata sequenza di operazioni per giungere al risultato finale. Detta $k$ la nostra chiave privata, il punto $Q=kG$ rappresenta la chiave pubblica. Un attacco Side Channel si applica proprio nel momento in cui si calcola $Q$, misurando la potenza assorbita ad ogni operazione fatta. Applicare un attacco di questo tipo \`e possibile avendo a disposizione un calcolatore munito di oscilloscopio. Unendo i dati di durata e potenza assorbita raccolti, si ricostruisce l'andamento della moltiplicazione scalare. Far corrispondere ad ogni variazione la relativa operazione (Point Addition o Point Doubling) significa trovare la sequenza di operazioni che portano a calcolare $Q$ e, di conseguenza, il nostro segreto $k$.
+\subsection{Side Channel}
+Gli attacchi detti ``\textit{Side Channel}" non sono intrusivi, non necessitano di raccogliere i dati scambiati tra due interlocutori per determinare la chiave privata $K^-$ in gioco. Questi attacchi mirano a calcolare $K^-$ in base a fattori fisici quali: tempo di elaborazione per l'algoritmo e consumo di potenza del processore. La vulnerabilit\`a maggiore nella crittografia ellittica risiede in come viene calcolata la chiave pubblica, ossia quante volte venga usata la Legge di Gruppo, quante volte la Point Doubling ed ``\textit{ascoltando}" in che ordine queste vengano elaborate. Come visto nel capitolo \ref{doub add} la Double\&Add usa una determinata sequenza di operazioni per giungere al risultato finale. Detta $k$ la nostra chiave privata, il punto $Q=kG$ rappresenta la chiave pubblica. Un attacco Side Channel si applica proprio nel momento in cui si calcola $Q$, misurando la potenza assorbita ad ogni operazione fatta. Applicare un attacco di questo tipo \`e possibile avendo a disposizione un calcolatore munito di oscilloscopio. Unendo i dati di durata e potenza assorbita raccolti, si ricostruisce l'andamento della moltiplicazione scalare. Far corrispondere ad ogni variazione la relativa operazione (Point Addition o Point Doubling) significa trovare la sequenza di operazioni che portano a calcolare $Q$ e, di conseguenza, il nostro segreto $k$.
 \\
 Il metodo pi\`u semplice per proteggersi da questi attacchi passivi consiste nel ricorrere alla Montgomery Ladder. Come visto nella sua implementazione, questo metodo computa sempre una addizione ed una moltiplicazione per ogni cifra binaria di $k$, permettendo tempi ed assorbimenti di potenza costanti. Senza poter distinguere quale operazione viene adoperata ad ogni passo, si conclude che un attacco Side Channel non sia applicabile a questo algoritmo.
 %
@@ -1831,13 +1849,13 @@ Il metodo pi\`u semplice per proteggersi da questi attacchi passivi consiste nel
 %
 %
 %
-\section{Conclusioni}
+\subsection{Considerazioni finali}
 \label{ecdlp conclusioni}
-In questo capitolo abbiamo visto diversi attacchi che mirano a risolvere l'ECDLP. Ogni algoritmo si fonda su principi matematici differenti o su curve ellittiche aventi specifiche propriet\`a. Il BSGS non presenta facile applicazione per via del suo costo spaziale; l'algoritmo di Poligh-Hellman richiede curve supersingolari, non trovando alcuna applicazione tra gli standard del NIST: tutte le curve promosse sono curve prime, il cui minimo ordine \`e $n=192$. Test di primalit\`a si trovano nello standard \cite{dss} a dimostrazione del fatto che le curve utilizzate sono assolutamente sicure contro questo tipo di attacco. 
+Come visto finora, esistono diversi attacchi che mirano a risolvere l'ECDLP. Ogni algoritmo si fonda su principi matematici differenti o su curve ellittiche aventi specifiche propriet\`a. Il BSGS non presenta facile applicazione per via del suo costo spaziale; l'algoritmo di Poligh-Hellman richiede curve supersingolari, non trovando alcuna applicazione tra le curve standardizzate dal NIST: tutte le curve promosse sono curve prime, il cui ordine minimo ha lunghezza pari $192$ bit. Test di primalit\`a si trovano nello standard \cite{dss} a dimostrazione del fatto che le curve utilizzate sono assolutamente sicure contro questo tipo di attacco. 
 \\
-Una seconda nota da evidenziare \`e che tali curve hanno cardinalit\`a $\#E$ diversa dalla caratteristica di campo $p$; non possono esser definite come Curve Anomale. Esistono algoritmi per la risoluzione dell'ECDLP su curve anomale ma, come affermato dallo stesso ideatore Nigel Smart in \cite{ev_curv2}, si tratta di metodi di interesse teorico piuttosto che pratico. Gli algoritmi di Pollard restano i pi\`u veloci a nostra disposizione sebbene non presentino un tempo di calcolo sub-esponenziale, rendendoli inefficaci contro le curve di grandi ordini $n$.
+Una seconda nota da evidenziare \`e che tali curve hanno cardinalit\`a $\#E$ diversa dalla caratteristica di campo $p$; pertanto non possono esser definite come Curve Anomale. Esistono algoritmi per la risoluzione dell'ECDLP su curve anomale ma, come affermato dallo stesso ideatore Nigel Smart in \cite{ev_curv2}, si tratta di ``\emph{metodi di interesse teorico piuttosto che pratico}" e non troverebbero applicazione nelle curve del NIST. Gli algoritmi di Pollard restano i pi\`u veloci a nostra disposizione sebbene non presentino un tempo di calcolo sub-esponenziale, rendendoli inefficaci contro le curve di grandi ordini $n$. In aggiunta, la $\lambda$ di Pollard richiede un intervallo ristretto sul quale operare: non conoscere l'intervallo esclude questo algoritmo da quelli applicabili contro l'ECDLP.
 \\
-\`E possibile pensare di velocizzare questi algoritmi o aumentarne le probabilit\`a di riuscita facendo affidamento alle formule (\ref{CPcard_dispari}) e (\ref{Cons Pers 2}) mediante le quali risolviamo l'ECDLP anche quando arriviamo a calcolare $-Q$, il punto simmetrico alla nostra chiave pubblica. Gli algoritmi di Pollard avrebbero due punti sui quali fermarsi raddoppiando le probabilit\`a di riuscita. L'algoritmo di Poligh-Hellman non viene influenzato da queste formule, infatti non viene modificato l'ordine $n$ sul quale esso si basa.
+\`E possibile velocizzare gli algoritmi visti, o aumentarne le probabilit\`a di riuscita, facendo affidamento alle formule (\ref{CPcard_dispari}) e (\ref{Cons Pers 2}) mediante le quali risolviamo l'ECDLP anche quando arriviamo a calcolare $-Q$, il punto simmetrico alla nostra chiave pubblica. Gli algoritmi di Pollard avrebbero due punti sui quali fermarsi raddoppiando le probabilit\`a di riuscita. L'algoritmo di Poligh-Hellman non viene influenzato da queste formule, infatti non viene modificato l'ordine $n$ sul quale esso si basa. Per lo stesso motivo l'attacco di Smart resta un esercizio teorico e l'hash table del BSGS non subisce miglioramenti sensibili.
 \\
 In ultimo, attacchi passivi come i Side Channel trovano scarsa applicazione se le moltiplicazioni scalari vengono effettuate ricorrendo alla Montgomery Ladder e non vengono influenzati dalle formule sulle quali si \`e appena discusso.
 %
@@ -1848,8 +1866,8 @@ In ultimo, attacchi passivi come i Side Channel trovano scarsa applicazione se l
 %
 %
 %
-\chapter{Livelli di Sicurezza}
-Dall'analisi condotta nel capitolo \ref{ecdlp} si \`e arrivati a mostrare come gli algoritmi pi\`u veloci per risolvere l'ECDLP siano gli algoritmi di Pollard. Volendo risolvere il problema dell'ECDLP, se l'algoritmo pi\`u veloce a noi noto richiede $2^k$ operazioni, diciamo che il problema presenta un \textbf{livello di sicurezza }$\mathbold{k}$. 
+\section{Livelli di Sicurezza}
+Dall'analisi condotta precedentemente in questo capitolo si \`e arrivati a mostrare come gli algoritmi pi\`u veloci per risolvere l'ECDLP siano gli algoritmi di Pollard. Volendo risolvere il problema dell'ECDLP, se l'algoritmo pi\`u veloce a noi noto richiede $2^k$ operazioni, diciamo che il problema presenta un \textbf{livello di sicurezza }$\mathbold{k}$. 
 \\
 Confrontiamo la (\ref{dlp enorme}) per risolvere il DLP e la (\ref{p parallelo}) per l'ECDLP, il metodo pi\`u oneroso \`e il secondo (figura \ref{DLPvECDLP}):
 \begin{figure}[H]
@@ -1885,25 +1903,25 @@ Sui dati della tabella (\ref{key confronto}) grafichiamo le chiavi per RSA ed EC
 Vogliamo dunque mostrare un ultimo confronto tra RSA ed ECC: a parit\`a di livello di sicurezza, mostriamo il numero di operazioni necessarie a risolvere il DLP e l'ECDLP mediante gli attacchi pi\`u efficaci considerati.
 Chiamiamo ``\textit{L}" il relativo livello di sicurezza al quale facciamo riferimento. Per RSA il miglior algoritmo risolutivo necessita di $e^{\sqrt[3]{ln(n) \cdot ln( ln( n) )^2}}$ operazioni; per ECC abbiamo la $\rho$ di Pollard con $\sqrt{\ddfrac{\pi n}{2}}$ operazioni. Il valore detto $n$ rappresenta il numero $2^b$ ovvero il numero che otteniamo mediante chiavi da $b$ bit. Nella colonna $ECC/RSA$ si mostra un rapporto tra le operazioni necessarie ad entrambi gli algoritmi per risolvere il problema del logaritmo discreto.
 \\
-Prendiamo in considerazione anche il tempo di elaborazione dell'algoritmo: un anno MIPS corrisponde al numero di operazioni che vengono svolte in 365 giorni di attivit\`a da un singolo processore che lavora alla frequenza di 1 milione di operazioni al secondo. Tale numero corrisponde a $MIPS=3.1 \cdot 10^{13}$ operazioni totali. Gli anni MIPS necessari per il calcolo $x$ operazioni sono calcolati come il rapporto $x / MIPS$, vedasi le colonne \textit{MIPS RSA} e \textit{MIPS ECC}. Infine, nella colonna \textit{MIPS ECC/RSA} mostriamo un rapporto tra gli anni MIPS necessari ad entrambi gli algoritmi per risolvere il logaritmo discreto.
+Prendiamo in considerazione anche il tempo di elaborazione dell'algoritmo: un anno MIPS corrisponde al numero di operazioni che vengono svolte in 365 giorni di attivit\`a da un singolo processore che lavora alla frequenza di 1 milione di operazioni al secondo. Tale numero corrisponde a $MIPS=3.1 \cdot 10^{13}$ operazioni totali. Gli anni MIPS necessari per il calcolo $x$ operazioni sono calcolati come il rapporto $x / MIPS$, vedasi le colonne \textit{MIPS RSA} e \textit{MIPS ECC}. La colonna \textit{MIPS ECC/RSA} non viene mostrata: passare da un valore della colonna \textit{ECC} al corrispettivo \textit{MIPS ECC} significa dividere secondo il coefficiente \textit{MIPS}, lo stesso concetto si applica per \textit{RSA} concludendo che il rapporto \textit{ECC/RSA} corrisponda esattamente a \textit{MIPS ECC/RSA}.
 \begin{center}
-\begin{tabular}{c |c |c |c |c |c |c }
-& \multicolumn{3}{c|}{Operazioni} &\multicolumn{3}{c}{Anni MIPS}\\
+\begin{tabular}{c |c |c |c |c |c }
+& \multicolumn{3}{c|}{Operazioni} &\multicolumn{2}{c}{Anni MIPS}\\
 \hline
-L & RSA & ECC & ECC/RSA & RSA & ECC & ECC/RSA\\
+L & RSA & ECC & ECC/RSA & RSA & ECC\\
 \hline
-80 & $3.8 \cdot 10^{13}$ & $1.5 \cdot 10^{24}$ & $3.9 \cdot 10^{10}$ &  1.2 & $4.7 \cdot 10^{10}$ & $3.9 \cdot 10^{10}$ \\
-112 & $1.9 \cdot 10^{18}$ & $6.5 \cdot 10^{33}$ & $3.4 \cdot 10^{15}$ &  $6.0 \cdot 10^{4}$ & $2.0 \cdot 10^{20}$ & $3.4 \cdot 10^{15}$ \\
-128 & $5.2 \cdot 10^{21}$ & $4.3 \cdot 10^{38}$ & $8.2 \cdot 10^{16}$ &  $1.6 \cdot 10^{8}$ & $1.3 \cdot 10^{25}$ & $8.2 \cdot 10^{16}$ \\
-192 & $6.0 \cdot 10^{31}$ & $7.9 \cdot 10^{57}$ & $1.3 \cdot 10^{26}$ &  $1.9 \cdot 10^{18}$ & $2.5 \cdot 10^{44}$ & $1.3 \cdot 10^{26}$ \\
-256 & $1.4 \cdot 10^{42}$ & $1.5 \cdot 10^{77}$ & $1.0 \cdot 10^{35}$ &  $4.4 \cdot 10^{28}$ & $4.7 \cdot 10^{63}$ & $1.0 \cdot 10^{35}$
+80 & $3.8 \cdot 10^{13}$ & $1.5 \cdot 10^{24}$ & $3.9 \cdot 10^{10}$ &  1.2 & $4.7 \cdot 10^{10}$\\
+112 & $1.9 \cdot 10^{18}$ & $6.5 \cdot 10^{33}$ & $3.4 \cdot 10^{15}$ &  $6.0 \cdot 10^{4}$ & $2.0 \cdot 10^{20}$\\
+128 & $5.2 \cdot 10^{21}$ & $4.3 \cdot 10^{38}$ & $8.2 \cdot 10^{16}$ &  $1.6 \cdot 10^{8}$ & $1.3 \cdot 10^{25}$\\
+192 & $6.0 \cdot 10^{31}$ & $7.9 \cdot 10^{57}$ & $1.3 \cdot 10^{26}$ &  $1.9 \cdot 10^{18}$ & $2.5 \cdot 10^{44}$\\
+256 & $1.4 \cdot 10^{42}$ & $1.5 \cdot 10^{77}$ & $1.0 \cdot 10^{35}$ &  $4.4 \cdot 10^{28}$ & $4.7 \cdot 10^{63}$
 \end{tabular}
 \end{center}
 Aver scelto l'algoritmo base della $\rho$ di Pollard non cambia molto la situazione rispetto la sua versione parallelizzata: colmare la differenza di operazioni tra i due problemi richiede tanti processori quanto il rapporto ECC/RSA relativo alla colonna Operazioni. Solo per il livello minimo, 80 bit, si dovrebbero considerare circa 39 miliardi di processori attivi simultaneamente. 
 \\
 Quanto mostrato nella tabella costituisce un ulteriore incentivo verso la scelta della crittografia ellittica. Il livello medio di sicurezza, 128 bit, comporta dapprima un impiego di memoria nettamente inferiore in ECC rispetto RSA (solo l'8\% della lunghezza in bit) e, al tempo stesso, le operazioni da computare per risolvere l'ECDLP risultano $8.2 \cdot 10^{16}$ volte maggiori in confronto con il DLP. Il tempo di calcolo per rompere i due logaritmi discreti \`e notevole in entrambi i casi ma non possiamo fare affidamento su un tempo di $1.6 \cdot 10^{8}$ (RSA, 128 bit) per determinare tale algoritmo come \textit{crittograficamente sicuro} per gli anni futuri. Compatibilit\`a e retrocompatibilit\`a con dispositivi in uso in tutto il mondo sono fattori fondamentali nella scelta di un buon algoritmo di crittografia. L'importanza di mantenere chiavi ``piccole" \`e fondamentale per mantenere RSA efficiente: trovare e moltiplicare due numeri primi molto grandi pu\`o causare una latenza eccessiva sui dispositivi meno performanti. Il risultato \`e la deprecazione di RSA \cite{NIST key lenght} per il 31 Dicembre 2017.
 \\
-A confronto, chiavi pi\`u piccole per ECC consentono di velocizzare notevolmente i calcoli di generazione per la chiave privata: si fa infatti uso di un numero casuale $d$ scelto in un ampissimo intervallo. Ricordando che la chiave privata $d$ per algoritmi ellittici va scelta nell'intervallo $[1, n-1]$ diamo un'idea di quanto ampia sia la scelta. Nello standard \cite{dss} la NIST raccomanda l'utilizzo di cinque curve diverse, ognuna per un differente livello di sicurezza, per generare la firma digitale mediante ECDSA. Tali curve sono denominate $P_{x}$ dove $x$ determina la pi\`u grande potenza di 2 utilizzata nell'esprimere la cardinalit\`a del campo primo $\mathbb{F}_p$:
+A confronto, chiavi pi\`u piccole per ECC consentono di velocizzare notevolmente i calcoli di generazione per la chiave privata: si fa infatti uso di un numero casuale $d$ scelto in un ampissimo intervallo. Ricordando che la chiave privata $d$ per algoritmi ellittici va presa nell'intervallo $[1, n-1]$ diamo un'idea di quanto ampia sia la scelta. Nello standard \cite{dss} la NIST raccomanda l'utilizzo di cinque curve diverse, ognuna per un differente livello di sicurezza. Tali curve sono denominate $P_{x}$ dove $x$ determina la pi\`u grande potenza di 2 utilizzata nell'esprimere la cardinalit\`a del campo primo $\mathbb{F}_p$:
 \begin{align*}
  P_{192} &\to p=2^{192} - 2^{64}-1\\
  P_{224} &\to p=2^{224} - 2^{96}+1\\
@@ -1915,16 +1933,16 @@ La curva standardizzata $P_{192}$ ha equazione $y^2=x^3 -3x+b$ \cite{ec standard
 \begin{center}
 $n=6277101735386680763835789423176059013767194773182842284081$
 \end{center}
-e conseguente scelta della chiave privata nell'intervallo $[1, 6.2\cdot 10^{58}]$.
+Ne consegue che scelta della chiave privata, per la curva pi\`u ``\textit{debole}" crittograficamente parlando, ricade nell'ampissimo intervallo $[1, 6.2\cdot 10^{58}]$.
 \\
 \\
 Appurato ci\`o, nuovi algoritmi fanno uso di un numero detto \textbf{Seed} $S$ in base al quale vengono generati i coefficienti $a$ e $b$ per la curva. I seed sono generalmente identificati come ``\textit{nothing up my sleeve}": le prime cifre decimali della funzione seno applicata a numeri interi; le cifre iniziali del $\pi$; il numero di Nepero \textit{e}; il rapporto aureo e cos\`i via. Ci\`o che li rende numeri ``\textit{crittograficamente sicuri}" \`e potervi dare una giustificazione matematica. 
 \\
 Applicazioni del Seed si trovano nelle stesse curve standardizzate dal NIST; sebbene la presenza del coefficiente fisso $a=-3$, il parametro $b$ viene calcolato come segue: 
 \begin{itemize}
-    \item si sceglie un seed $s$ di lunghezza pari a 160 bit,
-    \item si calcola $c = $SHA1$(s)$ basato ovvero sull'output SHA1 del seed,
-    \item si calcola $b = \sqrt{-\ddfrac{27}{c}}$ mod$(p)$, detto $p$ l'ordine del campo $\mathbb{F}_p$,
+    \item si sceglie un seed $s$ di lunghezza pari a 160 bit
+    \item si calcola $c = $SHA1$(s)$ basato ovvero sull'output SHA1 del seed
+    \item si calcola $b = \sqrt{-\ddfrac{27}{c}}$ mod$(p)$, detto $p$ l'ordine del campo $\mathbb{F}_p$
 \end{itemize}
 Le curve cos\`i costruite prendono la denominazione \textbf{Pseudo-Casuali}.
 %
@@ -2035,7 +2053,7 @@ Si conclude dicendo che questa curva rappresenta un'ottima scelta per l'implemen
 %
 %
 \chapter*{Ringraziamenti}
-Il tempo trascorso in questi anni sembra corrispondere ad un attimo. Anni di studio, amicizia, difficolt\`a hanno contribuito a rendermi una persona pi\`u matura e capace di affrontare i problemi a testa alta. La scelta dell'ateneo \`e seguita da un consiglio di un mio grande amico, Luca, che non ha mai smesso di essere un grande punto di riferimento e consigli. Voglio ringraziarlo ancora una volta per l'amicizia, la pazienza e la costanza che ha messo in ogni cosa rendendola speciale. Un grazie allo stesso modo speciale lo devo a Chiara, per l'infinita gentilezza e attenzione che pone in ogni parola, per la calma con cui affronta le difficolt\`a e tutta l'amicizia e l'affetto che ha dimostrato in questi anni. Tra i tanti colleghi di universit\`a e di corso, Gianpaolo \`e stato un Amico, un compagno di banco e di studio; di avventure, risate e delle tante frustrazioni per gli esami. Sempre propenso ed impegnato nel risolvere le situazioni pi\`u difficili, senza mai far pesare i suoi sforzi, mi ha dato il coraggio e la forza di andare avanti e proseguire tutte le volte che stavo per cedere. Gabriele, compagno di corso anche lui, mi ha offerto spunti di riflessione e pensieri personali che mi hanno portato ad osservare la realt\`a di tutti i giorni sotto un'ottica nuova, influenzando positivamente e con ottimismo il mio modo di pensare. Devo un grazie ad Alessandro per avermi dato la fiducia e la determinazione a cambiare e completare gli studi; al suo ottimismo ed il suo instancabile sorriso. Voglio ringraziare Benedetta, Monica, Ilaria per l'amicizia anche al di fuori delle lezioni ed i momenti passati insieme.
+Il tempo trascorso in questi anni sembra corrispondere ad un attimo. Anni di studio, amicizia, difficolt\`a hanno contribuito a rendermi una persona pi\`u matura e capace di affrontare i problemi a testa alta. La scelta dell'ateneo \`e seguita da un consiglio di un mio grande amico, Luca, che non ha mai smesso di essere un grande punto di riferimento e consigli. Voglio ringraziarlo ancora una volta per l'amicizia, la pazienza e la costanza che ha messo in ogni cosa rendendola speciale. Un grazie allo stesso modo speciale lo devo a Chiara, per l'infinita gentilezza e attenzione che pone in ogni parola, per la calma con cui affronta le difficolt\`a e tutta l'amicizia e l'affetto che ha dimostrato in questi anni. Tra i tanti colleghi di universit\`a e di corso, Gianpaolo \`e stato un Amico, un compagno di banco e di studio; di avventure, risate e delle tante frustrazioni per gli esami. Sempre propenso ed impegnato nel risolvere le situazioni pi\`u difficili, senza mai far pesare i suoi sforzi, mi ha dato il coraggio e la forza di andare avanti e proseguire tutte le volte che stavo per cedere. Gabriele, compagno di corso anche lui, mi ha offerto spunti di riflessione e pensieri personali che mi hanno portato ad osservare la realt\`a di tutti i giorni sotto un'ottica nuova, influenzando positivamente e con ottimismo il mio modo di pensare. Devo un grazie ad Alessandro per avermi dato la fiducia e la determinazione a cambiare e completare gli studi; ed al suo infinito ottimismo. Ringrazio ancora una volta Benedetta per l'amicizia e per avermi aiutato in numerose occasioni, soprattutto per la disponibilit\`a quando non potevo rivolgermi ad altri.
 \\
 In particolare voglio ringraziare Simone, Daniele e tutta la loro famiglia per l'affetto e la disponibilit\`a dimostrati da sempre. Un secondo grazie a Simone per esser stato inseparabile nonostante la distanza e l'aver condiviso tantissime esperienze ed idee.
 \\
@@ -2411,6 +2429,22 @@ Universit\`a di Chicago.
 Universit\`a del Minnesota,
 Professore associato di Matematica,
 7 Dicembre 2005.
+
+%51
+  \bibitem{rho speed1}
+  Paul C. van Oorschot, Michael J. Wiener,
+  \emph{``Parallel Collision Search with Cryptanalytic Applications"},
+1996.
+
+%52
+  \bibitem{rho speed2}
+  Silje Christensen, Simen Johnsrud,
+  \emph{``Speeding up the Pollard’s Rho algorithm"},
+1996.
+
+
+
+
 
 
 %99
