@@ -54,14 +54,14 @@
 
 %Imposta 9 simboli diversi per creare le note. Cos\`i evitiamo di confondere "le note" con "la notazione usata". Tuttavia non sembrano "professionali" o adatti ad una tesi e sono in numero limitati a 9 per capitolo (cambiare capitolo resetta il contatore dei simboli).
 %1 - *
-%2 - †
-%3 - ‡
-%4 - §
-%5 - ¶
+%2 - â€ 
+%3 - â€¡
+%4 - Â§
+%5 - Â¶
 %6 - ||
-%7 - **
-%8 - ††
-%9 - ‡‡
+%7 - âˆ—âˆ—
+%8 - â€ â€ 
+%9 - â€¡â€¡
 %\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 \renewcommand{\thefootnote}{\Roman{footnote}}
 
@@ -71,6 +71,15 @@
 %Per mettere liste con a), b) ecc
 \usepackage{enumitem}
 
+%Inserire pagine bianche con il comando \afterpage{\blankpage}
+\usepackage{afterpage}
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
 
 \titolo{Crittografia Ellittica}
 \laureando{Marco Carolla}
@@ -79,7 +88,7 @@
 
 \begin{document}
 
-\maketitle %Aggiunge la pagina iniziale dell'università
+%\maketitle %Aggiunge la pagina iniziale dell'universitÃ 
 \contentspage %Aggiunge l'indice
 
 %\pagenumbering{Roman}
@@ -255,7 +264,7 @@ n \in \mathbb{N}\text{, }n \ne 0 \text{, }char(\mathbb{F}_{n^m}) = \begin{cases}
 \end{cases}
 \label{charField}
 \end{gather}
-la caratteristica \`e pari al minimo numero di volte che l'elemento identit\`a della somma (\textbf{1}) deve essere sommato a se stesso per ottenere l'elemento identit\`a della motiplicazione (\textbf{0}). Se non fosse possibile definire tale $n$ si assume la caratteristica pari a \textit{zero}. 
+la caratteristica \`e pari al minimo numero di volte che l'elemento identit\`a della somma (\textbf{1}) deve essere sommato a se stesso per ottenere l'elemento identit\`a della moltiplicazione (\textbf{0}). Se non fosse possibile definire tale $n$ si assume la caratteristica pari a \textit{zero}. 
 \\
 Per un campo finito, l'ordine e la caratteristica coincidono. Si pu\`o dimostrare che il numero $n$ debba essere \textit{primo} procedendo per assurdo: se esso non fosse primo permetterebbe una scomposizione del tipo $n=n_1 \cdot n_2$, dove $n_1>1$ ed $n_2>1$ allora:
 \begin{center}
@@ -325,7 +334,7 @@ Per gruppi ciclici l'ordine del generatore $g$ e l'ordine del suo gruppo $G$ coi
 Il campo dei numeri interi $\mathbb{Z}$ forma un Gruppo con legge ``+", elemento identit\`a 0, e gode della propriet\`a commutativa. Tale campo \`e quindi un \textit{Gruppo Additivo Abeliano}. \`E facile dimostrare che tale campo non possa essere un Gruppo Moltiplicativo poich\`e dato un qualsiasi elemento $z \in \mathbb{Z}$ il suo inverso sar\`a un numero razionale $q = 1 / z$, $q \in \mathbb{Q}$; al pi\`u abbiamo $q=1$ se scegliamo $z=1$ ma ci\`o non soddisferebbe tutti gli altri punti del campo.
 \\
 \\
-Definiamo ora la tripla $(R, +, \cdot)$ con il termine ``anello" \cite{anelli1}: la sua coppia $(R, +)$ rappresenta un gruppo additivo abeliano, mentre l'operazione ``$\cdot$" segue le propriet\`a associativa, distributiva e commutativa, il suo elemento neutro $e=1$ viene definito come segue
+Definiamo ora la tripla $(R, +, \cdot)$ con il termine ``anello" \cite{anelli1}: la sua coppia $(R, +)$ rappresenta un gruppo additivo abeliano, mentre l'operazione ``$\cdot$" segue le propriet\`a associativa e distributiva rispetto l'addizione, il suo elemento neutro $e=1$ viene definito come segue
 \begin{center}
  $e\cdot a = a\cdot e = a$, $\forall a \in R$.%, $e \in R \setminus \{0\}$.
 \end{center}
@@ -357,7 +366,7 @@ Estendere il piano Euclideo \cite{baseTheory_Euclid2Proj_Space} a quello proiett
 \end{enumerate}
 Ne consegue l'esclusione dell'esistenza di rette proiettive parallele.
 \\
-Dato il punto $E=(x, y)$ nel piano Euclideo, la scrittura $E=[xZ:yZ:Z]$, con $Z \in \mathbb{R} \setminus \{0\}$ un numero reale diverso da zero, \`e data in termini di \textit{coordinate omogenee} o ``\textit{coordinate proiettive}".
+Dato il punto $E=(x, y)$ nel piano Euclideo, la scrittura in \textit{coordinate omogenee} o ``\textit{coordinate proiettive}" \`e data da $E=[xZ:yZ:Z]$, con $Z \in \mathbb{R} \setminus \{0\}$ un numero reale diverso da zero.
 \\
 Riguardo la notazione: per distinguere le coordinate proiettive da quelle cartesiane, spesso vengono usate notazioni differenti da $(x, y)$. A volte viene sostituita la virgola ``\textbf{,}'' con il simbolo ``\textbf{:}'', altre volte le parentesi tonde ``\textbf{()}'' vengono sostituite da quadre ``\textbf{$\mathbb{[]}$}'' ed altre volte vengono usate entrambe le notazioni assieme; infine si \`e soliti preferire le lettere maiuscole per punti proiettivi. Esempio: coordinate cartesiane $(x, y) = (1, 4)$, omogenee $[X:Y:Z]=[1:4:Z]$. Per mantenere un evidente cambio di coordinate verr\`a usata quest'ultima notazione.
 \\
@@ -508,14 +517,10 @@ in unione al punto all'infinito $\mathcal{O}$.
 La derivata si annulla per $4a^3+27b^2 = 0$ dimostrando la tesi iniziale.
 \\
 \\
-\`E possibile affermare che le curve ellittiche formano un Gruppo date le seguenti affermazioni:
+\`E possibile affermare che i punti di una curva ellittica formano un Gruppo date le seguenti affermazioni:
 \begin{enumerate}
 %
- \item L'operazione binaria ``+" lega due punti della curva ad un terzo ancora appartenente alla curva. Definita in tal modo, essa gode della propriet\`a della ``\textit{chiusura}" e risulta valida per esser definita Legge di Gruppo. La formula che esprime questo concetto \`e la seguente:
- \begin{center}
- $A+B=-C$
- \end{center}
- dove \textit{A}, \textit{B} e \textit{C} sono tre punti della curva
+ \item L'operazione binaria ``+" lega due punti $A$ e $B$ della curva descrivendo un terzo punto $A+B$ ancora appartenente alla curva. Espressa in tal modo, essa gode della propriet\`a della ``\textit{chiusura}" e risulta valida per esser definita Legge di Gruppo
  %
  %
  %
@@ -530,21 +535,21 @@ La derivata si annulla per $4a^3+27b^2 = 0$ dimostrando la tesi iniziale.
  %
  %
  %
- \item L'elemento inverso del punto $P$ \`e ``$-P$", il suo simmetrico rispetto all'asse $x$, ancora appartenente alla curva. La dimostrazione di quest'affermazione \`e riportata come Caso Particolare pi\`u avanti nella trattazione della legge di gruppo
+ \item L'elemento inverso del punto $P$ \`e ``$-P$", il suo simmetrico rispetto all'asse $x$, ancora appartenente alla curva. La dimostrazione di quest'affermazione \`e riportata come Caso Particolare pi\`u avanti nella trattazione della Legge di Gruppo
  %
  %
  %
- \item Sapendo che \`e possibile applicare la legge di gruppo a due punti qualsiasi della curva e confermata l'esistenza dell'elemento inverso, \`e possibile rispettare l'assioma dell'associativit\`a. Detti A e B due punti della curva tali che la loro somma tramite Legge di Gruppo sia il punto -C, possiamo dire che vale:
+ \item Sapendo che \`e possibile applicare la Legge di Gruppo a due punti qualsiasi della curva possiamo affermare che, detti A, B e C tre punti della curva, vale la seguente relazione:
  \begin{center}
  $(A+B)+C=A+(B+C)$
  \end{center}
 L'associativit\`a viene dunque dimostrata considerando valido il risultato ottenuto per ogni terna di punti della curva.
 \end{enumerate}
-Avendo rispettato gli assiomi di gruppo, abbiamo provato che le curve ellittiche costituiscano effettivamente un Gruppo.
+Avendo rispettato gli assiomi di gruppo, abbiamo provato che i punti delle curve ellittiche costituiscano effettivamente un Gruppo.
 \\
 Infine, generalizzando l'associativit\`a del gruppo, possiamo concludere che la seguente formula
 \begin{center}
-$A+(B+C)=B+(A+C)=C+(A+B)=C+(B+A)=\cdots = \mathcal{O}$
+$A+(B+C)=B+(A+C)= \ldots =C+(B+A)$
 \end{center}
 sia sempre valida per ogni curva ellittica. Quello cos\`i definito corrisponde ad un \textit{Gruppo Additivo Abeliano}.
 \begin{figure}[H]
@@ -567,18 +572,20 @@ La figura (\ref{CommonEC}) mostra la curva $y^2 = x^3 + ax+b$ in due momenti div
 %
 %
 \section{La Legge di Gruppo}
-Usiamo il termine ``\textit{Point Addition}" per far riferimento alla somma ``+" di due punti sulla curva, questa operazione costituisce la Legge di Gruppo per le curve ellittiche. Definiamo rigorosamente la Point Addition come ``\emph{Operazione binaria tra due punti A e B, $K$-razionali, di una curva ellittica $E$ tale per cui $A+B = -C$. Il risultato $-C$ \`e anch'esso un punto $K$-razionale appartenente alla curva $E$}".
-\\
-In alcuni casi, si fa riferimento alla Point Addition non come operatore binario ma come ternario ``$A+B+C = \mathcal{O}$" evidenziando il legame dei tre punti con l'elemento identit\`a $\mathcal{O}$.
+Usiamo il termine ``\textit{Point Addition}" per far riferimento alla somma ``+" di due punti sulla curva, questa operazione costituisce la Legge di Gruppo per le curve ellittiche. Definiamo la Point Addition come ``\emph{Presi due punti A e B, $K$-razionali, appartenenti ad una curva ellittica $E$, tracciamo la retta passante per entrambi i punti. Tale retta intercetter\`a la curva $E$ in un terzo punto $C$, anch'esso $K$-razionale. Il punto $-C$, simmetrico a $C$, \`e il risultato cercato}".
+%\\In alcuni casi, si fa riferimento alla Point Addition non come operatore binario ma come ternario ``$A+B+C = \mathcal{O}$" evidenziando il legame dei tre punti con l'elemento identit\`a $\mathcal{O}$.
+%
+%
+%
 %Il significato di tale risultato \`e che la curva ellittica ha un singolo punto all'infinito rappresentato da un punto di flesso. Si pu\`o aggiungere che la linea all'infinito incontrer\`a una sola volta la curva, precisamente nel punto all'infinito, quindi tale punto determina un'intersezione di molteplicit\`a tre.
 \begin{figure}[H]
- \includegraphics[width=.6\textwidth,center]{PA_P+Q}
+ \includegraphics[width=\textwidth,center]{A+B}
  \caption{Point Addition sulla curva $y^2 = x^3-7x+10$}
 \begin{center}
-  $P=(1, 2)$, $ Q=(3, 4)$, $ R=-(P+Q)=(-3, 2)$
+  $A=(1, 2)$, $ B=(3, 4)$, $ A+B=-C=(-3, 2)$
   \end{center}
  \end{figure}
-Detta $(x_C, y_C)$ la coppia di coordinate che rappresenta il punto $C$, intersezione della retta passante per $A=(x_A, y_A)$ e $B=(x_B, y_B)$ con la curva $E$, il suo simmetrico $-C=(x_C, -y_C)$ costituisce il risultato della legge di gruppo. Per semplice costruzione geometrica, la retta $r_{AB}$ passante per i due punti $A$ e $B$ presenter\`a un coefficiente angolare $m$ ed una quota $q$. Le formule per determinare direttamente la coppia $(x_C, -y_C)$ sono:
+Detta quindi $(x_C, y_C)$ la coppia di coordinate che rappresenta il punto $C$, intersezione della retta passante per $A=(x_A, y_A)$ e $B=(x_B, y_B)$ con la curva $E$, il suo simmetrico $-C=(x_C, -y_C)$ costituisce il risultato della Legge di Gruppo. Per semplice costruzione geometrica, la retta $r_{AB}$ passante per i due punti $A$ e $B$ presenter\`a un coefficiente angolare $m$ ed una quota $q$. Le formule per determinare direttamente la coppia $(x_C, -y_C)$ sono:
 \begin{align*}
 \begin{cases}
 m = \ddfrac{y_A - y_B}{x_A - x_B}\\
@@ -628,7 +635,7 @@ come anticipato inizialmente. Possiamo ora calcolare l'ordinata $y_C$ a partire 
 Cambiando il segno all'ordinata ottenuta verifichiamo che le formule date inizialmente sono valide.
 \\
 \\
-Mediante queste formule \`e possibile calcolare anche la differenza tra due punti: se la somma viene espressa come $A+B=C$ allora possiamo esprimere la sottrazione come $B=C-A$. Si \`e gi\`a detto che alla notazione ``$-A$" facciamo corrispondere il punto simmetrico di $A$, quindi la sottrazione pu\`o esser considerata un caso particolare della Point Addition in cui $B=C-A = C + (-A)$.
+Mediante queste formule \`e possibile calcolare anche la differenza tra due punti: se la somma viene espressa come $P+Q=R$ allora possiamo esprimere la sottrazione come $Q=R-P$. Si \`e gi\`a detto che alla notazione ``$-P$" facciamo corrispondere il punto simmetrico di $P$, quindi la sottrazione pu\`o esser considerata un caso particolare della Point Addition in cui $Q=R-P = R + (-P)$.
 \begin{figure}[H]
  \begin{minipage}[H]{0.5\textwidth}
   \includegraphics[width=\textwidth, left]{PQR+}
@@ -643,7 +650,7 @@ Mediante queste formule \`e possibile calcolare anche la differenza tra due punt
  \\
  \\
 \end{figure}
-Illustrate le formule che governano la legge di gruppo, \`e bene discutere riguardo i casi particolari di questa operazione:
+Illustrate le formule che governano la Legge di Gruppo, \`e bene discutere riguardo i casi particolari di questa operazione:
 \begin{enumerate}
  \item Somma un punto $P$ ed il suo simmetrico $Q = -P$. 
  \\
@@ -667,7 +674,7 @@ Illustrate le formule che governano la legge di gruppo, \`e bene discutere rigua
   \caption{Curva $y^2 = x^3-7x+10$, $P=Q=(-1, 4)$}
  \end{figure}
  \label{PointDoubling}
-Definiamo questo caso con la dicitura ``\textit{Point Doubling}". Le equazioni viste per la legge di gruppo tuttavia non permettono di calcolare il punto $2P$: bisogna trovare delle formule che tengano conto della \textbf{tangente} alla curva $E$ nel punto $P$. La retta tangente $y = mx+q$ presenter\`a un coefficiente angolare $m$ dato dal gradiente dell'equazione (\ref{Forma Breve}):
+Definiamo questo caso con la dicitura ``\textit{Point Doubling}". Le equazioni viste per la Legge di Gruppo tuttavia non permettono di calcolare il punto $2P$: bisogna trovare delle formule che tengano conto della \textbf{tangente} alla curva $E$ nel punto $P$. La retta tangente $y = mx+q$ presenter\`a un coefficiente angolare $m$ dato dal gradiente dell'equazione (\ref{Forma Breve}):
 \begin{align*}
 E : y^2 &= x^3 + ax + b &\text{Dividiamo tutto per $y^2$}\\
 1 &= \ddfrac{x^3 + ax + b}{y^2} &\text{Applichiamo il gradiente}\\
@@ -773,8 +780,8 @@ Esiste un metodo simile alla Double$\&$Add, e viene detto \textbf{Montgomery Lad
         
     \Else
     
-        \State $P_1 =2P_1$
         \State $P_2 =P_1+P_2$
+        \State $P_1 =2P_1$
         
     \EndIf
 \EndFor\\
@@ -849,19 +856,19 @@ Prendiamo dei numeri $q$ per i quali vengono rispettate le ipotesi del teorema: 
  $5$ &$2$ &$10$\\
  $19$ &$12$ &$28$\\
  $67$ &$52$ &$84$\\
- $313$ &$278$ &$349$\\
+ $313$ &$279$ &$349$\\
  $971$ &$910$ &$1034$\\
 \end{tabular}
 \end{center}
 \`E importante notare che il teorema usato restituisce la cardinalit\`a della curva includendo il punto all'infinito.
 \\
-Un algoritmo per determinare univocamente la cardinalit\`a $\#E$ \`e quello di Schoof \cite{schoof}. Chiamiamo $N \geq 4\sqrt{q}$ un numero la cui scomposizione in fattori primi corrisponde a $N=\prod_{i=1}^j p_i $. Il calcolo di $\#E$ viene reso possibile dal Teorema Cinese del Resto (descritto nel capitolo \ref{poliwag}) applicato al sistema seguente:
+Un algoritmo per determinare univocamente la cardinalit\`a $\#E$ \`e quello di Schoof. Per prima cosa chiamiamo $N \geq 4\sqrt{q}$ un numero la cui scomposizione in fattori primi corrisponda a $N=\prod_{i=1}^j p_i $. Successivamente, per ogni fattore $p_j$ viene calcolato un parametro $t_{p_j}$ come descritto in \cite{schoof}. Infine, il calcolo di $\#E$ viene reso possibile dal Teorema Cinese del Resto (descritto nel capitolo \ref{poliwag}) applicato al sistema seguente:
 \begin{center}$
 \begin{cases}
-    \#E \text{ mod}(p_1)\\
-    \#E \text{ mod}(p_2)\\
+    \#E = 1+q-t_{p_1} \text{ mod}(p_1)\\
+    \#E = 1+q-t_{p_2} \text{ mod}(p_2)\\
     \ldots \\
-    \#E \text{ mod}(p_j)\\
+    \#E = 1+q-t_{p_j} \text{ mod}(p_j)\\
 \end{cases}$
 \end{center}
 %
@@ -876,7 +883,7 @@ Un algoritmo per determinare univocamente la cardinalit\`a $\#E$ \`e quello di S
 %
 %
 \subsection{Punti Generatori}
-Un punto $P$ che generi un gruppo ciclico viene detto Generatore del gruppo. Tutti i punti appartenenti a questo gruppo possono esser calcolati applicando ripetitivamente la legge di gruppo al punto $P$. 
+Un punto $P$ che generi un gruppo ciclico viene detto Generatore del gruppo. Tutti i punti appartenenti a questo gruppo possono esser calcolati applicando ripetitivamente la Legge di Gruppo al punto $P$. 
 \\
 Prendiamo la curva $E: y^2 = x^3 +2x +2$ mod$(17)$ ed il punto $P = (5, 1)$. La curva ed il sottogruppo generato da $A$ contengono entrambi 19 elementi in totale. L'elemento successivo possiamo dirlo $Q=2P$ e si calcola con le stesse formule della Point Doubling (formule \ref{point doubling 1234}) espresse in modulo 17 per il caso in esame.
 \begin{figure}[H] 
@@ -1021,7 +1028,7 @@ Sulla base di quanto detto finora possiamo concludere che i sottogruppi $H$ pres
 \label{ecc algo}
 Consideriamo in questo capitolo alcuni algoritmi della sicurezza informatica ed i loro corrispondenti algoritmi basati sugli studi effettuati. Tratteremo di: crittografia simmetrica, asimmetrica e firma digitale.
 \\
-Riguardo la crittografia verr\`a mostrato il paradigma ElGamal per cifrare in modo sicuro un messaggio, seguito poi dalla sua variante per mezzo delle curve ellittiche, la \textit{Crittografia Ellittica}. Proseguiremo con la crittografia asimmetrica illustrando il funzionamento del protocollo RSA evidenziandone (qui e nei capitoli successivi) i motivi che spingono ad approcciarsi verso nuovi algoritmi utilizzando la teoria delle curve ellittiche. Infine tratteremo della firma digitale implementata negli algoritmi DSA e ECDSA.
+Riguardo la crittografia simmetrica verr\`a mostrato il paradigma ElGamal per cifrare in modo sicuro un messaggio, seguito poi dalla sua variante per mezzo delle curve ellittiche, la \textit{Crittografia Ellittica Simmetrica}. Proseguiremo con la crittografia asimmetrica illustrando il funzionamento del protocollo RSA, evidenziandone (qui e nei capitoli successivi) i motivi che spingono ad approcciarsi verso nuovi algoritmi, e quindi il corrispettivo protocollo: ECDH. Infine tratteremo della firma digitale implementata negli algoritmi DSA e ECDSA.
 %
 %
 %
@@ -1054,14 +1061,12 @@ Ci interessiamo ora ad esporre come funzioni la crittografia di un messaggio $m$
  \item Invia la coppia $(c_1, c_2)$ al suo interlocutore Bob. 
 \end{enumerate}
 Bob \`e capace di decifrare il messaggio procedendo al calcolo:
-\begin{center}
 \begin{align*}
 c_2 \cdot c_1^{-K^-} \text{ mod}(p) &=\\
  &= m \cdot (K^+)^k \cdot g^{k  (-K^-)} \text{ mod}(p)\\
  &= m \cdot g^{k  (K^-)} \cdot g^{-k (K^-)} \text{ mod}(p)\\
  &=m
 \end{align*}
-\end{center}
 In questo modo si \`e recuperato il messaggio originale, tuttavia sia per Alice che per Bob \`e necessario conoscere la chiave privata $K^-$ implicando una precedente comunicazione nella quale \`e avvenuto lo scambio della chiave simmetrica, il segreto condiviso.
 %
 %
@@ -1071,7 +1076,7 @@ In questo modo si \`e recuperato il messaggio originale, tuttavia sia per Alice 
 %
 %
 %
-\section{Crittografia Ellittica}
+\section{Crittografia Ellittica Simmetrica}
 La variante ellittica di ElGamal prevede un maggior numero di parametri pubblici. In questo caso bisogna pensare dapprima all'accordo (ed alla generazione) di una curva ellittica sulla quale operare. Campo, cardinalit\`a, generatore e cofattore sono quindi ulteriori elementi di cui necessiteremo:
 \begin{itemize}
  \item i numeri \textbf{a}, \textbf{b} che serviranno da coefficienti nell'equazione (\ref{CE mod}) per descrivere la curva ellittica;
@@ -1201,7 +1206,7 @@ Input decodifica: il punto $Q = (x_Q, y_Q)$ inviato da Alice
 \Return DEC2ASCII(d) \Comment{Ritorna il carattere ASCII corrispondente}
 \end{algorithmic}
 \end{algorithm}
-Infine \`e possibile aggiungere casualit\`a agli algoritmi visti facendo uso di un segreto condiviso tra le due parti ma oscuro a tutti gli altri utenti della rete: la chiave simmetrica $K^S=(x_S, y_S)$. Essendo anch'essa un punto della curva, definiamo la funzione ``$shuffle(x_S, y_S, n)$" che ne usa le coordinate per dare in output un numero $s$ modulo $n$. Alice e Bob possono computare quindi $(s+c)G$ per codificare in modo unico i caratteri ASCII e generare la loro tabella $(s+c) \to (s+c)G$. Lo pseudocodice per la codifica cambia leggermente: si dovr\`a ora calcolare il punto $Q \gets (c\mathbold{+s})G$ invece che $Q \gets cG$.
+Infine \`e possibile aggiungere casualit\`a agli algoritmi visti facendo uso di un segreto condiviso tra le due parti ma oscuro a tutti gli altri utenti della rete: la chiave simmetrica $K^S=(x_S, y_S)$. Essendo anch'essa un punto della curva, definiamo la funzione ``\textit{shuffle}$(x_S, y_S, n)$" che ne usa le coordinate per dare in output un numero $s$ modulo $n$. Alice e Bob possono computare quindi $(s+c)G$ per codificare in modo unico i caratteri ASCII e generare la loro tabella $(s+c) \to (s+c)G$. Lo pseudocodice per la codifica cambia leggermente: si dovr\`a ora calcolare il punto $Q \gets (c\mathbold{+s})G$ invece che $Q \gets cG$.
 %
 %
 %
@@ -1619,7 +1624,7 @@ L'ultimo punto calcolato \`e $(s^2-s+s)P = (s^2)P = nP$ per definizione di $s$ e
 \\
 Le operazioni che hanno reso possibile questo risultato sono esattamente $s$ moltiplicazioni scalari per trovare tutti i $tP$ ed un massimo di altre $s$ operazioni per il calcolo di $Q-rsP$ fino ad avvenuta collisione con $tP$.
 \\
-Dover salvare $s$ punti nella hash table che comporta una complessit\`a spaziale di $O(s) = O(\sqrt{n})$. Possiamo evitare di salvare il punto all'infinito ed il punto noto $P$ determinando che ora la tabella comprender\`a $\ceil{\sqrt{n} \,} -2$ record, un risultato insignificante per grandi valori di $n$. Esiste un'altra possibilit\`a per ridurre i dati da salvare: sfruttare la simmetria della curva. Per ogni punto $tP=(x, y)$ andiamo a salvarne solo la coordinata $x$, in tal modo dimezziamo lo spazio complessivo utilizzato. Al tempo stesso ciascun record della tabella evidenzier\`a non solo l'ascissa dei punti $+tP$ ma anche quella dei loro simmetrici, permettendo di trascurare un'altra met\`a dei punti ottenibili. Trovare la molteplicit\`a di un punto simmetrico \`e possibile basandosi su quanto esposto nel capitolo \ref{cardin} nelle Considerazioni Personali 2. La complessit\`a spaziale cos\`i definita risulta 
+Dover salvare $s$ punti nella hash table che comporta una complessit\`a spaziale di $O(s) = O(\sqrt{n})$. Possiamo evitare di salvare il punto all'infinito ed il punto noto $P$ determinando che ora la tabella comprender\`a $2$ record in meno, un risultato insignificante per grandi valori di $n$. Esiste un'altra possibilit\`a per ridurre i dati da salvare: sfruttare la simmetria della curva. Per ogni punto $tP=(x, y)$ andiamo a salvarne solo la coordinata $x$, in tal modo dimezziamo lo spazio complessivo utilizzato. Al tempo stesso ciascun record della tabella evidenzier\`a non solo l'ascissa dei punti $+tP$ ma anche quella dei loro simmetrici, permettendo di trascurare un'altra met\`a dei punti ottenibili. Trovare la molteplicit\`a di un punto simmetrico \`e possibile basandosi su quanto esposto nel capitolo \ref{cardin} nelle Considerazioni Personali 2. La complessit\`a spaziale cos\`i definita risulta 
 \begin{gather}
  O \Big (\, \Big \lceil \ddfrac{s}{4} \Big \rceil \, \Big ) = O \Big (\, \Big \lceil \ddfrac{\ceil{\sqrt{n}\,}}{4} \Big \rceil \, \Big ) 
  \label{bsgs migliorato}
@@ -1646,7 +1651,7 @@ L'intera tabella di hash richieder\`a $96 \cdot 7.9\cdot 10^{28} = 7.5 \cdot 10^
 \subsection{La \texorpdfstring{$\mathbold{\rho}$}{p} di Pollard}
 Un altro algoritmo per la risoluzione dell'ECDLP \`e la $\rho$ di Pollard. Quella che verr\`a mostrata di seguito \`e una variante del classico algoritmo di Pollard introdotto nel 1975 (nel quale si parlava di fattorizzare un numero primo), ora applicata alla teoria delle curve ellittiche come riportato in \cite{parall rho}. L'approccio che stiamo per mostrare, riprende l'idea della combinazione lineare di punti vista con il BSGS ma necessita di una complessit\`a spaziale nettamente inferiore. 
 \\
-Partendo dall'equazione $Q=kP$ determiniamo $Q=aP + bQ$, $kP=AP + BQ$ dove $a$, $b$, $A$, $B$ sono numeri interi, in modulo $n$. Sull'esempio della curva $y^2=x^3+2x+2$ mod$(17)$ riportato nel capitolo (\ref{cardin}), supponiamo essere $k=3$. Una combinazione lineare di punti per ottenere $Q$ pu\`o essere $a=6$, $b=-1$ secondo la quale otteniamo $Q=aP+bQ=6P-Q$ dove $6P=(16, 13)$ e $-Q=(10, 11)$. Computare la legge di gruppo tra questi due punti conduce al valore cercato $Q=(10, 6)$ corrispondente a $3P$. Essendo vero che $k=3$ abbiamo correttamente risolto il problema. In formule abbiamo che:
+Partendo dall'equazione $Q=kP$ determiniamo $Q=aP + bQ$, $kP=AP + BQ$ dove $a$, $b$, $A$, $B$ sono numeri interi, in modulo $n$. Sull'esempio della curva $y^2=x^3+2x+2$ mod$(17)$ riportato nel capitolo (\ref{cardin}), supponiamo essere $k=3$. Una combinazione lineare di punti per ottenere $Q$ pu\`o essere $a=6$, $b=-1$ secondo la quale otteniamo $Q=aP+bQ=6P-Q$ dove $6P=(16, 13)$ e $-Q=(10, 11)$. Computare la Legge di Gruppo tra questi due punti conduce al valore cercato $Q=(10, 6)$ corrispondente a $3P$. Essendo vero che $k=3$ abbiamo correttamente risolto il problema. In formule abbiamo che:
 \begin{center}
 Dati i parametri $a$, $b$, $A$, $B \in s$\\
  $\exists(a, b) \ne (A, B) \mid aP+bQ = AP+BQ$.
@@ -1863,7 +1868,7 @@ In ultimo, attacchi passivi come i Side Channel trovano scarsa applicazione se l
 %
 %
 \section{Livelli di Sicurezza}
-Dopo aver analizzato alcuni attacchi mirati contro l'ECDLP possiamo introdurre il concetto di ``\textit{livello di sicurezza}". Volendo risolvere un generico Problema del Logaritmo Discreto, se l'algoritmo pi\`u veloce a noi noto richiede $2^k$ operazioni, diciamo che il problema presenta un \textbf{livello di sicurezza }$\mathbold{k}$. 
+Dopo aver analizzato alcuni attacchi mirati contro l'ECDLP possiamo introdurre il concetto di ``\textit{livello di sicurezza}". Un algoritmo crittografico presenta un \textbf{livello di sicurezza }$\mathbold{k}$ se l'attacco pi\`u veloce a noi noto richiede $2^k$ operazioni per romperlo. Gli algoritmi analizzati nel capitolo \ref{ecc algo} sono fondati su DLP ed ECDLP: mettiamo a confronto i due problemi evidenziando quale sia il pi\`u oneroso e, di conseguenza, quale sia il pi\`u sicuro in termini crittografici.
 \\
 Dall'analisi condotta in questo capitolo si \`e arrivati a mostrare come l'algoritmo pi\`u veloce per risolvere l'ECDLP sia la $\rho$ di Pollard. Confrontiamo quindi la (\ref{dlp enorme}) per risolvere il DLP e la (\ref{p parallelo}) per l'ECDLP; il metodo pi\`u oneroso risulta essere il secondo (figura \ref{DLPvECDLP}):
 \begin{figure}[H]
@@ -1900,7 +1905,7 @@ Sui dati della tabella (\ref{key confronto}) grafichiamo le chiavi per RSA ed EC
 Vogliamo dunque mostrare un ultimo confronto tra RSA ed ECC: a parit\`a di livello di sicurezza, mostriamo il numero di operazioni necessarie a risolvere il DLP e l'ECDLP mediante gli attacchi pi\`u efficaci considerati.
 Chiamiamo ``\textit{L}" il relativo livello di sicurezza al quale facciamo riferimento. Per RSA il miglior algoritmo risolutivo necessita di $e^{\sqrt[3]{ln(n) \cdot ln( ln( n) )^2}}$ operazioni; per ECC abbiamo la $\rho$ di Pollard con $\sqrt{\ddfrac{\pi n}{2}}$ operazioni. Il valore detto $n$ rappresenta il numero $2^b$ ovvero il numero che otteniamo mediante chiavi da $b$ bit. Nella colonna $ECC/RSA$ si mostra un rapporto tra le operazioni necessarie ad entrambi gli algoritmi per risolvere il problema del logaritmo discreto.
 \\
-Prendiamo in considerazione anche il tempo di elaborazione dell'algoritmo per rompere il generico DLP: un anno MIPS corrisponde al numero di operazioni che vengono svolte in 365 giorni di attivit\`a da un singolo processore che lavora alla frequenza di 1 milione di operazioni al secondo. Tale numero corrisponde a $MIPS=3.1 \cdot 10^{13}$ operazioni totali. Gli anni MIPS necessari per il calcolo di $x$ operazioni sono calcolati come il rapporto $x / MIPS$, vedasi a tal proposito le colonne \textit{MIPS RSA} e \textit{MIPS ECC}. La colonna \textit{MIPS ECC/RSA} non viene mostrata: passare da un valore della colonna \textit{ECC} al corrispettivo \textit{MIPS ECC} significa dividere secondo il coefficiente \textit{MIPS}, lo stesso concetto si applica per \textit{RSA} concludendo che il rapporto di operazioni \textit{ECC/RSA} corrisponda esattamente a quello in anni MIPS.
+Prendiamo in considerazione anche il tempo di elaborazione dell'algoritmo per rompere il generico DLP: un anno MIPS corrisponde al numero di operazioni che vengono svolte in 365 giorni di attivit\`a da un singolo processore che lavora alla frequenza di 1 milione di operazioni al secondo. Tale numero corrisponde a $MIPS=3.1 \cdot 10^{13}$ operazioni totali. Gli anni MIPS necessari per il calcolo di $x$ operazioni sono calcolati come il rapporto $x / $\textit{MIPS}, vedasi a tal proposito le colonne \textit{MIPS RSA} e \textit{MIPS ECC}. La colonna \textit{MIPS ECC/RSA} non viene mostrata: passare da un valore della colonna \textit{ECC} al corrispettivo \textit{MIPS ECC} significa dividere secondo il coefficiente \textit{MIPS}, lo stesso concetto si applica per \textit{RSA} concludendo che il rapporto di operazioni \textit{ECC/RSA} corrisponda esattamente a quello in anni MIPS.
 \begin{center}
 \begin{tabular}{c |c |c |c |c |c }
 & \multicolumn{3}{c|}{Operazioni} &\multicolumn{2}{c}{Anni MIPS}\\
@@ -2153,7 +2158,7 @@ Ringrazio i miei genitori e le mie sorelle per ogni giorno e per l'opportunit\`a
 
 %12
   \bibitem{Wolfram}
-  \url{WolframAlpha.com} per la consultazione delle seguenti definizioni: Curva ellittica, Punto K-Razionale.
+  \url{WolframAlpha.com} per la consultazione delle seguenti definizioni: Curva ellittica, Punto K-Razionale, Legge di Gruppo per le curve ellittiche.
   
 %13
   \bibitem{P Torsione 1}
@@ -2436,7 +2441,7 @@ Professore associato di Matematica,
 %52
   \bibitem{rho speed2}
   Silje Christensen, Simen Johnsrud,
-  \emph{``Speeding up the Pollard’s Rho algorithm"},
+  \emph{``Speeding up the Pollardâ€™s Rho algorithm"},
 1996.
 
 
@@ -2458,6 +2463,9 @@ Professore associato di Matematica,
   
 
 \end{thebibliography}
+
+
+\afterpage{\blankpage}
 %
 %
 %
